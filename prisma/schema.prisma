@@ -1,0 +1,235 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  ADMIN
+  USER
+  MEMBERSHIP_SECRETARY
+}
+
+model User {
+  id                    String    @id @default(auto()) @map("_id") @db.ObjectId
+  name                  String?
+  fullname              String?
+  email                 String?   @unique
+  emailVerified         DateTime?
+  image                 String?
+  password              String?
+  hashedPassword        String?
+  salt                  String?
+  role                  UserRole  @default(USER)
+  isTwoFactorEnabled    Boolean   @default(false)
+  accounts              Account[]
+  sessions              Session[]
+  twoFactorConfirmation TwoFactorConfirmation?
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  description          String?
+  bio                  String?         
+  cv                   String? 
+  portfolio            String?            
+  additionalFile       String?
+
+// Contact 
+  phone                String?
+  whatsapp             String?
+  twitter              String?
+  facebook             String?
+  linkedin             String?
+  telegram             String?
+  instagram            String?
+  tiktok               String?
+
+
+// Birthday
+  birthDate            DateTime?
+  birthCountry         String?
+  birthState           String?
+  birthLocality        String?
+  birthAdminUnit       String?
+  birthNeighborhood    String?
+  birthMonth           Int?
+  birthYear            Int?
+
+  // Current Location
+  currentCountry       String?
+  currentState         String?
+  currentLocality      String?
+  currentAdminUnit     String?
+  currentNeighborhood  String?
+
+  // Original Location
+  originalCountry      String?
+  originalState        String?
+  originalLocality     String?
+  originalAdminUnit    String?
+  originalNeighborhood String?
+
+  // Nationality
+  nationalityId      String?
+  maritalStatus      String?
+  gender             String?
+  religion           String?
+
+  // Education & Work
+  educationLevel       String?
+  institution          String?
+  yearOfCompletion     Int?
+  major                String?             
+  
+  // Additional education fields
+  studentYear          Int?
+  
+  // Bachelor's information
+  bachelorInstitution  String?
+  bachelorMajor        String?
+  bachelorCompletionYear Int?
+  
+  // Master's information  
+  masterInstitution    String?
+  masterMajor          String?
+  masterCompletionYear Int?
+  
+  // PhD information
+  phdInstitution       String?
+  phdMajor             String?
+  phdCompletionYear    Int?
+  
+  // Professor information
+  professorInstitution  String?
+  professorMajor        String?
+  professorCompletionYear Int?
+  
+  currentOccupation    String?             
+  employmentSector     String?             
+  workplaceAddress     String?
+  companyName          String?
+
+  // Student Details
+  studentInstitution   String?
+  studentFaculty       String?
+
+  // Activities 
+  partyMember Boolean @default(false)
+  partyName String?
+  partyStartDate DateTime?
+  partyEndDate DateTime?
+  
+  unionMember Boolean @default(false)
+  unionName String?
+  unionStartDate DateTime?
+  unionEndDate DateTime?
+  
+  ngoMember Boolean @default(false)
+  ngoName String?
+  ngoActivity String?
+  
+  clubMember Boolean @default(false)
+  clubName String?
+  clubType String?      
+  
+  // Skills and Interests
+  skills String[] @default([])
+  interests String[] @default([])
+  
+  // Emergency Contacts
+  emergencyName1       String?
+  emergencyRelation1   String?
+  emergencyPhone1      String?
+  emergencyName2       String?
+  emergencyRelation2   String?
+  emergencyPhone2      String?
+
+  // Other
+  referralSource       String?
+  acquaintanceName     String?
+  donationAmount       Float?
+  donationDate         DateTime?
+  oathAcknowledged     Boolean?             @default(false)
+
+  // Onboarding
+  onboardingStatus String? @default("PENDING")  // "PENDING" | "COMPLETED"
+  onboardingStep   Int?    @default(1)
+  
+  // Application status
+  applicationStatus String? @default("PENDING")  // "PENDING" | "APPROVED" | "REJECTED"
+  reviewedBy        String? @db.ObjectId
+  reviewedAt        DateTime?
+  reviewNotes       String?
+}
+
+
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique @map("session_token") @db.String
+  userId       String   @db.ObjectId
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+  @@index([email])
+}
+
+model PasswordResetToken {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+  @@index([email])
+}
+
+model TwoFactorToken {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+  @@index([email])
+}
+
+model TwoFactorConfirmation {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
