@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from "react"
 import { ChevronRight, File, Folder } from "lucide-react"
 import { sidebarData } from './constant'
@@ -19,8 +21,11 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarRail,
+  SidebarTrigger,
+  useSidebar,
 } from "@/components/template/sidebar/sidebar"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 // Reorder the data to put relay at the top
 const getOrderedData = () => {
@@ -38,12 +43,22 @@ const toUrlPath = (str: string | undefined): string => {
   return str.toLowerCase().replace(/\s+/g, '-');
 }
 
-export function DocsSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function DocsSidebar({ className, style, ...props }: React.ComponentProps<typeof Sidebar>) {
   // Use the reordered data
   const orderedData = getOrderedData();
+  const { state, open } = useSidebar();
 
   return (
-    <Sidebar {...props}>
+    <Sidebar 
+      {...props} 
+      className={cn(
+        "border-r overflow-auto bg-background shadow-sm",
+        open ? "w-64" : "hidden w-0",
+        "transition-all duration-300 ease-in-out",
+        className
+      )}
+      style={style}
+    >
       <SidebarContent className="pt-4 px-2">
         <SidebarMenu>
           {orderedData.map((item, itemIndex) => (
@@ -53,7 +68,9 @@ export function DocsSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                   <SidebarMenuButton>
                     <ChevronRight className="transition-transform" />
                     <Folder />
-                    {item?.item || 'Unknown Item'}
+                    <span>
+                      {item?.item || 'Unknown Item'}
+                    </span>
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -93,7 +110,6 @@ export function DocsSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   )
 }
