@@ -1,0 +1,23 @@
+{
+  "title": "Synchronizing",
+  "description": "Index page for Synchronizing",
+  "body": {
+    "raw": "\n# Synchronizing\n\n- [Voltage Matching](voltage-matching)\n- [Phase Angle](phase-angle)\n- [Frequency Matching](frequency-matching)\n",
+    "code": "var Component=(()=>{var g=Object.create;var c=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),y=(e,n)=>{for(var r in n)c(e,r,{get:n[r],enumerable:!0})},h=(e,n,r,t)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of u(n))!x.call(e,a)&&a!==r&&c(e,a,{get:()=>n[a],enumerable:!(t=m(n,a))||t.enumerable});return e};var _=(e,n,r)=>(r=e!=null?g(f(e)):{},h(n||!e||!e.__esModule?c(r,\"default\",{value:e,enumerable:!0}):r,e)),j=e=>h(c({},\"__esModule\",{value:!0}),e);var l=p((S,o)=>{o.exports=_jsx_runtime});var M={};y(M,{default:()=>d,frontmatter:()=>z});var i=_(l()),z={title:\"Synchronizing\",description:\"Index page for Synchronizing\"};function s(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"synchronizing\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#synchronizing\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Synchronizing\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"voltage-matching\",children:\"Voltage Matching\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"phase-angle\",children:\"Phase Angle\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"frequency-matching\",children:\"Frequency Matching\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(s,{...e})}):s(e)}return j(M);})();\n;return Component;"
+  },
+  "_id": "docs/relay/synchronizing/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/synchronizing/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/synchronizing",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/synchronizing"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/synchronizing",
+  "slugAsParams": "relay/synchronizing",
+  "url": "/docs/docs/relay/synchronizing",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "synchronizing"
+}

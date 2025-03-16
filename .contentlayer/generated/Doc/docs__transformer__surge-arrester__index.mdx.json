@@ -1,0 +1,23 @@
+{
+  "title": "Surge Arrester",
+  "description": "Index page for Surge Arrester",
+  "body": {
+    "raw": "\n# Surge Arrester\n\n- [Leakage Current](leakage-current)\n- [Insulation Resistance](insulation-resistance)\n",
+    "code": "var Component=(()=>{var d=Object.create;var s=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var p=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),_=(n,e)=>{for(var t in e)s(n,t,{get:e[t],enumerable:!0})},c=(n,e,t,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!f.call(n,a)&&a!==t&&s(n,a,{get:()=>e[a],enumerable:!(i=g(e,a))||i.enumerable});return n};var j=(n,e,t)=>(t=n!=null?d(x(n)):{},c(e||!n||!n.__esModule?s(t,\"default\",{value:n,enumerable:!0}):t,n)),k=n=>c(s({},\"__esModule\",{value:!0}),n);var o=p((M,l)=>{l.exports=_jsx_runtime});var C={};_(C,{default:()=>h,frontmatter:()=>A});var r=j(o()),A={title:\"Surge Arrester\",description:\"Index page for Surge Arrester\"};function u(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(e.h1,{id:\"surge-arrester\",children:[(0,r.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#surge-arrester\",children:(0,r.jsx)(e.span,{className:\"icon icon-link\"})}),\"Surge Arrester\"]}),`\n`,(0,r.jsxs)(e.ul,{children:[`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"leakage-current\",children:\"Leakage Current\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`]})]})}function h(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,{...n,children:(0,r.jsx)(u,{...n})}):u(n)}return k(C);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/surge-arrester/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/surge-arrester/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/surge-arrester",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/surge-arrester"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/surge-arrester",
+  "slugAsParams": "transformer/surge-arrester",
+  "url": "/docs/docs/transformer/surge-arrester",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "surge-arrester"
+}

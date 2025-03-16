@@ -1,0 +1,23 @@
+{
+  "title": "Metering Devices",
+  "description": "Index page for Metering Devices",
+  "body": {
+    "raw": "\n# Metering Devices\n\n- [Accuracy Calibration](accuracy-calibration)\n- [Functional Verification](functional-verification)\n",
+    "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var p=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),_=(n,e)=>{for(var t in e)r(n,t,{get:e[t],enumerable:!0})},o=(n,e,t,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let c of f(e))!g.call(n,c)&&c!==t&&r(n,c,{get:()=>e[c],enumerable:!(a=m(e,c))||a.enumerable});return n};var v=(n,e,t)=>(t=n!=null?u(x(n)):{},o(e||!n||!n.__esModule?r(t,\"default\",{value:n,enumerable:!0}):t,n)),M=n=>o(r({},\"__esModule\",{value:!0}),n);var l=p((y,s)=>{s.exports=_jsx_runtime});var D={};_(D,{default:()=>h,frontmatter:()=>j});var i=v(l()),j={title:\"Metering Devices\",description:\"Index page for Metering Devices\"};function d(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(e.h1,{id:\"metering-devices\",children:[(0,i.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#metering-devices\",children:(0,i.jsx)(e.span,{className:\"icon icon-link\"})}),\"Metering Devices\"]}),`\n`,(0,i.jsxs)(e.ul,{children:[`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"accuracy-calibration\",children:\"Accuracy Calibration\"})}),`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"functional-verification\",children:\"Functional Verification\"})}),`\n`]})]})}function h(n={}){let{wrapper:e}=n.components||{};return e?(0,i.jsx)(e,{...n,children:(0,i.jsx)(d,{...n})}):d(n)}return M(D);})();\n;return Component;"
+  },
+  "_id": "docs/component/metering-devices/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/metering-devices/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/metering-devices",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/metering-devices"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/metering-devices",
+  "slugAsParams": "component/metering-devices",
+  "url": "/docs/docs/component/metering-devices",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "metering-devices"
+}

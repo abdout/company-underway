@@ -1,0 +1,23 @@
+{
+  "title": "Other",
+  "description": "Index page for Other",
+  "body": {
+    "raw": "\n# Other\n\n- [SCADA](scada)\n- [RMU (Ring Main Unit)](rmu-(ring-main-unit))\n- [Fault Recorder](fault-recorder)\n- [Battery Bank](battery-bank)\n- [DC-AC Charger](dc-ac-charger)\n- [Cable](cable)\n",
+    "code": "var Component=(()=>{var u=Object.create;var t=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),C=(e,n)=>{for(var a in n)t(e,a,{get:n[a],enumerable:!0})},l=(e,n,a,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!g.call(e,i)&&i!==a&&t(e,i,{get:()=>n[i],enumerable:!(c=f(n,i))||c.enumerable});return e};var _=(e,n,a)=>(a=e!=null?u(x(e)):{},l(n||!e||!e.__esModule?t(a,\"default\",{value:e,enumerable:!0}):a,e)),b=e=>l(t({},\"__esModule\",{value:!0}),e);var o=p((D,h)=>{h.exports=_jsx_runtime});var M={};C(M,{default:()=>s,frontmatter:()=>j});var r=_(o()),j={title:\"Other\",description:\"Index page for Other\"};function d(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"other\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#other\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"Other\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"scada\",children:\"SCADA\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"rmu-(ring-main-unit)\",children:\"RMU (Ring Main Unit)\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"fault-recorder\",children:\"Fault Recorder\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"battery-bank\",children:\"Battery Bank\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"dc-ac-charger\",children:\"DC-AC Charger\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"cable\",children:\"Cable\"})}),`\n`]})]})}function s(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(d,{...e})}):d(e)}return b(M);})();\n;return Component;"
+  },
+  "_id": "docs/other/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other"
+  },
+  "type": "Doc",
+  "slug": "/docs/other",
+  "slugAsParams": "other",
+  "url": "/docs/docs/other",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": ""
+}

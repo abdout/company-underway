@@ -1,0 +1,23 @@
+{
+  "title": "Cable",
+  "description": "Index page for Cable",
+  "body": {
+    "raw": "\n# Cable\n\n- [Insulation Resistance](insulation-resistance)\n- [Continuity](continuity)\n- [Partial Discharge](partial-discharge)\n- [Thermal Imaging](thermal-imaging)\n",
+    "code": "var Component=(()=>{var m=Object.create;var t=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),b=(e,n)=>{for(var a in n)t(e,a,{get:n[a],enumerable:!0})},c=(e,n,a,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of f(n))!x.call(e,r)&&r!==a&&t(e,r,{get:()=>n[r],enumerable:!(l=u(n,r))||l.enumerable});return e};var _=(e,n,a)=>(a=e!=null?m(g(e)):{},c(n||!e||!e.__esModule?t(a,\"default\",{value:e,enumerable:!0}):a,e)),C=e=>c(t({},\"__esModule\",{value:!0}),e);var o=p((I,s)=>{s.exports=_jsx_runtime});var y={};b(y,{default:()=>d,frontmatter:()=>j});var i=_(o()),j={title:\"Cable\",description:\"Index page for Cable\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"cable\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#cable\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Cable\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"continuity\",children:\"Continuity\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"partial-discharge\",children:\"Partial Discharge\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"thermal-imaging\",children:\"Thermal Imaging\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return C(y);})();\n;return Component;"
+  },
+  "_id": "docs/other/cable/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/cable/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other/cable",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other/cable"
+  },
+  "type": "Doc",
+  "slug": "/docs/other/cable",
+  "slugAsParams": "other/cable",
+  "url": "/docs/docs/other/cable",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": "cable"
+}

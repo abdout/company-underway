@@ -1,0 +1,23 @@
+{
+  "title": "Oil Management",
+  "description": "Index page for Oil Management",
+  "body": {
+    "raw": "\n# Oil Management\n\n- [Moisture Content](moisture-content)\n- [Dielectric Strength](dielectric-strength)\n- [Acidity](acidity)\n",
+    "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),M=(e,n)=>{for(var i in n)r(e,i,{get:n[i],enumerable:!0})},l=(e,n,i,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of g(n))!x.call(e,a)&&a!==i&&r(e,a,{get:()=>n[a],enumerable:!(c=u(n,a))||c.enumerable});return e};var _=(e,n,i)=>(i=e!=null?m(f(e)):{},l(n||!e||!e.__esModule?r(i,\"default\",{value:e,enumerable:!0}):i,e)),j=e=>l(r({},\"__esModule\",{value:!0}),e);var s=p((O,o)=>{o.exports=_jsx_runtime});var C={};M(C,{default:()=>d,frontmatter:()=>y});var t=_(s()),y={title:\"Oil Management\",description:\"Index page for Oil Management\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"oil-management\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#oil-management\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Oil Management\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"moisture-content\",children:\"Moisture Content\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"dielectric-strength\",children:\"Dielectric Strength\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"acidity\",children:\"Acidity\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return j(C);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/oil-management/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/oil-management/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/oil-management",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/oil-management"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/oil-management",
+  "slugAsParams": "transformer/oil-management",
+  "url": "/docs/docs/transformer/oil-management",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "oil-management"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Motor Control Center",
+  "description": "Index page for Motor Control Center",
+  "body": {
+    "raw": "\n# Motor Control Center\n\n- [Starter Contactor Operation](starter-contactor-operation)\n- [Overload Relay Calibration](overload-relay-calibration)\n- [Phase Loss Detection](phase-loss-detection)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},l=(e,n,r,i)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of u(n))!x.call(e,o)&&o!==r&&a(e,o,{get:()=>n[o],enumerable:!(i=p(n,o))||i.enumerable});return e};var M=(e,n,r)=>(r=e!=null?m(f(e)):{},l(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),j=e=>l(a({},\"__esModule\",{value:!0}),e);var s=C((D,c)=>{c.exports=_jsx_runtime});var g={};_(g,{default:()=>d,frontmatter:()=>b});var t=M(s()),b={title:\"Motor Control Center\",description:\"Index page for Motor Control Center\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"motor-control-center\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#motor-control-center\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Motor Control Center\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"starter-contactor-operation\",children:\"Starter Contactor Operation\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"overload-relay-calibration\",children:\"Overload Relay Calibration\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"phase-loss-detection\",children:\"Phase Loss Detection\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return j(g);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/motor-control-center/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/motor-control-center/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/motor-control-center",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/motor-control-center"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/motor-control-center",
+  "slugAsParams": "low-voltage/motor-control-center",
+  "url": "/docs/docs/low-voltage/motor-control-center",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "motor-control-center"
+}

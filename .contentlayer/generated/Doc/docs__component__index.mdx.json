@@ -1,0 +1,23 @@
+{
+  "title": "Component",
+  "description": "Index page for Component",
+  "body": {
+    "raw": "\n# Component\n\n- [Circuit Breaker](circuit-breaker)\n- [Lockout Relay](lockout-relay)\n- [Contactor](contactor)\n- [MCB](mcb)\n- [Disconnect Switch](disconnect-switch)\n- [Current Transformer](current-transformer)\n- [Voltage Transformer](voltage-transformer)\n- [Metering Devices](metering-devices)\n- [Surge Arrester](surge-arrester)\n",
+    "code": "var Component=(()=>{var m=Object.create;var t=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var x=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),C=(r,e)=>{for(var i in e)t(r,i,{get:e[i],enumerable:!0})},l=(r,e,i,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let c of u(e))!g.call(r,c)&&c!==i&&t(r,c,{get:()=>e[c],enumerable:!(o=f(e,c))||o.enumerable});return r};var _=(r,e,i)=>(i=r!=null?m(p(r)):{},l(e||!r||!r.__esModule?t(i,\"default\",{value:r,enumerable:!0}):i,r)),k=r=>l(t({},\"__esModule\",{value:!0}),r);var h=x((D,a)=>{a.exports=_jsx_runtime});var M={};C(M,{default:()=>d,frontmatter:()=>j});var n=_(h()),j={title:\"Component\",description:\"Index page for Component\"};function s(r){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"component\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#component\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Component\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"circuit-breaker\",children:\"Circuit Breaker\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"lockout-relay\",children:\"Lockout Relay\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"contactor\",children:\"Contactor\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"mcb\",children:\"MCB\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"disconnect-switch\",children:\"Disconnect Switch\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"current-transformer\",children:\"Current Transformer\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"voltage-transformer\",children:\"Voltage Transformer\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"metering-devices\",children:\"Metering Devices\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"surge-arrester\",children:\"Surge Arrester\"})}),`\n`]})]})}function d(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(s,{...r})}):s(r)}return k(M);})();\n;return Component;"
+  },
+  "_id": "docs/component/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component"
+  },
+  "type": "Doc",
+  "slug": "/docs/component",
+  "slugAsParams": "component",
+  "url": "/docs/docs/component",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": ""
+}

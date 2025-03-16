@@ -1,0 +1,23 @@
+{
+  "title": "Distribution Board",
+  "description": "Index page for Distribution Board",
+  "body": {
+    "raw": "\n# Distribution Board\n\n- [Circuit Identification](circuit-identification)\n- [Load Balancing Verification](load-balancing-verification)\n- [Functional MCB-RCD Operation](functional-mcb-rcd-operation)\n",
+    "code": "var Component=(()=>{var u=Object.create;var e=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var b=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var x=(i,n)=>()=>(n||i((n={exports:{}}).exports,n),n.exports),_=(i,n)=>{for(var r in n)e(i,r,{get:n[r],enumerable:!0})},c=(i,n,r,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of m(n))!p.call(i,a)&&a!==r&&e(i,a,{get:()=>n[a],enumerable:!(o=f(n,a))||o.enumerable});return i};var g=(i,n,r)=>(r=i!=null?u(b(i)):{},c(n||!i||!i.__esModule?e(r,\"default\",{value:i,enumerable:!0}):r,i)),D=i=>c(e({},\"__esModule\",{value:!0}),i);var d=x((M,l)=>{l.exports=_jsx_runtime});var B={};_(B,{default:()=>h,frontmatter:()=>j});var t=g(d()),j={title:\"Distribution Board\",description:\"Index page for Distribution Board\"};function s(i){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...i.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"distribution-board\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#distribution-board\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Distribution Board\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"circuit-identification\",children:\"Circuit Identification\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"load-balancing-verification\",children:\"Load Balancing Verification\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"functional-mcb-rcd-operation\",children:\"Functional MCB-RCD Operation\"})}),`\n`]})]})}function h(i={}){let{wrapper:n}=i.components||{};return n?(0,t.jsx)(n,{...i,children:(0,t.jsx)(s,{...i})}):s(i)}return D(B);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/distribution-board/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/distribution-board/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/distribution-board",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/distribution-board"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/distribution-board",
+  "slugAsParams": "low-voltage/distribution-board",
+  "url": "/docs/docs/low-voltage/distribution-board",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "distribution-board"
+}

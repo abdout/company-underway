@@ -1,0 +1,23 @@
+{
+  "title": "Battery Bank",
+  "description": "Index page for Battery Bank",
+  "body": {
+    "raw": "\n# Battery Bank\n\n- [Capacity Discharge](capacity-discharge)\n- [Voltage Stability](voltage-stability)\n- [Float-Charge Efficiency](float-charge-efficiency)\n- [Ground Fault Detection](ground-fault-detection)\n",
+    "code": "var Component=(()=>{var f=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var y=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),x=(e,n)=>{for(var a in n)r(e,a,{get:n[a],enumerable:!0})},l=(e,n,a,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of y(n))!m.call(e,i)&&i!==a&&r(e,i,{get:()=>n[i],enumerable:!(c=u(n,i))||c.enumerable});return e};var b=(e,n,a)=>(a=e!=null?f(g(e)):{},l(n||!e||!e.__esModule?r(a,\"default\",{value:e,enumerable:!0}):a,e)),k=e=>l(r({},\"__esModule\",{value:!0}),e);var h=p((C,o)=>{o.exports=_jsx_runtime});var B={};x(B,{default:()=>d,frontmatter:()=>_});var t=b(h()),_={title:\"Battery Bank\",description:\"Index page for Battery Bank\"};function s(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"battery-bank\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#battery-bank\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Battery Bank\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"capacity-discharge\",children:\"Capacity Discharge\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"voltage-stability\",children:\"Voltage Stability\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"float-charge-efficiency\",children:\"Float-Charge Efficiency\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"ground-fault-detection\",children:\"Ground Fault Detection\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(s,{...e})}):s(e)}return k(B);})();\n;return Component;"
+  },
+  "_id": "docs/other/battery-bank/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/battery-bank/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other/battery-bank",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other/battery-bank"
+  },
+  "type": "Doc",
+  "slug": "/docs/other/battery-bank",
+  "slugAsParams": "other/battery-bank",
+  "url": "/docs/docs/other/battery-bank",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": "battery-bank"
+}

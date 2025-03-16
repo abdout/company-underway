@@ -1,0 +1,23 @@
+{
+  "title": "Power Transformer",
+  "description": "Index page for Power Transformer",
+  "body": {
+    "raw": "\n# Power Transformer\n\n- [Insulation Resistance](insulation-resistance)\n- [Winding Resistance](winding-resistance)\n- [Turns Ratio](turns-ratio)\n- [Magnetizing Current](magnetizing-current)\n- [Dielectric Absorption](dielectric-absorption)\n- [Dissolved Gas Analysis](dissolved-gas-analysis)\n- [Sweep Frequency Response](sweep-frequency-response)\n",
+    "code": "var Component=(()=>{var f=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var x=(r,n)=>()=>(n||r((n={exports:{}}).exports,n),n.exports),w=(r,n)=>{for(var i in n)a(r,i,{get:n[i],enumerable:!0})},c=(r,n,i,t)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let s of m(n))!g.call(r,s)&&s!==i&&a(r,s,{get:()=>n[s],enumerable:!(t=u(n,s))||t.enumerable});return r};var _=(r,n,i)=>(i=r!=null?f(p(r)):{},c(n||!r||!r.__esModule?a(i,\"default\",{value:r,enumerable:!0}):i,r)),j=r=>c(a({},\"__esModule\",{value:!0}),r);var o=x((M,l)=>{l.exports=_jsx_runtime});var b={};w(b,{default:()=>d,frontmatter:()=>y});var e=_(o()),y={title:\"Power Transformer\",description:\"Index page for Power Transformer\"};function h(r){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"power-transformer\",children:[(0,e.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#power-transformer\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Power Transformer\"]}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"winding-resistance\",children:\"Winding Resistance\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"turns-ratio\",children:\"Turns Ratio\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"magnetizing-current\",children:\"Magnetizing Current\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"dielectric-absorption\",children:\"Dielectric Absorption\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"dissolved-gas-analysis\",children:\"Dissolved Gas Analysis\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"sweep-frequency-response\",children:\"Sweep Frequency Response\"})}),`\n`]})]})}function d(r={}){let{wrapper:n}=r.components||{};return n?(0,e.jsx)(n,{...r,children:(0,e.jsx)(h,{...r})}):h(r)}return j(b);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/power-transformer/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/power-transformer/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/power-transformer",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/power-transformer"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/power-transformer",
+  "slugAsParams": "transformer/power-transformer",
+  "url": "/docs/docs/transformer/power-transformer",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "power-transformer"
+}

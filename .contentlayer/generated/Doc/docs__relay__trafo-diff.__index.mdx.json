@@ -1,0 +1,23 @@
+{
+  "title": "Trafo Diff.",
+  "description": "Index page for Trafo Diff.",
+  "body": {
+    "raw": "\n# Trafo Diff.\n\n- [CT Polarity](ct-polarity)\n- [Inrush Restraint](inrush-restraint)\n- [Bias Characteristic](bias-characteristic)\n",
+    "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var _=(r,n)=>()=>(n||r((n={exports:{}}).exports,n),n.exports),j=(r,n)=>{for(var e in n)a(r,e,{get:n[e],enumerable:!0})},s=(r,n,e,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of m(n))!p.call(r,t)&&t!==e&&a(r,t,{get:()=>n[t],enumerable:!(c=u(n,t))||c.enumerable});return r};var D=(r,n,e)=>(e=r!=null?d(x(r)):{},s(n||!r||!r.__esModule?a(e,\"default\",{value:r,enumerable:!0}):e,r)),g=r=>s(a({},\"__esModule\",{value:!0}),r);var l=_((y,o)=>{o.exports=_jsx_runtime});var T={};j(T,{default:()=>h,frontmatter:()=>C});var i=D(l()),C={title:\"Trafo Diff.\",description:\"Index page for Trafo Diff.\"};function f(r){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"trafo-diff\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#trafo-diff\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Trafo Diff.\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"ct-polarity\",children:\"CT Polarity\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"inrush-restraint\",children:\"Inrush Restraint\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"bias-characteristic\",children:\"Bias Characteristic\"})}),`\n`]})]})}function h(r={}){let{wrapper:n}=r.components||{};return n?(0,i.jsx)(n,{...r,children:(0,i.jsx)(f,{...r})}):f(r)}return g(T);})();\n;return Component;"
+  },
+  "_id": "docs/relay/trafo-diff./index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/trafo-diff./index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/trafo-diff.",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/trafo-diff."
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/trafo-diff.",
+  "slugAsParams": "relay/trafo-diff.",
+  "url": "/docs/docs/relay/trafo-diff.",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "trafo-diff."
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Neutral Grounding",
+  "description": "Index page for Neutral Grounding",
+  "body": {
+    "raw": "\n# Neutral Grounding\n\n- [Ground Resistance](ground-resistance)\n- [Continuity](continuity)\n",
+    "code": "var Component=(()=>{var h=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var t in n)a(e,t,{get:n[t],enumerable:!0})},c=(e,n,t,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!f.call(e,i)&&i!==t&&a(e,i,{get:()=>n[i],enumerable:!(o=g(n,i))||o.enumerable});return e};var j=(e,n,t)=>(t=e!=null?h(x(e)):{},c(n||!e||!e.__esModule?a(t,\"default\",{value:e,enumerable:!0}):t,e)),N=e=>c(a({},\"__esModule\",{value:!0}),e);var s=p((M,l)=>{l.exports=_jsx_runtime});var y={};_(y,{default:()=>d,frontmatter:()=>G});var r=j(s()),G={title:\"Neutral Grounding\",description:\"Index page for Neutral Grounding\"};function u(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"neutral-grounding\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#neutral-grounding\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"Neutral Grounding\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"ground-resistance\",children:\"Ground Resistance\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"continuity\",children:\"Continuity\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(u,{...e})}):u(e)}return N(y);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/neutral-grounding/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/neutral-grounding/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/neutral-grounding",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/neutral-grounding"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/neutral-grounding",
+  "slugAsParams": "transformer/neutral-grounding",
+  "url": "/docs/docs/transformer/neutral-grounding",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "neutral-grounding"
+}

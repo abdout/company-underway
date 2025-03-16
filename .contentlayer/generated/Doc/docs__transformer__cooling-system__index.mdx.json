@@ -1,0 +1,23 @@
+{
+  "title": "Cooling System",
+  "description": "Index page for Cooling System",
+  "body": {
+    "raw": "\n# Cooling System\n\n- [Pump-Fan Operation](pump-fan-operation)\n- [Oil Flow Verification](oil-flow-verification)\n- [Temperature Control](temperature-control)\n",
+    "code": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var g=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var o in n)r(e,o,{get:n[o],enumerable:!0})},l=(e,n,o,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of u(n))!x.call(e,t)&&t!==o&&r(e,t,{get:()=>n[t],enumerable:!(a=p(n,t))||a.enumerable});return e};var y=(e,n,o)=>(o=e!=null?d(f(e)):{},l(n||!e||!e.__esModule?r(o,\"default\",{value:e,enumerable:!0}):o,e)),C=e=>l(r({},\"__esModule\",{value:!0}),e);var s=g((M,c)=>{c.exports=_jsx_runtime});var F={};_(F,{default:()=>m,frontmatter:()=>j});var i=y(s()),j={title:\"Cooling System\",description:\"Index page for Cooling System\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"cooling-system\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#cooling-system\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Cooling System\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"pump-fan-operation\",children:\"Pump-Fan Operation\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"oil-flow-verification\",children:\"Oil Flow Verification\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"temperature-control\",children:\"Temperature Control\"})}),`\n`]})]})}function m(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return C(F);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/cooling-system/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/cooling-system/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/cooling-system",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/cooling-system"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/cooling-system",
+  "slugAsParams": "transformer/cooling-system",
+  "url": "/docs/docs/transformer/cooling-system",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "cooling-system"
+}

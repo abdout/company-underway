@@ -1,0 +1,23 @@
+{
+  "title": "Current Transformer",
+  "description": "Index page for Current Transformer",
+  "body": {
+    "raw": "\n# Current Transformer\n\n- [Ratio](ratio)\n- [Polarity Verification](polarity-verification)\n- [Burden](burden)\n- [Insulation Resistance](insulation-resistance)\n- [Saturation Curve](saturation-curve)\n",
+    "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var _=(r,n)=>()=>(n||r((n={exports:{}}).exports,n),n.exports),C=(r,n)=>{for(var i in n)a(r,i,{get:n[i],enumerable:!0})},c=(r,n,i,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of m(n))!p.call(r,t)&&t!==i&&a(r,t,{get:()=>n[t],enumerable:!(o=f(n,t))||o.enumerable});return r};var j=(r,n,i)=>(i=r!=null?d(x(r)):{},c(n||!r||!r.__esModule?a(i,\"default\",{value:r,enumerable:!0}):i,r)),g=r=>c(a({},\"__esModule\",{value:!0}),r);var s=_((M,l)=>{l.exports=_jsx_runtime});var v={};C(v,{default:()=>u,frontmatter:()=>b});var e=j(s()),b={title:\"Current Transformer\",description:\"Index page for Current Transformer\"};function h(r){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"current-transformer\",children:[(0,e.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#current-transformer\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Current Transformer\"]}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"ratio\",children:\"Ratio\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"polarity-verification\",children:\"Polarity Verification\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"burden\",children:\"Burden\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"saturation-curve\",children:\"Saturation Curve\"})}),`\n`]})]})}function u(r={}){let{wrapper:n}=r.components||{};return n?(0,e.jsx)(n,{...r,children:(0,e.jsx)(h,{...r})}):h(r)}return g(v);})();\n;return Component;"
+  },
+  "_id": "docs/component/current-transformer/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/current-transformer/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/current-transformer",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/current-transformer"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/current-transformer",
+  "slugAsParams": "component/current-transformer",
+  "url": "/docs/docs/component/current-transformer",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "current-transformer"
+}

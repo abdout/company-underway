@@ -1,0 +1,23 @@
+{
+  "title": "SCADA",
+  "description": "Index page for SCADA",
+  "body": {
+    "raw": "\n# SCADA\n\n- [Point-to-Point Communication](point-to-point-communication)\n- [Time Synchronization](time-synchronization)\n- [Failover Redundancy](failover-redundancy)\n- [Alarm-Trip Integration](alarm-trip-integration)\n",
+    "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var A=(i,n)=>()=>(n||i((n={exports:{}}).exports,n),n.exports),_=(i,n)=>{for(var t in n)r(i,t,{get:n[t],enumerable:!0})},c=(i,n,t,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of f(n))!x.call(i,a)&&a!==t&&r(i,a,{get:()=>n[a],enumerable:!(o=u(n,a))||o.enumerable});return i};var g=(i,n,t)=>(t=i!=null?m(p(i)):{},c(n||!i||!i.__esModule?r(t,\"default\",{value:i,enumerable:!0}):t,i)),C=i=>c(r({},\"__esModule\",{value:!0}),i);var s=A((S,l)=>{l.exports=_jsx_runtime});var y={};_(y,{default:()=>h,frontmatter:()=>j});var e=g(s()),j={title:\"SCADA\",description:\"Index page for SCADA\"};function d(i){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...i.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"scada\",children:[(0,e.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#scada\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"SCADA\"]}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"point-to-point-communication\",children:\"Point-to-Point Communication\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"time-synchronization\",children:\"Time Synchronization\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"failover-redundancy\",children:\"Failover Redundancy\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"alarm-trip-integration\",children:\"Alarm-Trip Integration\"})}),`\n`]})]})}function h(i={}){let{wrapper:n}=i.components||{};return n?(0,e.jsx)(n,{...i,children:(0,e.jsx)(d,{...i})}):d(i)}return C(y);})();\n;return Component;"
+  },
+  "_id": "docs/other/scada/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/scada/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other/scada",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other/scada"
+  },
+  "type": "Doc",
+  "slug": "/docs/other/scada",
+  "slugAsParams": "other/scada",
+  "url": "/docs/docs/other/scada",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": "scada"
+}

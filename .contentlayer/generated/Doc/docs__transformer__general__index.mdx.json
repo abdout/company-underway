@@ -1,0 +1,23 @@
+{
+  "title": "General",
+  "description": "Index page for General",
+  "body": {
+    "raw": "\n# General\n\n- [Visual Inspection](visual-inspection)\n- [Tightness Check](tightness-check)\n- [Polarity Verification](polarity-verification)\n",
+    "code": "var Component=(()=>{var u=Object.create;var a=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var g=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},c=(e,n,r,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of m(n))!x.call(e,t)&&t!==r&&a(e,t,{get:()=>n[t],enumerable:!(l=f(n,t))||l.enumerable});return e};var j=(e,n,r)=>(r=e!=null?u(p(e)):{},c(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),k=e=>c(a({},\"__esModule\",{value:!0}),e);var o=g((M,s)=>{s.exports=_jsx_runtime});var C={};_(C,{default:()=>d,frontmatter:()=>y});var i=j(o()),y={title:\"General\",description:\"Index page for General\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"general\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#general\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"General\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"visual-inspection\",children:\"Visual Inspection\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"tightness-check\",children:\"Tightness Check\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"polarity-verification\",children:\"Polarity Verification\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return k(C);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/general/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/general/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/general",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/general"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/general",
+  "slugAsParams": "transformer/general",
+  "url": "/docs/docs/transformer/general",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "general"
+}

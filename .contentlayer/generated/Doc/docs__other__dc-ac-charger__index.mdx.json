@@ -1,0 +1,23 @@
+{
+  "title": "DC-AC Charger",
+  "description": "Index page for DC-AC Charger",
+  "body": {
+    "raw": "\n# DC-AC Charger\n\n- [Efficiency Float-Boost](efficiency-float-boost)\n- [Output Voltage Stability](output-voltage-stability)\n- [Harmonic Distortion](harmonic-distortion)\n- [Overload Protection](overload-protection)\n",
+    "code": "var Component=(()=>{var f=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),x=(e,n)=>{for(var t in n)a(e,t,{get:n[t],enumerable:!0})},c=(e,n,t,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!p.call(e,i)&&i!==t&&a(e,i,{get:()=>n[i],enumerable:!(o=u(n,i))||o.enumerable});return e};var _=(e,n,t)=>(t=e!=null?f(g(e)):{},c(n||!e||!e.__esModule?a(t,\"default\",{value:e,enumerable:!0}):t,e)),D=e=>c(a({},\"__esModule\",{value:!0}),e);var h=C((v,l)=>{l.exports=_jsx_runtime});var j={};x(j,{default:()=>d,frontmatter:()=>b});var r=_(h()),b={title:\"DC-AC Charger\",description:\"Index page for DC-AC Charger\"};function s(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"dc-ac-charger\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#dc-ac-charger\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"DC-AC Charger\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"efficiency-float-boost\",children:\"Efficiency Float-Boost\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"output-voltage-stability\",children:\"Output Voltage Stability\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"harmonic-distortion\",children:\"Harmonic Distortion\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"overload-protection\",children:\"Overload Protection\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(s,{...e})}):s(e)}return D(j);})();\n;return Component;"
+  },
+  "_id": "docs/other/dc-ac-charger/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/dc-ac-charger/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other/dc-ac-charger",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other/dc-ac-charger"
+  },
+  "type": "Doc",
+  "slug": "/docs/other/dc-ac-charger",
+  "slugAsParams": "other/dc-ac-charger",
+  "url": "/docs/docs/other/dc-ac-charger",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": "dc-ac-charger"
+}

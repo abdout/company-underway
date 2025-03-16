@@ -1,0 +1,23 @@
+{
+  "title": "Relay",
+  "description": "Index page for Relay",
+  "body": {
+    "raw": "\n# Relay\n\n- [General](general)\n- [Overcurrent](overcurrent)\n- [Differential](differential)\n- [Distance](distance)\n- [Earth Fault](earth-fault)\n- [Directional OC](directional-oc)\n- [Underfreq.](underfreq.)\n- [Undervolt.](undervolt.)\n- [Motor Prot.](motor-prot.)\n- [Trafo Diff.](trafo-diff.)\n- [Gen. Prot.](gen.-prot.)\n- [Recloser](recloser)\n- [Synchronizing](synchronizing)\n- [Check](check)\n",
+    "code": "var Component=(()=>{var s=Object.create;var c=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var g=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),y=(r,e)=>{for(var i in e)c(r,i,{get:e[i],enumerable:!0})},h=(r,e,i,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of m(e))!x.call(r,l)&&l!==i&&c(r,l,{get:()=>e[l],enumerable:!(a=u(e,l))||a.enumerable});return r};var _=(r,e,i)=>(i=r!=null?s(p(r)):{},h(e||!r||!r.__esModule?c(i,\"default\",{value:r,enumerable:!0}):i,r)),D=r=>h(c({},\"__esModule\",{value:!0}),r);var d=g((C,t)=>{t.exports=_jsx_runtime});var k={};y(k,{default:()=>f,frontmatter:()=>j});var n=_(d()),j={title:\"Relay\",description:\"Index page for Relay\"};function o(r){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"relay\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#relay\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Relay\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"general\",children:\"General\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"overcurrent\",children:\"Overcurrent\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"differential\",children:\"Differential\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"distance\",children:\"Distance\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"earth-fault\",children:\"Earth Fault\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"directional-oc\",children:\"Directional OC\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"underfreq.\",children:\"Underfreq.\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"undervolt.\",children:\"Undervolt.\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"motor-prot.\",children:\"Motor Prot.\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"trafo-diff.\",children:\"Trafo Diff.\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"gen.-prot.\",children:\"Gen. Prot.\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"recloser\",children:\"Recloser\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"synchronizing\",children:\"Synchronizing\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"check\",children:\"Check\"})}),`\n`]})]})}function f(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(o,{...r})}):o(r)}return D(k);})();\n;return Component;"
+  },
+  "_id": "docs/relay/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay",
+  "slugAsParams": "relay",
+  "url": "/docs/docs/relay",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": ""
+}

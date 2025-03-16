@@ -1,0 +1,23 @@
+{
+  "title": "Transformer",
+  "description": "Index page for Transformer",
+  "body": {
+    "raw": "\n# Transformer\n\n- [Power Transformer](power-transformer)\n- [Bushing](bushing)\n- [Tap Changer (OLTC/De-Energized)](tap-changer-(oltc-de-energized))\n- [Cooling System](cooling-system)\n- [Protection Devices](protection-devices)\n- [Neutral Grounding](neutral-grounding)\n- [Surge Arrester](surge-arrester)\n- [Control Panel](control-panel)\n- [Oil Management](oil-management)\n- [General](general)\n",
+    "code": "var Component=(()=>{var f=Object.create;var a=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var x=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),_=(r,e)=>{for(var i in e)a(r,i,{get:e[i],enumerable:!0})},c=(r,e,i,t)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of g(e))!p.call(r,l)&&l!==i&&a(r,l,{get:()=>e[l],enumerable:!(t=m(e,l))||t.enumerable});return r};var C=(r,e,i)=>(i=r!=null?f(u(r)):{},c(e||!r||!r.__esModule?a(i,\"default\",{value:r,enumerable:!0}):i,r)),T=r=>c(a({},\"__esModule\",{value:!0}),r);var h=x((b,o)=>{o.exports=_jsx_runtime});var D={};_(D,{default:()=>d,frontmatter:()=>j});var n=C(h()),j={title:\"Transformer\",description:\"Index page for Transformer\"};function s(r){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"transformer\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#transformer\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Transformer\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"power-transformer\",children:\"Power Transformer\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"bushing\",children:\"Bushing\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"tap-changer-(oltc-de-energized)\",children:\"Tap Changer (OLTC/De-Energized)\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"cooling-system\",children:\"Cooling System\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"protection-devices\",children:\"Protection Devices\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"neutral-grounding\",children:\"Neutral Grounding\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"surge-arrester\",children:\"Surge Arrester\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"control-panel\",children:\"Control Panel\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"oil-management\",children:\"Oil Management\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"general\",children:\"General\"})}),`\n`]})]})}function d(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(s,{...r})}):s(r)}return T(D);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer",
+  "slugAsParams": "transformer",
+  "url": "/docs/docs/transformer",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": ""
+}

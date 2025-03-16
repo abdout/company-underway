@@ -1,0 +1,23 @@
+{
+  "title": "Recloser",
+  "description": "Index page for Recloser",
+  "body": {
+    "raw": "\n# Recloser\n\n- [Reclose Interval](reclose-interval)\n- [Number of Reclose Attempts](number-of-reclose-attempts)\n- [Lockout](lockout)\n",
+    "code": "var Component=(()=>{var m=Object.create;var c=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),j=(n,e)=>{for(var t in e)c(n,t,{get:e[t],enumerable:!0})},s=(n,e,t,l)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of f(e))!x.call(n,o)&&o!==t&&c(n,o,{get:()=>e[o],enumerable:!(l=u(e,o))||l.enumerable});return n};var R=(n,e,t)=>(t=n!=null?m(p(n)):{},s(e||!n||!n.__esModule?c(t,\"default\",{value:n,enumerable:!0}):t,n)),b=n=>s(c({},\"__esModule\",{value:!0}),n);var i=_((M,a)=>{a.exports=_jsx_runtime});var k={};j(k,{default:()=>d,frontmatter:()=>g});var r=R(i()),g={title:\"Recloser\",description:\"Index page for Recloser\"};function h(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(e.h1,{id:\"recloser\",children:[(0,r.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#recloser\",children:(0,r.jsx)(e.span,{className:\"icon icon-link\"})}),\"Recloser\"]}),`\n`,(0,r.jsxs)(e.ul,{children:[`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"reclose-interval\",children:\"Reclose Interval\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"number-of-reclose-attempts\",children:\"Number of Reclose Attempts\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"lockout\",children:\"Lockout\"})}),`\n`]})]})}function d(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,{...n,children:(0,r.jsx)(h,{...n})}):h(n)}return b(k);})();\n;return Component;"
+  },
+  "_id": "docs/relay/recloser/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/recloser/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/recloser",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/recloser"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/recloser",
+  "slugAsParams": "relay/recloser",
+  "url": "/docs/docs/relay/recloser",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "recloser"
+}

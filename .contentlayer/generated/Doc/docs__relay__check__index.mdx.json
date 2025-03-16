@@ -1,0 +1,23 @@
+{
+  "title": "Check",
+  "description": "Index page for Check",
+  "body": {
+    "raw": "\n# Check\n\n- [Voltage Presence](voltage-presence)\n- [Synchronism Check](synchronism-check)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var x=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,k=Object.prototype.hasOwnProperty;var p=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),_=(n,e)=>{for(var r in e)a(n,r,{get:e[r],enumerable:!0})},s=(n,e,r,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of x(e))!k.call(n,t)&&t!==r&&a(n,t,{get:()=>e[t],enumerable:!(i=u(e,t))||i.enumerable});return n};var g=(n,e,r)=>(r=n!=null?m(f(n)):{},s(e||!n||!n.__esModule?a(r,\"default\",{value:n,enumerable:!0}):r,n)),C=n=>s(a({},\"__esModule\",{value:!0}),n);var h=p((b,o)=>{o.exports=_jsx_runtime});var y={};_(y,{default:()=>d,frontmatter:()=>j});var c=g(h()),j={title:\"Check\",description:\"Index page for Check\"};function l(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsxs)(e.h1,{id:\"check\",children:[(0,c.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#check\",children:(0,c.jsx)(e.span,{className:\"icon icon-link\"})}),\"Check\"]}),`\n`,(0,c.jsxs)(e.ul,{children:[`\n`,(0,c.jsx)(e.li,{children:(0,c.jsx)(e.a,{href:\"voltage-presence\",children:\"Voltage Presence\"})}),`\n`,(0,c.jsx)(e.li,{children:(0,c.jsx)(e.a,{href:\"synchronism-check\",children:\"Synchronism Check\"})}),`\n`]})]})}function d(n={}){let{wrapper:e}=n.components||{};return e?(0,c.jsx)(e,{...n,children:(0,c.jsx)(l,{...n})}):l(n)}return C(y);})();\n;return Component;"
+  },
+  "_id": "docs/relay/check/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/check/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/check",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/check"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/check",
+  "slugAsParams": "relay/check",
+  "url": "/docs/docs/relay/check",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "check"
+}

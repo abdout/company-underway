@@ -1,0 +1,23 @@
+{
+  "title": "Contactor",
+  "description": "Index page for Contactor",
+  "body": {
+    "raw": "\n# Contactor\n\n- [Coil Operation Pickup-Dropout](coil-operation-pickup-dropout)\n- [Contact Resistance](contact-resistance)\n- [Insulation Resistance](insulation-resistance)\n- [Mechanical Endurance](mechanical-endurance)\n",
+    "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var c in n)i(e,c,{get:n[c],enumerable:!0})},o=(e,n,c,r)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of m(n))!x.call(e,a)&&a!==c&&i(e,a,{get:()=>n[a],enumerable:!(r=p(n,a))||r.enumerable});return e};var j=(e,n,c)=>(c=e!=null?u(f(e)):{},o(n||!e||!e.__esModule?i(c,\"default\",{value:e,enumerable:!0}):c,e)),g=e=>o(i({},\"__esModule\",{value:!0}),e);var s=C((b,l)=>{l.exports=_jsx_runtime});var M={};_(M,{default:()=>d,frontmatter:()=>k});var t=j(s()),k={title:\"Contactor\",description:\"Index page for Contactor\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"contactor\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#contactor\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Contactor\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"coil-operation-pickup-dropout\",children:\"Coil Operation Pickup-Dropout\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"mechanical-endurance\",children:\"Mechanical Endurance\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return g(M);})();\n;return Component;"
+  },
+  "_id": "docs/component/contactor/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/contactor/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/contactor",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/contactor"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/contactor",
+  "slugAsParams": "component/contactor",
+  "url": "/docs/docs/component/contactor",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "contactor"
+}

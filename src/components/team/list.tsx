@@ -1,28 +1,43 @@
 'use client';
 import { team } from '@/constant/team'
-import React from 'react'
-import Team from './team';
-import Modal from '../atom/modal/modal';
-import { useModal } from '@/provider/modal';
-import Create from '../task/crud/create';
+import React, { useState } from 'react'
+import TeamCard from './team';
+import { 
+  Dialog, 
+  DialogContent
+} from '@/components/ui/dialog';
 import Profile from './profile';
 
-
 const TeamList = () => {
-  const { modal } = useModal();
-  const extend = team.find(team => team.id === modal.id);
+  const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  
+  const openTeamProfile = (id: string) => {
+    setSelectedTeam(id);
+    setDialogOpen(true);
+  };
+
+  const teamMember = team.find(t => t.id === selectedTeam);
+
   return (
     <>
-    {modal.open && extend && (
-     <Modal content={<Profile team={extend} />} big={true}/>
-    )}
-    <div className="p-4 grid grid-cols-4 gap-24 gap-y-4 ">
-      {team.map((team, index) => (
-        <div className="mb-10 h-40 w-40" key={index}>
-          <Team src={team.src} alt={team.alt} width={team.width}  id={team.id}/>
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent className="max-w-md p-0 border rounded-lg">
+          {teamMember && <Profile team={teamMember} onClose={() => setDialogOpen(false)} />}
+        </DialogContent>
+      </Dialog>
+
+      <div className="p-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {team.map((member, index) => (
+            <TeamCard 
+              key={index}
+              member={member}
+              onClick={() => member.id && openTeamProfile(member.id)}
+            />
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
     </>
   );
 };

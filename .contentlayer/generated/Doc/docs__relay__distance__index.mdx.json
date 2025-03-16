@@ -1,0 +1,23 @@
+{
+  "title": "Distance",
+  "description": "Index page for Distance",
+  "body": {
+    "raw": "\n# Distance\n\n- [Impedance](impedance)\n- [Zone Timing](zone-timing)\n- [Directional](directional)\n- [Polarization](polarization)\n",
+    "code": "var Component=(()=>{var m=Object.create;var r=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var a in n)r(e,a,{get:n[a],enumerable:!0})},l=(e,n,a,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of p(n))!x.call(e,t)&&t!==a&&r(e,t,{get:()=>n[t],enumerable:!(c=f(n,t))||c.enumerable});return e};var D=(e,n,a)=>(a=e!=null?m(u(e)):{},l(n||!e||!e.__esModule?r(a,\"default\",{value:e,enumerable:!0}):a,e)),j=e=>l(r({},\"__esModule\",{value:!0}),e);var s=_((k,o)=>{o.exports=_jsx_runtime});var M={};g(M,{default:()=>h,frontmatter:()=>z});var i=D(s()),z={title:\"Distance\",description:\"Index page for Distance\"};function d(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"distance\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#distance\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Distance\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"impedance\",children:\"Impedance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"zone-timing\",children:\"Zone Timing\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"directional\",children:\"Directional\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"polarization\",children:\"Polarization\"})}),`\n`]})]})}function h(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(d,{...e})}):d(e)}return j(M);})();\n;return Component;"
+  },
+  "_id": "docs/relay/distance/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/distance/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/distance",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/distance"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/distance",
+  "slugAsParams": "relay/distance",
+  "url": "/docs/docs/relay/distance",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "distance"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Surge Device",
+  "description": "Index page for Surge Device",
+  "body": {
+    "raw": "\n# Surge Device\n\n- [Leakage Current](leakage-current)\n- [Insulation Resistance](insulation-resistance)\n- [Functional Surge Suppression](functional-surge-suppression)\n",
+    "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var x=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),_=(n,e)=>{for(var i in e)a(n,i,{get:e[i],enumerable:!0})},c=(n,e,i,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of p(e))!m.call(n,t)&&t!==i&&a(n,t,{get:()=>e[t],enumerable:!(s=g(e,t))||s.enumerable});return n};var j=(n,e,i)=>(i=n!=null?d(f(n)):{},c(e||!n||!n.__esModule?a(i,\"default\",{value:n,enumerable:!0}):i,n)),v=n=>c(a({},\"__esModule\",{value:!0}),n);var o=x((C,l)=>{l.exports=_jsx_runtime});var S={};_(S,{default:()=>h,frontmatter:()=>D});var r=j(o()),D={title:\"Surge Device\",description:\"Index page for Surge Device\"};function u(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(e.h1,{id:\"surge-device\",children:[(0,r.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#surge-device\",children:(0,r.jsx)(e.span,{className:\"icon icon-link\"})}),\"Surge Device\"]}),`\n`,(0,r.jsxs)(e.ul,{children:[`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"leakage-current\",children:\"Leakage Current\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"functional-surge-suppression\",children:\"Functional Surge Suppression\"})}),`\n`]})]})}function h(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,{...n,children:(0,r.jsx)(u,{...n})}):u(n)}return v(S);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/surge-device/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/surge-device/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/surge-device",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/surge-device"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/surge-device",
+  "slugAsParams": "low-voltage/surge-device",
+  "url": "/docs/docs/low-voltage/surge-device",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "surge-device"
+}

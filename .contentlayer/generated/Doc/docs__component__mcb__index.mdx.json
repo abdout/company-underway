@@ -1,0 +1,23 @@
+{
+  "title": "MCB",
+  "description": "Index page for MCB",
+  "body": {
+    "raw": "\n# MCB\n\n- [Trip Timing Short Circuit-Overload](trip-timing-short-circuit-overload)\n- [Insulation Resistance](insulation-resistance)\n- [Mechanical Operation](mechanical-operation)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var M=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},o=(e,n,r,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of p(n))!x.call(e,t)&&t!==r&&a(e,t,{get:()=>n[t],enumerable:!(c=u(n,t))||c.enumerable});return e};var g=(e,n,r)=>(r=e!=null?m(f(e)):{},o(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),C=e=>o(a({},\"__esModule\",{value:!0}),e);var s=M((k,l)=>{l.exports=_jsx_runtime});var b={};_(b,{default:()=>d,frontmatter:()=>j});var i=g(s()),j={title:\"MCB\",description:\"Index page for MCB\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"mcb\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#mcb\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"MCB\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"trip-timing-short-circuit-overload\",children:\"Trip Timing Short Circuit-Overload\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"mechanical-operation\",children:\"Mechanical Operation\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return C(b);})();\n;return Component;"
+  },
+  "_id": "docs/component/mcb/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/mcb/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/mcb",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/mcb"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/mcb",
+  "slugAsParams": "component/mcb",
+  "url": "/docs/docs/component/mcb",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "mcb"
+}

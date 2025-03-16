@@ -1,0 +1,23 @@
+{
+  "title": "MCCB",
+  "description": "Index page for MCCB",
+  "body": {
+    "raw": "\n# MCCB\n\n- [Trip Timing Short Circuit-Overload](trip-timing-short-circuit-overload)\n- [Insulation Resistance](insulation-resistance)\n- [Contact Resistance](contact-resistance)\n- [Mechanical Operation](mechanical-operation)\n",
+    "code": "var Component=(()=>{var m=Object.create;var c=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),M=(e,n)=>{for(var t in n)c(e,t,{get:n[t],enumerable:!0})},o=(e,n,t,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!x.call(e,r)&&r!==t&&c(e,r,{get:()=>n[r],enumerable:!(a=u(n,r))||a.enumerable});return e};var _=(e,n,t)=>(t=e!=null?m(f(e)):{},o(n||!e||!e.__esModule?c(t,\"default\",{value:e,enumerable:!0}):t,e)),g=e=>o(c({},\"__esModule\",{value:!0}),e);var s=C((k,l)=>{l.exports=_jsx_runtime});var b={};M(b,{default:()=>d,frontmatter:()=>j});var i=_(s()),j={title:\"MCCB\",description:\"Index page for MCCB\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"mccb\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#mccb\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"MCCB\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"trip-timing-short-circuit-overload\",children:\"Trip Timing Short Circuit-Overload\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"mechanical-operation\",children:\"Mechanical Operation\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return g(b);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/mccb/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/mccb/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/mccb",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/mccb"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/mccb",
+  "slugAsParams": "low-voltage/mccb",
+  "url": "/docs/docs/low-voltage/mccb",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "mccb"
+}

@@ -1,7 +1,7 @@
 import { SiteConfig } from "./type"
 
 export const siteConfig: SiteConfig = {
-  name: "المنصة",
+  name: "Platform",
   description:
     "An open source application built using the new router, server components and everything new in Next.js 13.",
   url: "https://nmbdsd.org",
@@ -154,37 +154,28 @@ import { MarketingConfig } from "./type"
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: "فريق",
-      href: "/member",
+      title: "Docs",
+      href: "/docs",
     },
     {
-      title: "مشروع",
+      title: "Project",
       href: "/project",
     },
-
     {
-      title: "مهمة",
+      title: "Task",
       href: "/task",
     },
-
     {
-      title: "ورقة",
-      href: "/paper",
-    },
-
-    {
-      title: "امانة",
-      href: "/club",
+      title: "Daily",
+      href: "/daily",
     },
     {
-      title: "مال",
-      href: "/finance",
+      title: "Resource",
+      href: "/team",
     },
-    
     {
-      title: "العضوية",
-      href: "/membership/applications",
-      roleRequired: ["ADMIN", "MEMBERSHIP_SECRETARY"],
+      title: "Wallet",
+      href: "/wallet",
     },
   ],
 }

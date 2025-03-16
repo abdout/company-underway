@@ -1,0 +1,23 @@
+{
+  "title": "Gen. Prot.",
+  "description": "Index page for Gen. Prot.",
+  "body": {
+    "raw": "\n# Gen. Prot.\n\n- [Loss of Excitation](loss-of-excitation)\n- [Reverse Power](reverse-power)\n- [Stator Earth Fault](stator-earth-fault)\n",
+    "code": "var Component=(()=>{var f=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var x=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},s=(e,n,r,i)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of x(n))!p.call(e,o)&&o!==r&&a(e,o,{get:()=>n[o],enumerable:!(i=u(n,o))||i.enumerable});return e};var j=(e,n,r)=>(r=e!=null?f(m(e)):{},s(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),P=e=>s(a({},\"__esModule\",{value:!0}),e);var l=_((L,c)=>{c.exports=_jsx_runtime});var F={};g(F,{default:()=>d,frontmatter:()=>w});var t=j(l()),w={title:\"Gen. Prot.\",description:\"Index page for Gen. Prot.\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"gen-prot\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#gen-prot\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Gen. Prot.\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"loss-of-excitation\",children:\"Loss of Excitation\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"reverse-power\",children:\"Reverse Power\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"stator-earth-fault\",children:\"Stator Earth Fault\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return P(F);})();\n;return Component;"
+  },
+  "_id": "docs/relay/gen.-prot./index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/gen.-prot./index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/gen.-prot.",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/gen.-prot."
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/gen.-prot.",
+  "slugAsParams": "relay/gen.-prot.",
+  "url": "/docs/docs/relay/gen.-prot.",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "gen.-prot."
+}

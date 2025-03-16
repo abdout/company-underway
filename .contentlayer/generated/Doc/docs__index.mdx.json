@@ -1,0 +1,23 @@
+{
+  "title": "Documentation",
+  "description": "Index page for Documentation",
+  "body": {
+    "raw": "\n# Documentation\n\n- [Relay](relay)\n- [Component](component)\n- [Transformer](transformer)\n- [Low Voltage](low-voltage)\n- [Other](other)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},c=(e,n,r,i)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of f(n))!x.call(e,o)&&o!==r&&a(e,o,{get:()=>n[o],enumerable:!(i=u(n,o))||i.enumerable});return e};var j=(e,n,r)=>(r=e!=null?m(p(e)):{},c(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),D=e=>c(a({},\"__esModule\",{value:!0}),e);var h=_((L,l)=>{l.exports=_jsx_runtime});var y={};g(y,{default:()=>d,frontmatter:()=>w});var t=j(h()),w={title:\"Documentation\",description:\"Index page for Documentation\"};function s(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"documentation\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#documentation\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Documentation\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"relay\",children:\"Relay\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"component\",children:\"Component\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"transformer\",children:\"Transformer\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"low-voltage\",children:\"Low Voltage\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"other\",children:\"Other\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(s,{...e})}):s(e)}return D(y);})();\n;return Component;"
+  },
+  "_id": "docs/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs",
+    "contentType": "mdx",
+    "flattenedPath": "docs"
+  },
+  "type": "Doc",
+  "slug": "/docs",
+  "slugAsParams": "",
+  "url": "/docs/docs",
+  "category": "docs",
+  "subCategory": "",
+  "activityName": ""
+}

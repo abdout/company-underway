@@ -1,0 +1,23 @@
+{
+  "title": "Metering",
+  "description": "Index page for Metering",
+  "body": {
+    "raw": "\n# Metering\n\n- [Accuracy Calibration](accuracy-calibration)\n- [Functional Voltage-Current-PF Measurement](functional-voltage-current-pf-measurement)\n",
+    "code": "var Component=(()=>{var m=Object.create;var i=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),M=(e,n)=>{for(var r in n)i(e,r,{get:n[r],enumerable:!0})},o=(e,n,r,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of f(n))!x.call(e,a)&&a!==r&&i(e,a,{get:()=>n[a],enumerable:!(c=d(n,a))||c.enumerable});return e};var _=(e,n,r)=>(r=e!=null?m(g(e)):{},o(n||!e||!e.__esModule?i(r,\"default\",{value:e,enumerable:!0}):r,e)),j=e=>o(i({},\"__esModule\",{value:!0}),e);var s=p((y,l)=>{l.exports=_jsx_runtime});var C={};M(C,{default:()=>h,frontmatter:()=>b});var t=_(s()),b={title:\"Metering\",description:\"Index page for Metering\"};function u(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"metering\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#metering\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Metering\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"accuracy-calibration\",children:\"Accuracy Calibration\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"functional-voltage-current-pf-measurement\",children:\"Functional Voltage-Current-PF Measurement\"})}),`\n`]})]})}function h(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(u,{...e})}):u(e)}return j(C);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/metering/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/metering/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/metering",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/metering"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/metering",
+  "slugAsParams": "low-voltage/metering",
+  "url": "/docs/docs/low-voltage/metering",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "metering"
+}

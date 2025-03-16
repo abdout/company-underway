@@ -1,0 +1,23 @@
+{
+  "title": "Distribution Panel",
+  "description": "Index page for Distribution Panel",
+  "body": {
+    "raw": "\n# Distribution Panel\n\n- [Insulation Resistance](insulation-resistance)\n- [Busbar Tightness](busbar-tightness)\n- [Voltage Stability](voltage-stability)\n- [Phase Sequence Verification](phase-sequence-verification)\n- [Functional Breaker-RCD Coordination](functional-breaker-rcd-coordination)\n",
+    "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var b=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var x=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var t in n)r(e,t,{get:n[t],enumerable:!0})},s=(e,n,t,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of b(n))!p.call(e,a)&&a!==t&&r(e,a,{get:()=>n[a],enumerable:!(l=f(n,a))||l.enumerable});return e};var _=(e,n,t)=>(t=e!=null?u(m(e)):{},s(n||!e||!e.__esModule?r(t,\"default\",{value:e,enumerable:!0}):t,e)),D=e=>s(r({},\"__esModule\",{value:!0}),e);var c=x((P,o)=>{o.exports=_jsx_runtime});var k={};g(k,{default:()=>d,frontmatter:()=>j});var i=_(c()),j={title:\"Distribution Panel\",description:\"Index page for Distribution Panel\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"distribution-panel\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#distribution-panel\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Distribution Panel\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"busbar-tightness\",children:\"Busbar Tightness\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"voltage-stability\",children:\"Voltage Stability\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"phase-sequence-verification\",children:\"Phase Sequence Verification\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"functional-breaker-rcd-coordination\",children:\"Functional Breaker-RCD Coordination\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return D(k);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/distribution-panel/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/distribution-panel/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/distribution-panel",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/distribution-panel"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/distribution-panel",
+  "slugAsParams": "low-voltage/distribution-panel",
+  "url": "/docs/docs/low-voltage/distribution-panel",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "distribution-panel"
+}

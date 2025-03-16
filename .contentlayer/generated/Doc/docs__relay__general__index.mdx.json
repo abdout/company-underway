@@ -1,0 +1,23 @@
+{
+  "title": "General",
+  "description": "Index page for General",
+  "body": {
+    "raw": "\n# General\n\n- [Secondary Injection](secondary-injection)\n- [Primary Injection](primary-injection)\n- [Settings Verification](settings-verification)\n- [Communication](communication)\n- [Contact Resistance](contact-resistance)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,j=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var r in n)a(e,r,{get:n[r],enumerable:!0})},o=(e,n,r,c)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of u(n))!j.call(e,t)&&t!==r&&a(e,t,{get:()=>n[t],enumerable:!(c=f(n,t))||c.enumerable});return e};var _=(e,n,r)=>(r=e!=null?m(x(e)):{},o(n||!e||!e.__esModule?a(r,\"default\",{value:e,enumerable:!0}):r,e)),y=e=>o(a({},\"__esModule\",{value:!0}),e);var s=p((M,l)=>{l.exports=_jsx_runtime});var G={};g(G,{default:()=>d,frontmatter:()=>C});var i=_(s()),C={title:\"General\",description:\"Index page for General\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"general\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#general\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"General\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"secondary-injection\",children:\"Secondary Injection\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"primary-injection\",children:\"Primary Injection\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"settings-verification\",children:\"Settings Verification\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"communication\",children:\"Communication\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return y(G);})();\n;return Component;"
+  },
+  "_id": "docs/relay/general/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/general/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/general",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/general"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/general",
+  "slugAsParams": "relay/general",
+  "url": "/docs/docs/relay/general",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "general"
+}

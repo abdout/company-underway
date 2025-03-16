@@ -1,0 +1,23 @@
+{
+  "title": "UPS",
+  "description": "Index page for UPS",
+  "body": {
+    "raw": "\n# UPS\n\n- [Battery Capacity](battery-capacity)\n- [Transfer Time Grid-Battery](transfer-time-grid-battery)\n- [Output Voltage Stability](output-voltage-stability)\n- [Harmonic Analysis](harmonic-analysis)\n",
+    "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,y=Object.prototype.hasOwnProperty;var x=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var a in n)r(e,a,{get:n[a],enumerable:!0})},c=(e,n,a,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of p(n))!y.call(e,i)&&i!==a&&r(e,i,{get:()=>n[i],enumerable:!(l=m(n,i))||l.enumerable});return e};var _=(e,n,a)=>(a=e!=null?u(f(e)):{},c(n||!e||!e.__esModule?r(a,\"default\",{value:e,enumerable:!0}):a,e)),b=e=>c(r({},\"__esModule\",{value:!0}),e);var o=x((M,s)=>{s.exports=_jsx_runtime});var S={};g(S,{default:()=>d,frontmatter:()=>j});var t=_(o()),j={title:\"UPS\",description:\"Index page for UPS\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"ups\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#ups\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"UPS\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"battery-capacity\",children:\"Battery Capacity\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"transfer-time-grid-battery\",children:\"Transfer Time Grid-Battery\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"output-voltage-stability\",children:\"Output Voltage Stability\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"harmonic-analysis\",children:\"Harmonic Analysis\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return b(S);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/ups/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/ups/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage/ups",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage/ups"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage/ups",
+  "slugAsParams": "low-voltage/ups",
+  "url": "/docs/docs/low-voltage/ups",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": "ups"
+}

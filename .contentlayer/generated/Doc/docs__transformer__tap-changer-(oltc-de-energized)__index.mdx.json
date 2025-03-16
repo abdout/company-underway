@@ -1,0 +1,23 @@
+{
+  "title": "Tap Changer (OLTC/De-Energized)",
+  "description": "Index page for Tap Changer (OLTC/De-Energized)",
+  "body": {
+    "raw": "\n# Tap Changer (OLTC/De-Energized)\n\n- [Contact Resistance](contact-resistance)\n- [Timing Operation](timing-operation)\n- [Functional Sequence](functional-sequence)\n- [Oil Quality](oil-quality)\n",
+    "code": "var Component=(()=>{var u=Object.create;var t=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var x=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),C=(n,e)=>{for(var a in e)t(n,a,{get:e[a],enumerable:!0})},l=(n,e,a,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of p(e))!f.call(n,r)&&r!==a&&t(n,r,{get:()=>e[r],enumerable:!(c=g(e,r))||c.enumerable});return n};var T=(n,e,a)=>(a=n!=null?u(m(n)):{},l(e||!n||!n.__esModule?t(a,\"default\",{value:n,enumerable:!0}):a,n)),_=n=>l(t({},\"__esModule\",{value:!0}),n);var s=x((L,o)=>{o.exports=_jsx_runtime});var z={};C(z,{default:()=>d,frontmatter:()=>j});var i=T(s()),j={title:\"Tap Changer (OLTC/De-Energized)\",description:\"Index page for Tap Changer (OLTC/De-Energized)\"};function h(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(e.h1,{id:\"tap-changer-oltcde-energized\",children:[(0,i.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#tap-changer-oltcde-energized\",children:(0,i.jsx)(e.span,{className:\"icon icon-link\"})}),\"Tap Changer (OLTC/De-Energized)\"]}),`\n`,(0,i.jsxs)(e.ul,{children:[`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"timing-operation\",children:\"Timing Operation\"})}),`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"functional-sequence\",children:\"Functional Sequence\"})}),`\n`,(0,i.jsx)(e.li,{children:(0,i.jsx)(e.a,{href:\"oil-quality\",children:\"Oil Quality\"})}),`\n`]})]})}function d(n={}){let{wrapper:e}=n.components||{};return e?(0,i.jsx)(e,{...n,children:(0,i.jsx)(h,{...n})}):h(n)}return _(z);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/tap-changer-(oltc-de-energized)/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/tap-changer-(oltc-de-energized)/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/tap-changer-(oltc-de-energized)",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/tap-changer-(oltc-de-energized)"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/tap-changer-(oltc-de-energized)",
+  "slugAsParams": "transformer/tap-changer-(oltc-de-energized)",
+  "url": "/docs/docs/transformer/tap-changer-(oltc-de-energized)",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "tap-changer-(oltc-de-energized)"
+}

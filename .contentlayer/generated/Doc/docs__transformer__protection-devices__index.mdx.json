@@ -1,0 +1,23 @@
+{
+  "title": "Protection Devices",
+  "description": "Index page for Protection Devices",
+  "body": {
+    "raw": "\n# Protection Devices\n\n- [Buchholz Alarm-Trip](buchholz-alarm-trip)\n- [Pressure Relief Operation](pressure-relief-operation)\n- [Winding Temperature Alarm](winding-temperature-alarm)\n",
+    "code": "var Component=(()=>{var m=Object.create;var a=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),g=(n,e)=>{for(var i in e)a(n,i,{get:e[i],enumerable:!0})},o=(n,e,i,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of u(e))!x.call(n,t)&&t!==i&&a(n,t,{get:()=>e[t],enumerable:!(c=p(e,t))||c.enumerable});return n};var j=(n,e,i)=>(i=n!=null?m(f(n)):{},o(e||!n||!n.__esModule?a(i,\"default\",{value:n,enumerable:!0}):i,n)),v=n=>o(a({},\"__esModule\",{value:!0}),n);var s=_((M,l)=>{l.exports=_jsx_runtime});var P={};g(P,{default:()=>d,frontmatter:()=>D});var r=j(s()),D={title:\"Protection Devices\",description:\"Index page for Protection Devices\"};function h(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(e.h1,{id:\"protection-devices\",children:[(0,r.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#protection-devices\",children:(0,r.jsx)(e.span,{className:\"icon icon-link\"})}),\"Protection Devices\"]}),`\n`,(0,r.jsxs)(e.ul,{children:[`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"buchholz-alarm-trip\",children:\"Buchholz Alarm-Trip\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"pressure-relief-operation\",children:\"Pressure Relief Operation\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"winding-temperature-alarm\",children:\"Winding Temperature Alarm\"})}),`\n`]})]})}function d(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,{...n,children:(0,r.jsx)(h,{...n})}):h(n)}return v(P);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/protection-devices/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/protection-devices/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/protection-devices",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/protection-devices"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/protection-devices",
+  "slugAsParams": "transformer/protection-devices",
+  "url": "/docs/docs/transformer/protection-devices",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "protection-devices"
+}

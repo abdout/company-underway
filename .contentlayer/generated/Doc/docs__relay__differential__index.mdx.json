@@ -1,0 +1,23 @@
+{
+  "title": "Differential",
+  "description": "Index page for Differential",
+  "body": {
+    "raw": "\n# Differential\n\n- [Ratio and Phase Angle](ratio-and-phase-angle)\n- [Slope Characteristic](slope-characteristic)\n- [Harmonic Restraint](harmonic-restraint)\n- [Insulation](insulation)\n- [Functional](functional)\n",
+    "code": "var Component=(()=>{var f=Object.create;var t=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),g=(e,n)=>{for(var a in n)t(e,a,{get:n[a],enumerable:!0})},c=(e,n,a,l)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of m(n))!x.call(e,r)&&r!==a&&t(e,r,{get:()=>n[r],enumerable:!(l=u(n,r))||l.enumerable});return e};var j=(e,n,a)=>(a=e!=null?f(p(e)):{},c(n||!e||!e.__esModule?t(a,\"default\",{value:e,enumerable:!0}):a,e)),D=e=>c(t({},\"__esModule\",{value:!0}),e);var s=_((b,o)=>{o.exports=_jsx_runtime});var F={};g(F,{default:()=>d,frontmatter:()=>C});var i=j(s()),C={title:\"Differential\",description:\"Index page for Differential\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.h1,{id:\"differential\",children:[(0,i.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#differential\",children:(0,i.jsx)(n.span,{className:\"icon icon-link\"})}),\"Differential\"]}),`\n`,(0,i.jsxs)(n.ul,{children:[`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"ratio-and-phase-angle\",children:\"Ratio and Phase Angle\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"slope-characteristic\",children:\"Slope Characteristic\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"harmonic-restraint\",children:\"Harmonic Restraint\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"insulation\",children:\"Insulation\"})}),`\n`,(0,i.jsx)(n.li,{children:(0,i.jsx)(n.a,{href:\"functional\",children:\"Functional\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,i.jsx)(n,{...e,children:(0,i.jsx)(h,{...e})}):h(e)}return D(F);})();\n;return Component;"
+  },
+  "_id": "docs/relay/differential/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/differential/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/differential",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/differential"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/differential",
+  "slugAsParams": "relay/differential",
+  "url": "/docs/docs/relay/differential",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "differential"
+}

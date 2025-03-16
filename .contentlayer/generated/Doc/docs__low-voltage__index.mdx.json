@@ -1,0 +1,23 @@
+{
+  "title": "Low Voltage",
+  "description": "Index page for Low Voltage",
+  "body": {
+    "raw": "\n# Low Voltage\n\n- [Distribution Panel](distribution-panel)\n- [MCCB](mccb)\n- [ACB](acb)\n- [Capacitor Bank](capacitor-bank)\n- [UPS](ups)\n- [Earth Fault](earth-fault)\n- [Distribution Board](distribution-board)\n- [Motor Control Center](motor-control-center)\n- [Surge Device](surge-device)\n- [Metering](metering)\n- [Earthing System](earthing-system)\n",
+    "code": "var Component=(()=>{var u=Object.create;var t=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var b=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),x=(r,e)=>{for(var i in e)t(r,i,{get:e[i],enumerable:!0})},c=(r,e,i,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of m(e))!p.call(r,l)&&l!==i&&t(r,l,{get:()=>e[l],enumerable:!(a=f(e,l))||a.enumerable});return r};var C=(r,e,i)=>(i=r!=null?u(g(r)):{},c(e||!r||!r.__esModule?t(i,\"default\",{value:r,enumerable:!0}):i,r)),_=r=>c(t({},\"__esModule\",{value:!0}),r);var h=b((D,o)=>{o.exports=_jsx_runtime});var M={};x(M,{default:()=>s,frontmatter:()=>w});var n=C(h()),w={title:\"Low Voltage\",description:\"Index page for Low Voltage\"};function d(r){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"low-voltage\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#low-voltage\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Low Voltage\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"distribution-panel\",children:\"Distribution Panel\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"mccb\",children:\"MCCB\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"acb\",children:\"ACB\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"capacitor-bank\",children:\"Capacitor Bank\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"ups\",children:\"UPS\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"earth-fault\",children:\"Earth Fault\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"distribution-board\",children:\"Distribution Board\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"motor-control-center\",children:\"Motor Control Center\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"surge-device\",children:\"Surge Device\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"metering\",children:\"Metering\"})}),`\n`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.a,{href:\"earthing-system\",children:\"Earthing System\"})}),`\n`]})]})}function s(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(d,{...r})}):d(r)}return _(M);})();\n;return Component;"
+  },
+  "_id": "docs/low-voltage/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/low-voltage/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/low-voltage",
+    "contentType": "mdx",
+    "flattenedPath": "docs/low-voltage"
+  },
+  "type": "Doc",
+  "slug": "/docs/low-voltage",
+  "slugAsParams": "low-voltage",
+  "url": "/docs/docs/low-voltage",
+  "category": "docs",
+  "subCategory": "low-voltage",
+  "activityName": ""
+}

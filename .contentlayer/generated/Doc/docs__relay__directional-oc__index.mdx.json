@@ -1,0 +1,23 @@
+{
+  "title": "Directional OC",
+  "description": "Index page for Directional OC",
+  "body": {
+    "raw": "\n# Directional OC\n\n- [Directional Discrimination](directional-discrimination)\n- [Pickup](pickup)\n- [Timing](timing)\n",
+    "code": "var Component=(()=>{var m=Object.create;var c=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var D=(i,n)=>()=>(n||i((n={exports:{}}).exports,n),n.exports),_=(i,n)=>{for(var r in n)c(i,r,{get:n[r],enumerable:!0})},o=(i,n,r,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of p(n))!x.call(i,t)&&t!==r&&c(i,t,{get:()=>n[t],enumerable:!(a=u(n,t))||a.enumerable});return i};var g=(i,n,r)=>(r=i!=null?m(f(i)):{},o(n||!i||!i.__esModule?c(r,\"default\",{value:i,enumerable:!0}):r,i)),j=i=>o(c({},\"__esModule\",{value:!0}),i);var s=D((O,l)=>{l.exports=_jsx_runtime});var k={};_(k,{default:()=>h,frontmatter:()=>C});var e=g(s()),C={title:\"Directional OC\",description:\"Index page for Directional OC\"};function d(i){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...i.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.h1,{id:\"directional-oc\",children:[(0,e.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#directional-oc\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Directional OC\"]}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"directional-discrimination\",children:\"Directional Discrimination\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"pickup\",children:\"Pickup\"})}),`\n`,(0,e.jsx)(n.li,{children:(0,e.jsx)(n.a,{href:\"timing\",children:\"Timing\"})}),`\n`]})]})}function h(i={}){let{wrapper:n}=i.components||{};return n?(0,e.jsx)(n,{...i,children:(0,e.jsx)(d,{...i})}):d(i)}return j(k);})();\n;return Component;"
+  },
+  "_id": "docs/relay/directional-oc/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/relay/directional-oc/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/relay/directional-oc",
+    "contentType": "mdx",
+    "flattenedPath": "docs/relay/directional-oc"
+  },
+  "type": "Doc",
+  "slug": "/docs/relay/directional-oc",
+  "slugAsParams": "relay/directional-oc",
+  "url": "/docs/docs/relay/directional-oc",
+  "category": "docs",
+  "subCategory": "relay",
+  "activityName": "directional-oc"
+}

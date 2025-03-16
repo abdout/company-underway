@@ -1,0 +1,23 @@
+{
+  "title": "Bushing",
+  "description": "Index page for Bushing",
+  "body": {
+    "raw": "\n# Bushing\n\n- [Tan Delta](tan-delta)\n- [Capacitance Measurement](capacitance-measurement)\n- [Insulation Resistance](insulation-resistance)\n",
+    "code": "var Component=(()=>{var d=Object.create;var s=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var g=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var i in n)s(e,i,{get:n[i],enumerable:!0})},c=(e,n,i,r)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of f(n))!x.call(e,t)&&t!==i&&s(e,t,{get:()=>n[t],enumerable:!(r=m(n,t))||r.enumerable});return e};var j=(e,n,i)=>(i=e!=null?d(p(e)):{},c(n||!e||!e.__esModule?s(i,\"default\",{value:e,enumerable:!0}):i,e)),b=e=>c(s({},\"__esModule\",{value:!0}),e);var o=g((D,l)=>{l.exports=_jsx_runtime});var B={};_(B,{default:()=>u,frontmatter:()=>M});var a=j(o()),M={title:\"Bushing\",description:\"Index page for Bushing\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(n.h1,{id:\"bushing\",children:[(0,a.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#bushing\",children:(0,a.jsx)(n.span,{className:\"icon icon-link\"})}),\"Bushing\"]}),`\n`,(0,a.jsxs)(n.ul,{children:[`\n`,(0,a.jsx)(n.li,{children:(0,a.jsx)(n.a,{href:\"tan-delta\",children:\"Tan Delta\"})}),`\n`,(0,a.jsx)(n.li,{children:(0,a.jsx)(n.a,{href:\"capacitance-measurement\",children:\"Capacitance Measurement\"})}),`\n`,(0,a.jsx)(n.li,{children:(0,a.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`]})]})}function u(e={}){let{wrapper:n}=e.components||{};return n?(0,a.jsx)(n,{...e,children:(0,a.jsx)(h,{...e})}):h(e)}return b(B);})();\n;return Component;"
+  },
+  "_id": "docs/transformer/bushing/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/transformer/bushing/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/transformer/bushing",
+    "contentType": "mdx",
+    "flattenedPath": "docs/transformer/bushing"
+  },
+  "type": "Doc",
+  "slug": "/docs/transformer/bushing",
+  "slugAsParams": "transformer/bushing",
+  "url": "/docs/docs/transformer/bushing",
+  "category": "docs",
+  "subCategory": "transformer",
+  "activityName": "bushing"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Fault Recorder",
+  "description": "Index page for Fault Recorder",
+  "body": {
+    "raw": "\n# Fault Recorder\n\n- [Time Sync IRIG-B-PTP](time-sync-irig-b-ptp)\n- [Event Sequence Validation](event-sequence-validation)\n- [Data Retrieval](data-retrieval)\n- [Storage Capacity](storage-capacity)\n",
+    "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var g=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),_=(n,e)=>{for(var a in e)i(n,a,{get:e[a],enumerable:!0})},l=(n,e,a,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of m(e))!x.call(n,t)&&t!==a&&i(n,t,{get:()=>e[t],enumerable:!(c=f(e,t))||c.enumerable});return n};var j=(n,e,a)=>(a=n!=null?u(p(n)):{},l(e||!n||!n.__esModule?i(a,\"default\",{value:n,enumerable:!0}):a,n)),v=n=>l(i({},\"__esModule\",{value:!0}),n);var d=g((b,o)=>{o.exports=_jsx_runtime});var F={};_(F,{default:()=>h,frontmatter:()=>y});var r=j(d()),y={title:\"Fault Recorder\",description:\"Index page for Fault Recorder\"};function s(n){let e={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...n.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(e.h1,{id:\"fault-recorder\",children:[(0,r.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#fault-recorder\",children:(0,r.jsx)(e.span,{className:\"icon icon-link\"})}),\"Fault Recorder\"]}),`\n`,(0,r.jsxs)(e.ul,{children:[`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"time-sync-irig-b-ptp\",children:\"Time Sync IRIG-B-PTP\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"event-sequence-validation\",children:\"Event Sequence Validation\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"data-retrieval\",children:\"Data Retrieval\"})}),`\n`,(0,r.jsx)(e.li,{children:(0,r.jsx)(e.a,{href:\"storage-capacity\",children:\"Storage Capacity\"})}),`\n`]})]})}function h(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,{...n,children:(0,r.jsx)(s,{...n})}):s(n)}return v(F);})();\n;return Component;"
+  },
+  "_id": "docs/other/fault-recorder/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/other/fault-recorder/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/other/fault-recorder",
+    "contentType": "mdx",
+    "flattenedPath": "docs/other/fault-recorder"
+  },
+  "type": "Doc",
+  "slug": "/docs/other/fault-recorder",
+  "slugAsParams": "other/fault-recorder",
+  "url": "/docs/docs/other/fault-recorder",
+  "category": "docs",
+  "subCategory": "other",
+  "activityName": "fault-recorder"
+}

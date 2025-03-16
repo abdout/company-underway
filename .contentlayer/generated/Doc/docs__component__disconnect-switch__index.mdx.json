@@ -1,0 +1,23 @@
+{
+  "title": "Disconnect Switch",
+  "description": "Index page for Disconnect Switch",
+  "body": {
+    "raw": "\n# Disconnect Switch\n\n- [Contact Resistance](contact-resistance)\n- [Insulation Resistance](insulation-resistance)\n- [Mechanical Interlock Verification](mechanical-interlock-verification)\n",
+    "code": "var Component=(()=>{var u=Object.create;var a=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var _=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),w=(e,n)=>{for(var i in n)a(e,i,{get:n[i],enumerable:!0})},r=(e,n,i,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let t of m(n))!p.call(e,t)&&t!==i&&a(e,t,{get:()=>n[t],enumerable:!(s=f(n,t))||s.enumerable});return e};var j=(e,n,i)=>(i=e!=null?u(x(e)):{},r(n||!e||!e.__esModule?a(i,\"default\",{value:e,enumerable:!0}):i,e)),D=e=>r(a({},\"__esModule\",{value:!0}),e);var l=_((C,o)=>{o.exports=_jsx_runtime});var k={};w(k,{default:()=>d,frontmatter:()=>g});var c=j(l()),g={title:\"Disconnect Switch\",description:\"Index page for Disconnect Switch\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsxs)(n.h1,{id:\"disconnect-switch\",children:[(0,c.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#disconnect-switch\",children:(0,c.jsx)(n.span,{className:\"icon icon-link\"})}),\"Disconnect Switch\"]}),`\n`,(0,c.jsxs)(n.ul,{children:[`\n`,(0,c.jsx)(n.li,{children:(0,c.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,c.jsx)(n.li,{children:(0,c.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,c.jsx)(n.li,{children:(0,c.jsx)(n.a,{href:\"mechanical-interlock-verification\",children:\"Mechanical Interlock Verification\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,c.jsx)(n,{...e,children:(0,c.jsx)(h,{...e})}):h(e)}return D(k);})();\n;return Component;"
+  },
+  "_id": "docs/component/disconnect-switch/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/disconnect-switch/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/disconnect-switch",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/disconnect-switch"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/disconnect-switch",
+  "slugAsParams": "component/disconnect-switch",
+  "url": "/docs/docs/component/disconnect-switch",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "disconnect-switch"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Voltage Transformer",
+  "description": "Index page for Voltage Transformer",
+  "body": {
+    "raw": "\n# Voltage Transformer\n\n- [Ratio](ratio)\n- [Polarity Verification](polarity-verification)\n- [Burden](burden)\n- [Insulation Resistance](insulation-resistance)\n- [Saturation Curve](saturation-curve)\n",
+    "code": "var Component=(()=>{var f=Object.create;var t=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var a in n)t(e,a,{get:n[a],enumerable:!0})},l=(e,n,a,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!g.call(e,i)&&i!==a&&t(e,i,{get:()=>n[i],enumerable:!(o=u(n,i))||o.enumerable});return e};var j=(e,n,a)=>(a=e!=null?f(x(e)):{},l(n||!e||!e.__esModule?t(a,\"default\",{value:e,enumerable:!0}):a,e)),v=e=>l(t({},\"__esModule\",{value:!0}),e);var s=p((C,c)=>{c.exports=_jsx_runtime});var b={};_(b,{default:()=>d,frontmatter:()=>V});var r=j(s()),V={title:\"Voltage Transformer\",description:\"Index page for Voltage Transformer\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"voltage-transformer\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#voltage-transformer\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"Voltage Transformer\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"ratio\",children:\"Ratio\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"polarity-verification\",children:\"Polarity Verification\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"burden\",children:\"Burden\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"saturation-curve\",children:\"Saturation Curve\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(h,{...e})}):h(e)}return v(b);})();\n;return Component;"
+  },
+  "_id": "docs/component/voltage-transformer/index.mdx",
+  "_raw": {
+    "sourceFilePath": "docs/component/voltage-transformer/index.mdx",
+    "sourceFileName": "index.mdx",
+    "sourceFileDir": "docs/component/voltage-transformer",
+    "contentType": "mdx",
+    "flattenedPath": "docs/component/voltage-transformer"
+  },
+  "type": "Doc",
+  "slug": "/docs/component/voltage-transformer",
+  "slugAsParams": "component/voltage-transformer",
+  "url": "/docs/docs/component/voltage-transformer",
+  "category": "docs",
+  "subCategory": "component",
+  "activityName": "voltage-transformer"
+}
