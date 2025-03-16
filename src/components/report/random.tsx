@@ -11,8 +11,8 @@ const RandomValueTable: React.FC = () => {
 
   const handleCopy = () => {
     let tableText = '';
-    for (let row of rows) {
-      let rowText = columns.map(() => generateRandomValue()).join('\t');
+    for (const row of rows) {
+      const rowText = columns.map(() => generateRandomValue()).join('\t');
       tableText += rowText + '\n';
     }
     navigator.clipboard.writeText(tableText);

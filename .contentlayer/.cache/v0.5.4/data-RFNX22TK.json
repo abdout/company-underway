@@ -5768,90 +5768,6 @@
       "hasWarnings": false,
       "documentTypeName": "Doc"
     },
-    "docs/transformer/neutral-grounding/continuity.mdx": {
-      "document": {
-        "title": "Continuity",
-        "description": "Documentation for Continuity under Neutral Grounding in Transformer category",
-        "body": {
-          "raw": "\n# Continuity\n\nThis is the documentation page for **Continuity** which is part of the **Neutral Grounding** subcategory in the **Transformer** section.\n\n## Overview\n\nAdd a brief overview of Continuity here.\n\n## Procedure\n\n1. Step one of the Continuity procedure\n2. Step two of the Continuity procedure\n3. Step three of the Continuity procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Continuity can be added here.\n\n## Related Activities\n\n- Other related activities from Neutral Grounding\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var u=Object.create;var a=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),y=(i,e)=>{for(var t in e)a(i,t,{get:e[t],enumerable:!0})},c=(i,e,t,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of m(e))!b.call(i,r)&&r!==t&&a(i,r,{get:()=>e[r],enumerable:!(o=p(e,r))||o.enumerable});return i};var N=(i,e,t)=>(t=i!=null?u(f(i)):{},c(e||!i||!i.__esModule?a(t,\"default\",{value:i,enumerable:!0}):t,i)),v=i=>c(a({},\"__esModule\",{value:!0}),i);var d=g((D,l)=>{l.exports=_jsx_runtime});var C={};y(C,{default:()=>s,frontmatter:()=>k});var n=N(d()),k={title:\"Continuity\",description:\"Documentation for Continuity under Neutral Grounding in Transformer category\"};function h(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"continuity\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#continuity\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Continuity\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Continuity\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Neutral Grounding\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Transformer\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Continuity here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Continuity procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Continuity procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Continuity procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Continuity can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Neutral Grounding\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(h,{...i})}):h(i)}return v(C);})();\n;return Component;"
-        },
-        "_id": "docs/transformer/neutral-grounding/continuity.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/transformer/neutral-grounding/continuity.mdx",
-          "sourceFileName": "continuity.mdx",
-          "sourceFileDir": "docs/transformer/neutral-grounding",
-          "contentType": "mdx",
-          "flattenedPath": "docs/transformer/neutral-grounding/continuity"
-        },
-        "type": "Doc",
-        "slug": "/docs/transformer/neutral-grounding/continuity",
-        "slugAsParams": "transformer/neutral-grounding/continuity",
-        "url": "/docs/docs/transformer/neutral-grounding/continuity",
-        "category": "docs",
-        "subCategory": "transformer",
-        "activityName": "neutral-grounding"
-      },
-      "documentHash": "1742098135365",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/transformer/neutral-grounding/ground-resistance.mdx": {
-      "document": {
-        "title": "Ground Resistance",
-        "description": "Documentation for Ground Resistance under Neutral Grounding in Transformer category",
-        "body": {
-          "raw": "\n# Ground Resistance\n\nThis is the documentation page for **Ground Resistance** which is part of the **Neutral Grounding** subcategory in the **Transformer** section.\n\n## Overview\n\nAdd a brief overview of Ground Resistance here.\n\n## Procedure\n\n1. Step one of the Ground Resistance procedure\n2. Step two of the Ground Resistance procedure\n3. Step three of the Ground Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Ground Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Neutral Grounding\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var u=Object.create;var t=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),N=(r,e)=>{for(var i in e)t(r,i,{get:e[i],enumerable:!0})},o=(r,e,i,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!b.call(r,a)&&a!==i&&t(r,a,{get:()=>e[a],enumerable:!(c=p(e,a))||c.enumerable});return r};var v=(r,e,i)=>(i=r!=null?u(f(r)):{},o(e||!r||!r.__esModule?t(i,\"default\",{value:r,enumerable:!0}):i,r)),k=r=>o(t({},\"__esModule\",{value:!0}),r);var d=g((D,s)=>{s.exports=_jsx_runtime});var R={};N(R,{default:()=>h,frontmatter:()=>G});var n=v(d()),G={title:\"Ground Resistance\",description:\"Documentation for Ground Resistance under Neutral Grounding in Transformer category\"};function l(r){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"ground-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#ground-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Ground Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Ground Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Neutral Grounding\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Transformer\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Ground Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Ground Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Ground Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Ground Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Ground Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Neutral Grounding\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(l,{...r})}):l(r)}return k(R);})();\n;return Component;"
-        },
-        "_id": "docs/transformer/neutral-grounding/ground-resistance.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/transformer/neutral-grounding/ground-resistance.mdx",
-          "sourceFileName": "ground-resistance.mdx",
-          "sourceFileDir": "docs/transformer/neutral-grounding",
-          "contentType": "mdx",
-          "flattenedPath": "docs/transformer/neutral-grounding/ground-resistance"
-        },
-        "type": "Doc",
-        "slug": "/docs/transformer/neutral-grounding/ground-resistance",
-        "slugAsParams": "transformer/neutral-grounding/ground-resistance",
-        "url": "/docs/docs/transformer/neutral-grounding/ground-resistance",
-        "category": "docs",
-        "subCategory": "transformer",
-        "activityName": "neutral-grounding"
-      },
-      "documentHash": "1742098135363",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/transformer/neutral-grounding/index.mdx": {
-      "document": {
-        "title": "Neutral Grounding",
-        "description": "Index page for Neutral Grounding",
-        "body": {
-          "raw": "\n# Neutral Grounding\n\n- [Ground Resistance](ground-resistance)\n- [Continuity](continuity)\n",
-          "code": "var Component=(()=>{var h=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var t in n)a(e,t,{get:n[t],enumerable:!0})},c=(e,n,t,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!f.call(e,i)&&i!==t&&a(e,i,{get:()=>n[i],enumerable:!(o=g(n,i))||o.enumerable});return e};var j=(e,n,t)=>(t=e!=null?h(x(e)):{},c(n||!e||!e.__esModule?a(t,\"default\",{value:e,enumerable:!0}):t,e)),N=e=>c(a({},\"__esModule\",{value:!0}),e);var s=p((M,l)=>{l.exports=_jsx_runtime});var y={};_(y,{default:()=>d,frontmatter:()=>G});var r=j(s()),G={title:\"Neutral Grounding\",description:\"Index page for Neutral Grounding\"};function u(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"neutral-grounding\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#neutral-grounding\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"Neutral Grounding\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"ground-resistance\",children:\"Ground Resistance\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"continuity\",children:\"Continuity\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(u,{...e})}):u(e)}return N(y);})();\n;return Component;"
-        },
-        "_id": "docs/transformer/neutral-grounding/index.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/transformer/neutral-grounding/index.mdx",
-          "sourceFileName": "index.mdx",
-          "sourceFileDir": "docs/transformer/neutral-grounding",
-          "contentType": "mdx",
-          "flattenedPath": "docs/transformer/neutral-grounding"
-        },
-        "type": "Doc",
-        "slug": "/docs/transformer/neutral-grounding",
-        "slugAsParams": "transformer/neutral-grounding",
-        "url": "/docs/docs/transformer/neutral-grounding",
-        "category": "docs",
-        "subCategory": "transformer",
-        "activityName": "neutral-grounding"
-      },
-      "documentHash": "1742098135360",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
     "docs/transformer/oil-management/acidity.mdx": {
       "document": {
         "title": "Acidity",
@@ -5961,6 +5877,90 @@
         "activityName": "oil-management"
       },
       "documentHash": "1742098135382",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/transformer/neutral-grounding/continuity.mdx": {
+      "document": {
+        "title": "Continuity",
+        "description": "Documentation for Continuity under Neutral Grounding in Transformer category",
+        "body": {
+          "raw": "\n# Continuity\n\nThis is the documentation page for **Continuity** which is part of the **Neutral Grounding** subcategory in the **Transformer** section.\n\n## Overview\n\nAdd a brief overview of Continuity here.\n\n## Procedure\n\n1. Step one of the Continuity procedure\n2. Step two of the Continuity procedure\n3. Step three of the Continuity procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Continuity can be added here.\n\n## Related Activities\n\n- Other related activities from Neutral Grounding\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var u=Object.create;var a=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),y=(i,e)=>{for(var t in e)a(i,t,{get:e[t],enumerable:!0})},c=(i,e,t,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of m(e))!b.call(i,r)&&r!==t&&a(i,r,{get:()=>e[r],enumerable:!(o=p(e,r))||o.enumerable});return i};var N=(i,e,t)=>(t=i!=null?u(f(i)):{},c(e||!i||!i.__esModule?a(t,\"default\",{value:i,enumerable:!0}):t,i)),v=i=>c(a({},\"__esModule\",{value:!0}),i);var d=g((D,l)=>{l.exports=_jsx_runtime});var C={};y(C,{default:()=>s,frontmatter:()=>k});var n=N(d()),k={title:\"Continuity\",description:\"Documentation for Continuity under Neutral Grounding in Transformer category\"};function h(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"continuity\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#continuity\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Continuity\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Continuity\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Neutral Grounding\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Transformer\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Continuity here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Continuity procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Continuity procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Continuity procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Continuity can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Neutral Grounding\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(h,{...i})}):h(i)}return v(C);})();\n;return Component;"
+        },
+        "_id": "docs/transformer/neutral-grounding/continuity.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/transformer/neutral-grounding/continuity.mdx",
+          "sourceFileName": "continuity.mdx",
+          "sourceFileDir": "docs/transformer/neutral-grounding",
+          "contentType": "mdx",
+          "flattenedPath": "docs/transformer/neutral-grounding/continuity"
+        },
+        "type": "Doc",
+        "slug": "/docs/transformer/neutral-grounding/continuity",
+        "slugAsParams": "transformer/neutral-grounding/continuity",
+        "url": "/docs/docs/transformer/neutral-grounding/continuity",
+        "category": "docs",
+        "subCategory": "transformer",
+        "activityName": "neutral-grounding"
+      },
+      "documentHash": "1742098135365",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/transformer/neutral-grounding/ground-resistance.mdx": {
+      "document": {
+        "title": "Ground Resistance",
+        "description": "Documentation for Ground Resistance under Neutral Grounding in Transformer category",
+        "body": {
+          "raw": "\n# Ground Resistance\n\nThis is the documentation page for **Ground Resistance** which is part of the **Neutral Grounding** subcategory in the **Transformer** section.\n\n## Overview\n\nAdd a brief overview of Ground Resistance here.\n\n## Procedure\n\n1. Step one of the Ground Resistance procedure\n2. Step two of the Ground Resistance procedure\n3. Step three of the Ground Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Ground Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Neutral Grounding\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var u=Object.create;var t=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),N=(r,e)=>{for(var i in e)t(r,i,{get:e[i],enumerable:!0})},o=(r,e,i,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!b.call(r,a)&&a!==i&&t(r,a,{get:()=>e[a],enumerable:!(c=p(e,a))||c.enumerable});return r};var v=(r,e,i)=>(i=r!=null?u(f(r)):{},o(e||!r||!r.__esModule?t(i,\"default\",{value:r,enumerable:!0}):i,r)),k=r=>o(t({},\"__esModule\",{value:!0}),r);var d=g((D,s)=>{s.exports=_jsx_runtime});var R={};N(R,{default:()=>h,frontmatter:()=>G});var n=v(d()),G={title:\"Ground Resistance\",description:\"Documentation for Ground Resistance under Neutral Grounding in Transformer category\"};function l(r){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...r.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"ground-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#ground-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Ground Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Ground Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Neutral Grounding\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Transformer\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Ground Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Ground Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Ground Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Ground Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Ground Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Neutral Grounding\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,{...r,children:(0,n.jsx)(l,{...r})}):l(r)}return k(R);})();\n;return Component;"
+        },
+        "_id": "docs/transformer/neutral-grounding/ground-resistance.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/transformer/neutral-grounding/ground-resistance.mdx",
+          "sourceFileName": "ground-resistance.mdx",
+          "sourceFileDir": "docs/transformer/neutral-grounding",
+          "contentType": "mdx",
+          "flattenedPath": "docs/transformer/neutral-grounding/ground-resistance"
+        },
+        "type": "Doc",
+        "slug": "/docs/transformer/neutral-grounding/ground-resistance",
+        "slugAsParams": "transformer/neutral-grounding/ground-resistance",
+        "url": "/docs/docs/transformer/neutral-grounding/ground-resistance",
+        "category": "docs",
+        "subCategory": "transformer",
+        "activityName": "neutral-grounding"
+      },
+      "documentHash": "1742098135363",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/transformer/neutral-grounding/index.mdx": {
+      "document": {
+        "title": "Neutral Grounding",
+        "description": "Index page for Neutral Grounding",
+        "body": {
+          "raw": "\n# Neutral Grounding\n\n- [Ground Resistance](ground-resistance)\n- [Continuity](continuity)\n",
+          "code": "var Component=(()=>{var h=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var p=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var t in n)a(e,t,{get:n[t],enumerable:!0})},c=(e,n,t,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let i of m(n))!f.call(e,i)&&i!==t&&a(e,i,{get:()=>n[i],enumerable:!(o=g(n,i))||o.enumerable});return e};var j=(e,n,t)=>(t=e!=null?h(x(e)):{},c(n||!e||!e.__esModule?a(t,\"default\",{value:e,enumerable:!0}):t,e)),N=e=>c(a({},\"__esModule\",{value:!0}),e);var s=p((M,l)=>{l.exports=_jsx_runtime});var y={};_(y,{default:()=>d,frontmatter:()=>G});var r=j(s()),G={title:\"Neutral Grounding\",description:\"Index page for Neutral Grounding\"};function u(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(n.h1,{id:\"neutral-grounding\",children:[(0,r.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#neutral-grounding\",children:(0,r.jsx)(n.span,{className:\"icon icon-link\"})}),\"Neutral Grounding\"]}),`\n`,(0,r.jsxs)(n.ul,{children:[`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"ground-resistance\",children:\"Ground Resistance\"})}),`\n`,(0,r.jsx)(n.li,{children:(0,r.jsx)(n.a,{href:\"continuity\",children:\"Continuity\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,r.jsx)(n,{...e,children:(0,r.jsx)(u,{...e})}):u(e)}return N(y);})();\n;return Component;"
+        },
+        "_id": "docs/transformer/neutral-grounding/index.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/transformer/neutral-grounding/index.mdx",
+          "sourceFileName": "index.mdx",
+          "sourceFileDir": "docs/transformer/neutral-grounding",
+          "contentType": "mdx",
+          "flattenedPath": "docs/transformer/neutral-grounding"
+        },
+        "type": "Doc",
+        "slug": "/docs/transformer/neutral-grounding",
+        "slugAsParams": "transformer/neutral-grounding",
+        "url": "/docs/docs/transformer/neutral-grounding",
+        "category": "docs",
+        "subCategory": "transformer",
+        "activityName": "neutral-grounding"
+      },
+      "documentHash": "1742098135360",
       "hasWarnings": false,
       "documentTypeName": "Doc"
     },

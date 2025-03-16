@@ -1,64 +1,67 @@
 'use client';
 import { domain } from "@/constant/domain";
-import { PostProjectContextProps, PostProjectState } from "@/type/project/post";
-import React, { createContext, useState, useContext } from "react";
-
+import { PostProjectContextProps, PostProjectState } from "@/components/platform/project/post";
+import React, { createContext, useState, useContext, useEffect } from "react";
+import { createProject, type ProjectData } from "@/actions/projects";
+import { createTask, type TaskData } from "@/actions/tasks";
 
 const PostProjectContext = createContext<PostProjectContextProps | undefined>(undefined);
 
 export const usePostProject = () => {
- 
+  console.log("usePostProject: Hook called");
   const context = useContext(PostProjectContext);
   if (!context) {
+    console.error("usePostProject: No context found, make sure to use within a PostProjectProvider");
     throw new Error('usePostProject must be used within a PostProjectProvider');
   }
   return context;
 };
 
 export const PostProjectProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  console.log("PostProjectProvider: Initializing");
   const [postProjectState, setPostProjectState] = useState<PostProjectState>({ status: 'idle', error: null });
   
+  useEffect(() => {
+    console.log("PostProjectProvider: State changed", postProjectState);
+  }, [postProjectState]);
 
-  const postTask = async (taskData: any) => {
-    const res = await fetch(`${domain}/api/task`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(taskData),
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to create a task");
+  const postTask = async (taskData: TaskData) => {
+    console.log("PostProjectProvider: Posting task", taskData);
+    try {
+      // Use server action instead of fetch
+      console.log("PostProjectProvider: Using createTask server action");
+      const result = await createTask(taskData);
+      
+      if (!result.success) {
+        console.error("PostProjectProvider: Failed to create task", result.error);
+        throw new Error(`Failed to create a task: ${result.error}`);
+      }
+      console.log("PostProjectProvider: Task created successfully");
+      return result.task;
+    } catch (error) {
+      console.error("PostProjectProvider: Error creating task", error);
+      throw error;
     }
   };
 
-  const postProject = async (data: {
-    customer: string;
-    location: string;
-    consultant: string;
-    client: string;
-    voltages: string[];
-    lvOptions: { lvSwgr: string; lvTrafo: string; lvCable: string; lvRmu: string };
-    mvOptions: { mvSwgr: string; mvTrafo: string; mvCable: string; mvRmu: string };
-    hvOptions: { hvSwgr: string; hvTrafo: string; hvCable: string; hvRmu: string };
-    evOptions: { evSwgr: string; evTrafo: string; evCable: string; evRmu: string };
-  }) => {
+  const postProject = async (data: ProjectData) => {
+    console.log("PostProjectProvider: postProject called with data", data);
     setPostProjectState({ status: 'loading', error: null });
+    
     try {
-      const res = await fetch(`${domain}/api/project`, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-  
-      if (!res.ok) {
-        throw new Error("Failed to create a project");
+      // Use server action instead of fetch
+      console.log("PostProjectProvider: Using createProject server action");
+      const result = await createProject(data);
+      
+      if (!result.success) {
+        console.error("PostProjectProvider: Server action returned error", result.error);
+        throw new Error(`Failed to create a project: ${result.error}`);
       }
+      
+      console.log("PostProjectProvider: Project created successfully");
   
       const getTaskTitles = (data: any) => {
+        console.log("PostProjectProvider: Extracting task titles from data");
         const options = [
           'lvSwgr', 'lvTrafo', 'lvCable', 'lvRmu',
           'mvSwgr', 'mvTrafo', 'mvCable', 'mvRmu',
@@ -81,29 +84,34 @@ export const PostProjectProvider: React.FC<{ children: React.ReactNode }> = ({ c
             }
           }
         }
-      
+        
+        console.log("PostProjectProvider: Extracted task titles", taskTitles);
         return taskTitles;
       };
       
       // Inside the postProject function
       const taskTitles = getTaskTitles(data);
+      console.log("PostProjectProvider: Creating tasks for project", taskTitles.length);
       
       for (const title of taskTitles) {
+        console.log("PostProjectProvider: Creating task", title);
         await postTask({
-          title,
           project: data.customer,
-          team: ['/team/eng/user.svg'],
-          location: "Undefined",
-          date: new Date(),
+          task: title,
+          club: "",
           status: "In Progress",
           priority: "Medium",
-          estTime: "4",
-          // Fill in with the other task fields...
+          duration: "4",
+          desc: `Task for ${data.customer} project`,
+          label: "",
+          tag: "",
+          remark: ""
         });
-        
       }
+      console.log("PostProjectProvider: All tasks created successfully");
       setPostProjectState({ status: 'succeeded', error: null });
     } catch (error) {
+      console.error("PostProjectProvider: Error in postProject", error);
       setPostProjectState({ status: 'failed', error });
     }
   };

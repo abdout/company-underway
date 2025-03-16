@@ -1,13 +1,18 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
 
-const Submit = (props:{label: string}) => {
+interface SubmitProps {
+  label: string;
+}
+
+const Submit: React.FC<SubmitProps> = ({ label }) => {
   return (
-    <button
+    <Button
       type="submit"
-      className=" py-[14px] w-[280px] bg-black text-[#fcfcfc]  font-medium mt-4 tracking-widest text-[16px]"
+      className="tracking-widest"
     >
-      {props.label}
-    </button>
+      {label}
+    </Button>
   );
 };
 

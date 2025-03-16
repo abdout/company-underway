@@ -1,15 +1,15 @@
-import CB from "@/components/project/mos/body/cb";
-import CRM from "@/components/project/mos/body/crm";
-import CT from "@/components/project/mos/body/ct";
-import HiPot from "@/components/project/mos/body/hipot";
-import IR from "@/components/project/mos/body/ir";
-import K from "@/components/project/mos/body/k";
-import MCB from "@/components/project/mos/body/mcb";
-import PD from "@/components/project/mos/body/pd";
-import PT from "@/components/project/mos/body/pt";
-import Relay from "@/components/project/mos/body/relay";
-import TD from "@/components/project/mos/body/td";
-import Z from "@/components/project/mos/body/z";
+import CB from "@/components/platform/project/mos/body/cb";
+import CRM from "@/components/platform/project/mos/body/crm";
+import CT from "@/components/platform/project/mos/body/ct";
+import HiPot from "@/components/platform/project/mos/body/hipot";
+import IR from "@/components/platform/project/mos/body/ir";
+import K from "@/components/platform/project/mos/body/k";
+import MCB from "@/components/platform/project/mos/body/mcb";
+import PD from "@/components/platform/project/mos/body/pd";
+import PT from "@/components/platform/project/mos/body/pt";
+import Relay from "@/components/platform/project/mos/body/relay";
+import TD from "@/components/platform/project/mos/body/td";
+import Z from "@/components/platform/project/mos/body/z";
 
 
 export type OptionKey = 'evSwgr' | 'evTrafo' | 'evCable' | 'evRmu' | 'hvSwgr' | 'hvTrafo' | 'hvCable' | 'hvRmu' | 'mvSwgr' | 'mvTrafo' | 'mvCable' | 'mvRmu' | 'lvSwgr' | 'lvTrafo' | 'lvCable' | 'lvRmu';

@@ -1,6 +1,6 @@
-import React from 'react';
+"use client";
+import React, { useEffect } from 'react';
 import { ProjectProvider } from "@/provider/project";
-import { ModalProvider } from "@/provider/modal";
 import { CreateProvider } from "@/provider/create";
 import { PostProjectProvider } from "@/provider/post";
 import { TaskProvider } from "@/provider/task";
@@ -11,25 +11,27 @@ import { FooterProvider } from './footer';
 import { KitProvider } from './kit';
 
 export const MainProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  console.log("MainProvider: Initializing providers");
+  
+  useEffect(() => {
+    console.log("MainProvider: Providers mounted");
+  }, []);
+  
   return (
-    
-      <ModalProvider>
-        <CreateProvider>
-          <PostProjectProvider>
-            <ProjectProvider>
-              <TaskProvider>
-                <HeaderProvider>
-                  <FooterProvider>
-                    <KitProvider>
-                {children}
-                    </KitProvider>
-                  </FooterProvider>
-                </HeaderProvider>
-              </TaskProvider>
-            </ProjectProvider>
-          </PostProjectProvider>
-        </CreateProvider>
-      </ModalProvider>
-    
+    <CreateProvider>
+      <PostProjectProvider>
+        <ProjectProvider>
+          <TaskProvider>
+            <HeaderProvider>
+              <FooterProvider>
+                <KitProvider>
+                  {children}
+                </KitProvider>
+              </FooterProvider>
+            </HeaderProvider>
+          </TaskProvider>
+        </ProjectProvider>
+      </PostProjectProvider>
+    </CreateProvider>
   );
 };

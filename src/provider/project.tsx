@@ -1,6 +1,6 @@
 "use client";
 import { domain } from '@/constant/domain';
-import { Project, ProjectContextProps } from '@/type/project/project';
+import { Project, ProjectContextProps } from '@/components/platform/project/project';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ProjectContext = createContext<ProjectContextProps | undefined>(undefined);
@@ -18,14 +18,33 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [projects, setProjects] = useState<Project[]>([]);
 
   const fetchProject = async (id: string) => {
-    const response = await fetch(`${domain}/api/project/${id}`);
-    const data = await response.json();
-    setProject(data.project);
+    console.log(`ProjectProvider: Fetching project with ID: ${id}`);
+    try {
+      const response = await fetch(`/api/project/${id}`);
+      console.log(`ProjectProvider: API Response status: ${response.status}`);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch project: ${response.status} ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      console.log(`ProjectProvider: Project data received:`, data);
+      
+      if (!data.project) {
+        console.error('ProjectProvider: No project data in response', data);
+        return;
+      }
+      
+      setProject(data.project);
+      console.log(`ProjectProvider: Project state updated`, data.project);
+    } catch (error) {
+      console.error(`ProjectProvider: Error fetching project:`, error);
+    }
   };
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch(`${domain}/api/project`);
+      const res = await fetch(`/api/project`);
       const data = await res.json();
       setProjects(data.projects);
     } catch (error) {

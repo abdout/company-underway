@@ -1,6 +1,6 @@
 'use client';
 import { SelectOption } from "@/components/atom/select/select";
-import { CreateContextProps, CreateState } from "@/type/project/create";
+import { CreateContextProps, CreateState } from "@/components/platform/project/create";
 import { createContext, useState, useContext, Dispatch, SetStateAction } from "react";
 
 const CreateContext = createContext<CreateContextProps | undefined>(undefined);
