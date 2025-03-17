@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { usePDF } from "react-to-pdf";
-import Action from "@/component/project/report/action";
-import Breadcrumb from "@/component/project/report/layout/crumb";
+import Action from "@/components/platform/project/report/action";
+import Breadcrumb from "@/components/platform/project/report/layout/crumb";
 
 interface IndexProps {
   params: Params;

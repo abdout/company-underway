@@ -3,7 +3,7 @@ import { useProject } from "@/provider/project";
 import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import Action from "@/component/project/report/action";
+import Action from "@/components/platform/project/report/action";
 
 interface Params {
   id: string;

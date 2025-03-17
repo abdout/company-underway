@@ -1,33 +1,43 @@
 import React from "react";
 import Image from "next/image";
-import { useModal } from "@/provider/modal";
+import Link from "next/link";
 
-const Kit = (props: {
+interface KitProps {
   src: string;
   alt: string;
   width?: number;
   status?: number;
   id?: string;
   bg?: string;
-}) => {
-  const { openModal } = useModal();
+  onSelect?: (id: string) => void;
+}
+
+const Kit = ({ src, alt, width, status, id, bg, onSelect }: KitProps) => {
   return (
     <div 
-    onClick={() => props.id && openModal(props.id)}
-    className="flex flex-col border w-[180px] hover:border-black">
-      <div className="flex justify-center items-center h-[140px] p-2">
+    style={{ borderColor: bg }} 
+      onClick={() => id && onSelect && onSelect(id)}
+      className="group flex flex-col rounded-lg overflow-hidden cursor-pointer transition duration-300 border"
+    >
+      <div 
+        
+        className="relative h-[8rem] md:h-[10rem] w-full overflow-hidden "
+      >
         <Image
-          src={props.src}
-          alt={props.alt}
-          width={props.width}
-          height={props.width}
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain object-center group-hover:scale-105 transition duration-300 p-5"
         />
       </div>
-      <div style={{ backgroundColor: props.bg }} className="px-4 py-2">
-        <h3>{props.alt}</h3>
-        <h4>{props.id}</h4>
-        <h4>Ready</h4>
-        <h4>In store</h4>
+      <div 
+        style={{ backgroundColor: bg, borderColor: bg }} 
+        className="md:p-4 px-4 py-3 border-b border-l border-r"
+      >
+        <h3 className="text-xl font-bold mb-1 ">{alt}</h3>
+        <p className=" text-sm ">
+          {status ? "Ready" : "Available"}
+        </p>
       </div>
     </div>
   );

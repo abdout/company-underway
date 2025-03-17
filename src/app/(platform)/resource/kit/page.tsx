@@ -4,7 +4,7 @@ import React from 'react'
 const Kit = () => {
   return (
     <div className='mb-28'>
-    <KitList />
+      <KitList />
     </div>
   )
 }

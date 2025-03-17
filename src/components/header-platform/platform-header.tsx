@@ -1,6 +1,7 @@
 // import { buttonVariants } from '@/components/ui/button'
 // import { cn } from '@/lib/utils'
 // import Link from 'next/link'
+'use client';
 import React from 'react'
 import Link from 'next/link'
 import { MainNav } from './main-nav'
@@ -12,6 +13,7 @@ import { cn } from '@/lib/utils'
 import { Icons } from './icons'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from './constant'
+import { usePathname } from 'next/navigation'
 
 const PlatformHeader = () => {
   return (

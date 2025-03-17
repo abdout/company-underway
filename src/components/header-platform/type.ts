@@ -11,6 +11,7 @@ export type NavItem = {
 
 export type MainNavItem = NavItem & {
   roleRequired?: string[]
+  projectId?: string
 }
 
 export type SidebarNavItem = {

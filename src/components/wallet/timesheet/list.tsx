@@ -1,12 +1,13 @@
 "use client";
-import { useTask } from "@/provider/task";
+import { useTask } from "@/components/platform/task/context";
+import { task } from "@/components/platform/task/type";
 import React, { useEffect, useState } from "react";
 // import Delete from "./crud/delete";
 // import SmIcon from "@/component/atom/icon/sm";
 import Modal from "@/components/atom/modal/modal";
 // import Edit from "./crud/edit";
 import Create from "./crud/create";
-import { useModal } from "@/provider/modal";
+import { useModal } from "@/components/atom/modal/context";
 import { Icon } from "@iconify/react";
 // import { Task } from '@/type/task/task';  // Import the Task type
 // import Circle from "./circle";
@@ -19,7 +20,7 @@ import { domain } from "@/constant/domain";
 
 const TimeList: React.FC = () => {
   const { modal, openModal } = useModal();
-  const { refreshTasks, tasks } = useTask();
+  const { refreshTasks, tasks, deleteTask } = useTask();
   const { projects } = useProject();
 
   const [contextMenu, setContextMenu] = useState<{ x: number, y: number, taskID: string | null }>({ x: 0, y: 0, taskID: null });
@@ -40,24 +41,13 @@ const TimeList: React.FC = () => {
     setSelectedRow(null);
   };
 
-  const Delete = async (id: string) => {
-    const confirmed = window.confirm("Are you sure?");
-
-    if (confirmed) {
-      const res = await fetch(`${domain}/api/task?id=${id}`, {
-        method: "DELETE",
-      });
-
-      if (res.ok) {
-        refreshTasks();
-      }
-    }
-  };
-
   const handleDelete = async (taskID: string | null) => {
     if (taskID) {
-      await Delete(taskID);
-      handleCloseContextMenu();
+      const confirmed = window.confirm("Are you sure?");
+      if (confirmed) {
+        await deleteTask(taskID);
+        handleCloseContextMenu();
+      }
     }
   };
 
@@ -85,43 +75,33 @@ const TimeList: React.FC = () => {
   <table className="table-auto w-[60rem] m-8 ">
     <thead>
       <tr>
-        <td className="text-lg font-medium border-b border-black py-2">Date</td>
-        <td className="text-lg font-medium border-b border-black py-2">Location</td>
+        <td className="text-lg font-medium border-b border-black py-2">Task</td>
         <td className="text-lg font-medium border-b border-black py-2">Project</td>
-        <td className="text-lg font-medium border-b border-black py-2">Customer</td>
-        <td className="text-lg font-medium border-b border-black py-2">Hour</td>
-        <td className="text-lg font-medium border-b border-black py-2">Over</td>
+        <td className="text-lg font-medium border-b border-black py-2">Club</td>
+        <td className="text-lg font-medium border-b border-black py-2">Status</td>
+        <td className="text-lg font-medium border-b border-black py-2">Priority</td>
+        <td className="text-lg font-medium border-b border-black py-2">Duration</td>
         <td className="text-lg font-medium border-b border-black py-2">Remark</td>
       </tr>
     </thead>
     <tbody>
-      {tasks.map((task) => {
-        const formattedEstTime = task.estTime ? task.estTime.toString().padStart(2, '0') + ' hr' : 'N/A'; // format estTime when displaying it
+      {Array.isArray(tasks) ? tasks.map((task) => {
         return (
           <tr key={task._id || ''} className={`border-b ${task._id === selectedRow ? 'bg-black text-[#fcfcfc]' : ''} hover:bg-gray-100`} onContextMenu={(e) => handleRightClick(e, task._id || '')}>
-            <td className="py-4">{new Date(task.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })}</td>
+            <td className="py-4">{task.task}</td>
             <td className="py-4">
               <div className="w-24 overflow-hidden overflow-ellipsis whitespacenowrap">
-                <a href={task.location} target="_blank" rel="noopener noreferrer">
-                  {task.location}
-                </a>
+                {task.project}
               </div>
             </td>
-            <td className="py-4">{task.project}</td>
-            <td className="py-4">{task.title}</td>
-            <td className="py-4">{formattedEstTime}</td>
-            <td className="py-4">{formattedEstTime}</td>
-            <td>
-              {/* <Delete id={task._id} />
-              <button 
-               className="w-[25px] h-[25px]"
-               onClick={() => handleEdit(task._id)}>
-                <SmIcon src="/edit.png" alt="Edit" path="" />
-              </button> */}
-            </td>
+            <td className="py-4">{task.club}</td>
+            <td className="py-4">{task.status}</td>
+            <td className="py-4">{task.prioity}</td>
+            <td className="py-4">{task.duration}</td>
+            <td className="py-4">{task.remark}</td>
           </tr>
         );
-      })}
+      }) : <tr><td colSpan={7} className="text-center py-4">No tasks available</td></tr>}
       {contextMenu.taskID && (
         <div 
         style={{ top: `${contextMenu.y}px`, left: `${contextMenu.x}px` }} 

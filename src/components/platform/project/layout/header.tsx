@@ -24,29 +24,31 @@ const Header = ({ params }: { params: Params | Promise<Params> }) => {
   ];
 
   return (
-    <div>
-      <nav className="flex justify-between pt-14 absolute top-1 w-full">
-        <ul className="flex space-x-8">
-          {links.map((link) => (
-            <li
-              key={link.href}
-              className={
-                (
-                  link.label === "Detail"
-                    ? pathname === link.href
-                    : pathname.startsWith(link.href)
-                )
-                  ? ""
-                  : "opacity-50"
-              }
-            >
-              <Link href={link.href} className="text-lg">
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <div className="sticky top-14 z-40 w-full bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40">
+      <div className="container max-w-screen-2xl py-2">
+        <nav className="flex justify-between">
+          <ul className="flex space-x-8">
+            {links.map((link) => (
+              <li
+                key={link.href}
+                className={
+                  (
+                    link.label === "Detail"
+                      ? pathname === link.href
+                      : pathname.startsWith(link.href)
+                  )
+                    ? "font-medium"
+                    : "text-foreground/60 hover:text-foreground/80 transition-colors"
+                }
+              >
+                <Link href={link.href} className="text-base">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 };

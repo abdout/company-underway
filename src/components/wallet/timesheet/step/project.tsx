@@ -1,5 +1,5 @@
-import Input from "@/component/atom/input/input";
-import Tag from "@/component/atom/tag/tag";
+import Input from "@/components/atom/input/input";
+import Tag from "@/components/atom/tag/tag";
 import { projects } from "@/type/task/tag";
 import React from "react";
 

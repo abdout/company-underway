@@ -170,8 +170,12 @@ export const marketingConfig: MarketingConfig = {
       href: "/daily",
     },
     {
+      title: "Features",
+      href: "/feature",
+    },
+    {
       title: "Resource",
-      href: "/team",
+      href: "/resource/team",
     },
     {
       title: "Wallet",

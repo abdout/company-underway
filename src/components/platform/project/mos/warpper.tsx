@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useProject } from "@/provider/project";
 
-import Activity from "@/component/project/mos/activity";
+import Activity from "@/components/platform/project/mos/activity";
 
 interface WrapperProps {
   params: Params | Promise<Params>;

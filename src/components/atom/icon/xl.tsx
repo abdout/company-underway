@@ -1,18 +1,23 @@
 import Image from "next/image";
 import React from "react";
 
-const XlIcon = (props: {
+interface XlIconProps {
   src: string;
   alt: string;
-  
-}) => {
+  size?: number;
+}
+
+const XlIcon = ({ src, alt, size = 120 }: XlIconProps) => {
   return (
-        <Image
-          src={props.src}
-          width={130}
-          height={130}
-          alt={props.alt}
-        />
+    <div className="relative w-[120px] h-[120px] overflow-hidden rounded-lg">
+      <Image
+        src={src}
+        fill
+        sizes="120px"
+        className="object-cover"
+        alt={alt}
+      />
+    </div>
   );
 };
 

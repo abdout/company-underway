@@ -1,4 +1,3 @@
-
 // import Footer from "@/components/template/footer/footer"
 import "../globals.css";
 import PlatformHeader from "@/components/header-platform/platform-header"
@@ -7,6 +6,7 @@ import { UploadProvider } from "@/components/upload/context";
 import { ProjectProvider } from "@/components/platform/nmbd-project/context";
 import { TaskProvider } from "@/components/platform/task/context";
 import { MainProvider } from "@/provider/main";
+import { ModalProvider } from "@/components/atom/modal/context";
 
 interface AppLayoutProps {
   children: React.ReactNode
@@ -22,7 +22,9 @@ export default function AppLayout({ children }: AppLayoutProps) {
           <TaskProvider>
             <UploadProvider>
               <MemberProvider>
-                {children}
+                <ModalProvider>
+                  {children}
+                </ModalProvider>
               </MemberProvider>
             </UploadProvider>
           </TaskProvider>

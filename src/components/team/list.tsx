@@ -17,12 +17,19 @@ const TeamList = () => {
     setDialogOpen(true);
   };
 
+  const handleOpenChange = (open: boolean) => {
+    setDialogOpen(open);
+    if (!open) {
+      setSelectedTeam(null);
+    }
+  };
+
   const teamMember = team.find(t => t.id === selectedTeam);
 
   return (
     <>
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-md p-0 border rounded-lg">
+      <Dialog open={dialogOpen} onOpenChange={handleOpenChange}>
+        <DialogContent className="max-w-[600px] p-0 border rounded-lg">
           {teamMember && <Profile team={teamMember} onClose={() => setDialogOpen(false)} />}
         </DialogContent>
       </Dialog>
