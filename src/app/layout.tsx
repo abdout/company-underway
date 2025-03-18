@@ -34,7 +34,7 @@ export default async function RootLayout({
   const session = await auth();
   return (
     <SessionProvider session={session}>
-    <html lang="ar" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning >
       <head>
         <link rel="preload" href="./fonts/Rubik-Black.ttf" as="font" crossOrigin="anonymous" />
       </head>

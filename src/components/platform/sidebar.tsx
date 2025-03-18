@@ -89,6 +89,22 @@ const SettingsIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+// Add TaskIcon for Daily Reports
+const TaskIcon = ({ className }: { className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24"
+    className={className}
+  >
+    <g fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z" />
+      <path d="M9 10l2 2l4-4" />
+    </g>
+  </svg>
+);
+
 interface SidebarItemProps {
   href: string;
   icon: React.ReactNode;
@@ -132,6 +148,11 @@ export function Sidebar() {
       href: '/platform/notifications',
       icon: <NotificationIcon className="h-[18px] w-[18px]" />,
       label: 'الاشعارات'
+    },
+    {
+      href: '/platform/daily',
+      icon: <TaskIcon className="h-5 w-5" />,
+      label: 'التقارير اليومية'
     },
     {
       href: '/platform/profile',

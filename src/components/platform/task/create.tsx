@@ -137,23 +137,23 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen ">
-            <div className='felx pl-[30rem] pb-4 flex-col items-start justify-start gap-2 -mt-10'>
-                <h3>مهمة جديدة</h3>
-                <p className='text-sm font-light mt-2'>
-                    لا يتحرك المرء نحو واجهة, انما يتحرك ليصنع واحدة
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className='flex flex-col items-start justify-start gap-2 mb-8'>
+                <h3 className="text-xl font-semibold">New Task</h3>
+                <p className='text-sm text-muted-foreground mt-2'>
+                    Create a new task for your project
                 </p>
             </div>
-            <Form  {...form}>
+            <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(handleSubmit)}
-                    className="w-full max-w-md flex flex-col justify-center items-center gap-6 -mt-40 relative h-full"
+                    className="w-full max-w-md flex flex-col justify-center items-center gap-6 relative h-full"
                 >
                     <Button
                         type='button'
                         size="icon"
                         variant='outline'
-                        className={`absolute top-1/2 left-[-10rem] transform -translate-y-1/2 rounded-full ${step === 1 ? 'opacity-50 pointer-events-none' : ''}`}
+                        className={`absolute top-1/2 left-[-4rem] transform -translate-y-1/2 rounded-full ${step === 1 ? 'opacity-50 pointer-events-none' : ''}`}
                         onClick={prevStep}
                     >
                         <Icon icon="ic:sharp-arrow-back" width={25} />
@@ -162,22 +162,33 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
                         type='button'
                         size="icon"
                         variant='outline'
-                        className={`absolute top-1/2 right-[-10rem] transform -translate-y-1/2 rounded-full ${step === 4 ? 'opacity-50 pointer-events-none' : ''}`}
+                        className={`absolute top-1/2 right-[-4rem] transform -translate-y-1/2 rounded-full ${step === 4 ? 'opacity-50 pointer-events-none' : ''}`}
                         onClick={nextStep}
                     >
                         <Icon icon="ic:sharp-arrow-forward" width={25} />
                     </Button>
+                    
+                    {/* Step indicators */}
+                    <div className="flex gap-2 mb-4">
+                        {[1, 2, 3, 4].map((stepNum) => (
+                            <div 
+                                key={stepNum}
+                                className={`w-2 h-2 rounded-full ${step === stepNum ? 'bg-black' : 'bg-gray-300'}`} 
+                            />
+                        ))}
+                    </div>
+                    
                     {step === 1 && (
                         <>
                             <FormField
                                 control={form.control}
                                 name="task"
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-full">
                                         <FormControl>
                                             <Input
-                                                className='w-72'
-                                                placeholder="العنوان" {...field} />
+                                                className='w-full'
+                                                placeholder="Task Title" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -187,11 +198,11 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
                                 control={form.control}
                                 name="desc"
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-full">
                                         <FormControl>
                                             <Input
-                                                className='h-20 w-72'
-                                                placeholder="الوصف" {...field} />
+                                                className='h-20 w-full'
+                                                placeholder="Description" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -205,25 +216,23 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
                                 control={form.control}
                                 name="project"
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-full">
                                         <FormControl>
                                             <Input
-                                                className='w-72'
-                                                placeholder="المشروع" {...field} />
+                                                className='w-full'
+                                                placeholder="Project Name" {...field} />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
                             <FormField
-
                                 control={form.control}
                                 name="duration"
                                 render={({ field }) => (
-                                    <FormItem>
+                                    <FormItem className="w-full">
                                         <FormControl>
                                             <EstTime
-
                                                 value={field.value}
                                                 onChange={(value) => form.setValue("duration", value)}
                                             />
@@ -240,7 +249,7 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
                                 control={form.control}
                                 name="club"
                                 render={() => (
-                                    <FormItem>
+                                    <FormItem className="w-full">
                                         <FormControl>
                                             <SelectPopover
                                                 items={clubs}
@@ -249,68 +258,101 @@ const Create: React.FC<CreateProps> = ({ onClose }) => {
                                                     setSelectedClub(item);
                                                     form.setValue("club", item?.value ?? "");
                                                 }}
-                                                label="+ الامانة"
+                                                placeholder="Select Department"
                                             />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}
                             />
-
-
+                            <FormField
+                                control={form.control}
+                                name="status"
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormControl>
+                                            <Status
+                                                value={field.value}
+                                                onChange={(value) => form.setValue("status", value)}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="priority"
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormControl>
+                                            <Priority
+                                                value={field.value}
+                                                onChange={(value) => form.setValue("priority", value)}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
                         </>
                     )}
                     {step === 4 && (
                         <>
-                            <div className="flex flex-row justify-between w-full">
-                                <FormField
-                                    control={form.control}
-                                    name="status"
-                                    render={({ field }) => (
-                                        <FormItem className="flex-1 mr-4">
-                                            <FormControl>
-                                                <Status
-                                                    status={field.value}
-                                                    setStatus={(status) => form.setValue("status", status)}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                                <FormField
-                                    control={form.control}
-                                    name="priority"
-                                    render={() => (
-                                        <FormItem className="flex-1 ml-4">
-                                            <FormControl>
-                                                <Priority
-                                                    priority={form.watch("priority")}
-                                                    setPriority={(priority) => form.setValue("priority", priority)}
-                                                />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                            </div>
-
-
-
-
+                            <FormField
+                                control={form.control}
+                                name="label"
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormControl>
+                                            <Input
+                                                className='w-full'
+                                                placeholder="Label" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="tag"
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormControl>
+                                            <Input
+                                                className='w-full'
+                                                placeholder="Tags" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="remark"
+                                render={({ field }) => (
+                                    <FormItem className="w-full">
+                                        <FormControl>
+                                            <Input
+                                                className='w-full'
+                                                placeholder="Remarks" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
                         </>
                     )}
-                    <div dir="ltr" className="absolute bottom-28">
-                        <Indicator totalSteps={4} currentStep={step} />
-
-                    </div>
-
-                    <Button
-                        type="submit"
-                        className="absolute bottom-10 mt-6 h-12 font-medium text-sm w-72"
-                    >
-                        انشاء مهمة
-                    </Button>
+                    {step === 4 && (
+                        <div className="w-full flex justify-center mt-4">
+                            <Button
+                                type='submit'
+                                className="bg-black text-white w-32 hover:bg-gray-800"
+                            >
+                                Create Task
+                            </Button>
+                        </div>
+                    )}
                 </form>
             </Form>
         </div>

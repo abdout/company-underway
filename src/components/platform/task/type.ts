@@ -4,7 +4,7 @@ export type task = {
   task: string;
   club: string;
   status: string;
-  prioity: string;
+  priority: string;
   duration: string;
   desc: string;
   label: string;

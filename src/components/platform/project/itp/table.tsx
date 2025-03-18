@@ -9,7 +9,7 @@ const Table = (props: { data: string[][] }) => {
           {row.map((cell, cellIndex) => (
             <td
               key={cellIndex}
-              style={{ width: widths[cellIndex] }} // Use the widths directly
+              style={{ width: widths[cellIndex] }}
               className={`border border-black p-1 overflow-hidden text-overflow-ellipsis ${cellIndex === 2 ? 'text-left px-4' : ''}`}
               dangerouslySetInnerHTML={{ __html: cell }}
             />

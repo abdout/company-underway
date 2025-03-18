@@ -4,14 +4,6 @@ import React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Toaster } from "@/components/ui/sonner"
-import { 
-  FileTextIcon, 
-  FileSpreadsheetIcon, 
-  FileTextSearchIcon,
-  FileInput,
-  Settings2,
-  FolderIcon
-} from "lucide-react"
 
 export default function FeatureLayout({
   children,
@@ -23,27 +15,22 @@ export default function FeatureLayout({
   const navItems = [
     {
       href: "/feature/invoice",
-      icon: <FileSpreadsheetIcon className="h-5 w-5" />,
       label: "Invoice Management"
     },
     {
       href: "/feature/timesheet",
-      icon: <FileTextIcon className="h-5 w-5" />,
       label: "Timesheet"
     },
     {
       href: "/feature/pdf-extractor",
-      icon: <FileTextSearchIcon className="h-5 w-5" />,
       label: "PDF Extractor"
     },
     {
       href: "/feature/report-generator",
-      icon: <FileInput className="h-5 w-5" />,
       label: "Report Generator"
     },
     {
       href: "/feature/document-library",
-      icon: <FolderIcon className="h-5 w-5" />,
       label: "Document Library"
     }
   ]
@@ -55,7 +42,6 @@ export default function FeatureLayout({
         <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <Settings2 className="h-6 w-6" />
               <span className="font-bold">Features</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -69,8 +55,7 @@ export default function FeatureLayout({
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {item.icon}
-                  <span className="ml-2">{item.label}</span>
+                  <span>{item.label}</span>
                 </Link>
               ))}
             </nav>

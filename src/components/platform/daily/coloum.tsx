@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'; // Import React and useEffect
+import React, { useEffect } from 'react';
 import { ColumnDef } from '@tanstack/react-table'
 import { MoreHorizontal, ArrowUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -12,45 +12,36 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-// import { Icon } from '@iconify/react';
-import { task } from '@/components/platform/task/type'
+import { daily } from '@/components/platform/daily/type'
 import Link from 'next/link'
-import { useTask } from '@/components/platform/task/context'
+import { useDaily } from '@/components/platform/daily/context'
 import Image from 'next/image'
 
-// TeamCell component to display team members with rounded images
-const TeamCell: React.FC = () => {
+// EngineerCell component to display user avatar
+const EngineerCell: React.FC<{ engineer: string }> = ({ engineer }) => {
   return (
-    <div className="flex -space-x-2">
-      <div className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-        <Image 
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=64" 
-          alt="Team member 1"
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
+    <div className="flex items-center gap-2">
+      <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white">
         <Image 
           src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=64" 
-          alt="Team member 2"
+          alt={engineer}
           fill
           className="object-cover"
         />
       </div>
+      <span>{engineer}</span>
     </div>
   );
 };
 
-const ActionsCell: React.FC<{ row: { original: task } }> = ({ row }) => {
-  const { refreshTasks, tasks, deleteTask } = useTask();
+const ActionsCell: React.FC<{ row: { original: daily } }> = ({ row }) => {
+  const { refreshDailyReports, dailyReports, deleteDaily } = useDaily();
   
   useEffect(() => {
-    refreshTasks();
-    console.log(tasks);
-  }, []);
+    refreshDailyReports();
+  }, [refreshDailyReports]);
 
-  const task = row.original;
+  const report = row.original;
 
   return (
     <div className="flex justify-center">
@@ -65,17 +56,17 @@ const ActionsCell: React.FC<{ row: { original: task } }> = ({ row }) => {
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            onClick={() => navigator.clipboard.writeText(task._id)}
+            onClick={() => navigator.clipboard.writeText(report._id)}
           >
             Copy ID
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link href={`/task/${task._id}`}>
+            <Link href={`/daily/${report._id}`}>
               View Details
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>Archive</DropdownMenuItem>
-          <DropdownMenuItem onClick={() => task._id && deleteTask(task._id)}>Delete</DropdownMenuItem> 
+          <DropdownMenuItem onClick={() => report._id && deleteDaily(report._id)}>Delete</DropdownMenuItem> 
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
@@ -88,10 +79,10 @@ interface StatusCircleProps {
 
 const StatusCircle: React.FC<StatusCircleProps> = ({ status }) => {
   const statusColors: { [key: string]: string } = {
-      'Neutral': 'bg-gray-400',
+      'Not Started': 'bg-gray-400',
       'In Progress': 'bg-yellow-400',
       'Completed': 'bg-green-400',
-      'Stopped': 'bg-red-400',
+      'Blocked': 'bg-red-400',
   }; 
   const colorClass = statusColors[status] || 'bg-gray-400'; // Default color
 
@@ -106,10 +97,10 @@ interface PriorityCircleProps {
 
 const PriorityCircle: React.FC<PriorityCircleProps> = ({ priority }) => {
   const priorityColors: { [key: string]: string } = {
-      'Neutral': 'bg-gray-400',
       'Low': 'bg-blue-400',
       'Medium': 'bg-yellow-400',
-      'High': 'bg-red-400',
+      'High': 'bg-orange-400',
+      'Critical': 'bg-red-400',
   }; 
   const colorClass = priorityColors[priority] || 'bg-gray-400'; // Default color
 
@@ -118,10 +109,22 @@ const PriorityCircle: React.FC<PriorityCircleProps> = ({ priority }) => {
   );
 };
 
+// Progress bar component for completion percentage
+const ProgressBar: React.FC<{ percentage: string }> = ({ percentage }) => {
+  const percent = parseInt(percentage) || 0;
+  return (
+    <div className="w-full bg-gray-200 rounded-full h-2.5">
+      <div 
+        className="bg-blue-600 h-2.5 rounded-full" 
+        style={{ width: `${percent}%` }}
+      ></div>
+    </div>
+  );
+};
 
-export const columns: ColumnDef<task>[] = [
+export const columns: ColumnDef<daily>[] = [
   {
-    accessorKey: 'task',
+    accessorKey: 'date',
     header: ({ column }) => {
       return (
         <Button
@@ -129,31 +132,35 @@ export const columns: ColumnDef<task>[] = [
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
-          Task
+          Date
           <ArrowUpDown className='ml-2 h-4 w-4' />
         </Button>
       )
     }
+  },
+  {
+    accessorKey: 'title',
+    header: ({ column }) => {
+      return (
+        <Button
+          className='p-0 m-0'
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          Title
+          <ArrowUpDown className='ml-2 h-4 w-4' />
+        </Button>
+      )
+    }
+  },
+  {
+    accessorKey: 'engineer',
+    header: () => <div>Engineer</div>,
+    cell: ({ row }) => <EngineerCell engineer={row.getValue('engineer')} />
   },
   {
     accessorKey: 'project',
-    header: ({ column }) => {
-      return (
-        <Button
-          className='p-0 m-0'
-          variant='ghost'
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        >
-          Project
-          <ArrowUpDown className='ml-2 h-4 w-4' />
-        </Button>
-      )
-    }
-  },
-  {
-    accessorKey: 'club',
-    header: () => <div>Team</div>,
-    cell: () => <TeamCell />
+    header: () => <div>Project</div>,
   },
   {
     accessorKey: 'status',
@@ -173,24 +180,30 @@ export const columns: ColumnDef<task>[] = [
             <PriorityCircle priority={row.getValue('priority')} />
             <span>{row.getValue('priority')}</span>
         </div>
-    ),    
+    ),
   },
   {
-    accessorKey: 'duration',
-    header: () => <div className="text-center">Duration</div>,
+    accessorKey: 'hoursSpent',
+    header: () => <div className="text-center">Hours</div>,
     cell: ({ row }) => (
         <div className="flex justify-center w-full">
-            <span>{row.getValue('duration')} hr</span>
+            <span>{row.getValue('hoursSpent')} hrs</span>
         </div>
     ),
   },
   {
-    accessorKey: 'remark',
-    header: () => <div>Remarks</div>,
+    accessorKey: 'completionPercentage',
+    header: () => <div>Progress</div>,
+    cell: ({ row }) => (
+        <div className="w-full px-2">
+            <ProgressBar percentage={row.getValue('completionPercentage')} />
+            <div className="text-xs text-right mt-1">{row.getValue('completionPercentage')}%</div>
+        </div>
+    ),
   },
   {
     id: 'actions',
     header: () => <div className="text-center">Action</div>,
     cell: ActionsCell
   }
-]
+] 

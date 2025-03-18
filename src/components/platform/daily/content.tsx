@@ -31,11 +31,10 @@ import { Input } from '@/components/ui/input'
 import { DataTableFacetedFilter } from '@/components/data-table/data-table-faceted-filter'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
 import { useFilter } from './filter'
-// import { ShadcnDailog } from '@/components/atom/dailog'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { Icon } from '@iconify/react'
 import { useModal } from '@/components/atom/modal/context'
-import Create from '@/components/platform/task/create'
+import Create from '@/components/platform/daily/create'
 import Modal from '@/components/atom/modal/modal'
 
 interface DataTableProps<TData, TValue> {
@@ -47,10 +46,9 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    gender: false,
-    dob: false,
     priority: false,
-    remark: false,
+    blockers: false,
+    plannedTomorrow: false
   })
   const [rowSelection, setRowSelection] = useState({})
   const [page, setPage] = useState(0)
@@ -79,14 +77,10 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
 
   const statusOptions = useFilter('status')
   const priorityOptions = useFilter('priority')
+  const projectOptions = useFilter('project')
   const statusColumn = table.getColumn('status')
   const priorityColumn = table.getColumn('priority')
-
-  // const [ setOpen] = useState(false)
-
-  // const handleClose = () => {
-  //   setOpen(false)
-  // }
+  const projectColumn = table.getColumn('project')
 
   useEffect(() => {
     setPage(0)
@@ -128,15 +122,15 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
     <>
       {modal.open && modal.id === null && <Modal content={<Create onClose={handleCloseModal} />} />}
       
-      {/* Filters and Add Task Button */}
+      {/* Filters and Add Daily Report Button */}
       <div className='flex flex-wrap items-center justify-between gap-2 md:gap-4 py-4'>
         <div className='flex flex-wrap items-center gap-2 md:gap-4'>
           {/* Search Input */}
           <Input
-            placeholder='Search by task name...'
-            value={(table.getColumn('task')?.getFilterValue() as string) ?? ''}
+            placeholder='Search by title...'
+            value={(table.getColumn('title')?.getFilterValue() as string) ?? ''}
             onChange={(event) =>
-              table.getColumn('task')?.setFilterValue(event.target.value)
+              table.getColumn('title')?.setFilterValue(event.target.value)
             }
             className='w-[200px]'
           />
@@ -162,13 +156,13 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                       }}
                     />
                   )}
-                  {priorityColumn && (
+                  {projectColumn && (
                     <DataTableFacetedFilter
-                      column={priorityColumn}
-                      title='Priority'
-                      options={priorityOptions}
+                      column={projectColumn}
+                      title='Project'
+                      options={projectOptions}
                       onFilterChange={(filterValue) => {
-                        priorityColumn.setFilterValue(filterValue)
+                        projectColumn.setFilterValue(filterValue)
                       }}
                     />
                   )}
@@ -236,7 +230,7 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                 </DropdownMenuContent>
               </DropdownMenu>
             )}
-            {priorityColumn && (
+            {projectColumn && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button 
@@ -244,8 +238,8 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                     className="h-9 px-3 gap-2 reveal"
                   >
                     <Icon icon="lucide:filter" className="size-3" />
-                    Priority
-                    {!!priorityColumn?.getFilterValue() && (
+                    Project
+                    {!!projectColumn?.getFilterValue() && (
                       <span className="ml-1 rounded-full bg-primary/10 px-1.5 text-xs font-medium">
                         1
                       </span>
@@ -254,11 +248,11 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                   <DataTableFacetedFilter
-                    column={priorityColumn}
-                    title='Priority'
-                    options={priorityOptions}
+                    column={projectColumn}
+                    title='Project'
+                    options={projectOptions}
                     onFilterChange={(filterValue) => {
-                      priorityColumn.setFilterValue(filterValue);
+                      projectColumn.setFilterValue(filterValue);
                     }}
                   />
                 </DropdownMenuContent>
@@ -298,7 +292,7 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Add Task Button */}
+            {/* Add Daily Report Button */}
             <Button 
               variant="outline"
               className="h-9 w-9 rounded-full flex items-center justify-center p-0 mx-1.5"
@@ -371,4 +365,4 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
       </div>
     </>
   )
-}
+} 

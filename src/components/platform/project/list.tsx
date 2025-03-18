@@ -6,6 +6,7 @@ import ProjectDialog from "./home/dialog";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { Project } from '@/components/platform/project/project';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 
 const ProjectList: React.FC = () => {
   console.log("ProjectList: Component rendering");
@@ -69,31 +70,33 @@ const ProjectList: React.FC = () => {
       />
       
       {projects.map((t: Project) => (
-        <div
+        <Card
           key={t._id}
-          className="p-6 border m-5 w-[12rem] flex flex-col items-start  hover:border-black relative"
+          className={`border border-gray-400 hover:border-black m-5 w-[14rem] h-48 relative ${contextMenu.projectID === t._id ? 'opacity-20' : ''}`}
           onContextMenu={(e) => {
             if (t._id) {
               handleRightClick(e, t._id);
             }
           }}
         >
-          <div className={`${contextMenu.projectID === t._id ? 'opacity-20' : ''}`}>
-            <Link href={`/project/${t._id}`}>
-              <div>
-                <h1>{t.customer}</h1>
-                <h3>{t.location ? t.location : <span className="opacity-50">Location</span>}</h3>
-                <div className="flex gap-2 ml-[-6px] items-center mt-2 my-1">
+          <Link href={`/project/${t._id}`} >
+            <CardHeader>
+              <strong className="font-heading text-2xl">{t.customer}</strong>
+              <p className="line-clamp-1 overflow-hidden text-ellipsis">
+                {t.location ? t.location : <span className="opacity-50">Location</span>}
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-2 -ml-1 items-center -mt-2">
                 <Icon icon="material-symbols-light:bookmark-sharp" width={25}/>
-                  <h4>Osman</h4>
-                </div>
-                <div className="flex gap-4 items-center">
-                  <div className="rounded-full bg-green-600 w-[16px] h-[16px] md:w-[14px] md:h-[14px]"></div>
-                  <h4 className="md:text-[15px]">Done</h4>
-                </div>
+                <p>Osman</p>
               </div>
-            </Link>
-          </div>
+            </CardContent>
+            <CardFooter className="flex gap-4 items-center -mt-5">
+              <div className="rounded-full bg-green-600 w-4 h-4"></div>
+              <p>Done</p>
+            </CardFooter>
+          </Link>
 
           {contextMenu.projectID === t._id && (
             <div
@@ -109,11 +112,11 @@ const ProjectList: React.FC = () => {
               </button>
             </div>
           )}
-        </div>
+        </Card>
       ))}
 
       <button
-        className="p-6 border m-5  w-[12rem]  flex flex-col items-center justify-center hover:border-black opacity-70 hover:opacity-100"
+        className="p-6 border m-5  w-[14rem]  rounded-xl flex flex-col items-center justify-center hover:border-black opacity-70 hover:opacity-100"
         onClick={() => handleOpenDialog(null)}
       >
         <Icon icon="ph:plus-thin" width={70} />

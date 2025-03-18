@@ -44,42 +44,44 @@ const Activity: React.FC<IndexProps> = ({ params, option, index }) => {
   ).filter(Boolean);
 
   return (
-    <div className="flex flex-col">
-      <Header />
-      
-      {labels.map((label, labelIndex) => (
+    <div className="flex justify-center w-full">
+      <div style={{ transform: 'scale(0.85)', width: '1239px' }}>
+        <Header />
+        
+        {labels.map((label, labelIndex) => (
+          <Cell
+            key={labelIndex}
+            data={`${index + labelIndex}. ${label} PRECOMMISSIONING TEST`}
+            head={true}
+            bg={2}
+            alian={true}
+            end={true}
+            width="1239"
+          />
+        ))}
+        
+        <Cell data="DOCUMENT REVIEW" alian={true} end={true} width="1239"/>
+        
+        <Table data={Document}/>
+        
         <Cell
-          key={labelIndex}
-          data={`${index + labelIndex}. ${label} PRECOMMISSIONING TEST`}
-          head={true}
-          bg={2}
+          data="PRECOMMISSIONING TEST"
           alian={true}
           end={true}
+          top={false}
           width="1239"
         />
-      ))}
-      
-      <Cell data="DOCUMENT REVIEW" alian={true} end={true} width="1239"/>
-      
-      <Table data={Document}/>
-      
-      <Cell
-        data="PRECOMMISSIONING TEST"
-        alian={true}
-        end={true}
-        top={false}
-        width="1239"
-      />
-      
-      <SubActivity params={unwrappedParams} option={option} />
-      <Cell
-        data="FINAL ACCEPTANCE"
-        alian={true}
-        end={true}
-        top={false}
-        width="1239"
-      />
-      <Table data={Accept} />
+        
+        <SubActivity params={unwrappedParams} option={option} />
+        <Cell
+          data="FINAL ACCEPTANCE"
+          alian={true}
+          end={true}
+          top={false}
+          width="1239"
+        />
+        <Table data={Accept} />
+      </div>
     </div>
   );
 };

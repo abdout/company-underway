@@ -1,35 +1,38 @@
 import { FC } from 'react';
 
 interface PriorityProps {
-  priority: string;
-  setPriority: (priority: string) => void;
+  value: string;
+  onChange: (value: string) => void;
 }
 
-type Option = 'محايد' | 'منخفض' | 'متوسط' | 'عالي';
+type Option = 'Neutral' | 'Low' | 'Medium' | 'High';
 
-const Priority: FC<PriorityProps> = ({ priority, setPriority }) => {
-  const options: Option[] = ['محايد', 'منخفض', 'متوسط', 'عالي'];
+const Priority: FC<PriorityProps> = ({ value, onChange }) => {
+  const options: Option[] = ['Neutral', 'Low', 'Medium', 'High'];
   const colors: Record<Option, string> = {
-    'محايد': 'bg-gray-400',
-    'منخفض': 'bg-green-400',
-    'متوسط': 'bg-yellow-400',
-    'عالي': 'bg-red-400'
+    'Neutral': 'bg-gray-400',
+    'Low': 'bg-blue-400',
+    'Medium': 'bg-yellow-400',
+    'High': 'bg-red-400'
   };
 
   return (
-    <div>
-      {options.map((option) => (
-        <div 
-          key={option} 
-          onClick={() => setPriority(option)}
-          className={`flex items-center cursor-pointer gap-3 ${priority === option ? 'opacity-100' : 'opacity-50'}`}
-        >
-          <span 
-            className={`inline-block w-4 h-4 rounded-full mr-3 ${colors[option]}`}
-          />
-          {option}
-        </div>
-      ))}
+    <div className="w-full p-2 border rounded-md">
+      <div className="mb-2 text-sm text-muted-foreground">Priority</div>
+      <div className="space-y-2">
+        {options.map((option) => (
+          <div 
+            key={option} 
+            onClick={() => onChange(option)}
+            className={`flex items-center cursor-pointer p-2 rounded-md hover:bg-slate-50 ${value === option ? 'bg-slate-100' : ''}`}
+          >
+            <span 
+              className={`inline-block w-4 h-4 rounded-full mr-3 ${colors[option]}`}
+            />
+            {option}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
