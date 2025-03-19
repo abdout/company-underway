@@ -23,66 +23,46 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Extract the fields needed for project model
+    // Extract fields that match the project model
     const { 
-      // Original fields directly mapped to new schema
-      customer, 
+      projectName,
       description,
       location, 
       consultant, 
       client, 
       status,
-      voltages,
-      lvOptions,
-      mvOptions,
-      hvOptions,
-      evOptions,
+      team,
+      teamLead,
+      systems,
+      activities,
+      mobilization,
+      accommodation,
+      kits,
+      cars,
       // Legacy fields for backward compatibility
       title,
       desc
     } = body;
     
-    console.log('Project API route: Creating project with data', { 
-      customer,
-      location,
-      consultant,
-      client,
-      status
-    });
+    console.log('Project API route: Creating project with data');
 
     try {
-      // Handle different formats of voltages (array or object)
-      let voltagesObj = { LV: false, MV: false, HV: false, EV: false };
-      
-      if (Array.isArray(voltages)) {
-        // If voltages is an array of strings like ['LV', 'MV']
-        voltagesObj = {
-          LV: voltages.includes('LV'),
-          MV: voltages.includes('MV'),
-          HV: voltages.includes('HV'),
-          EV: voltages.includes('EV')
-        };
-      } else if (typeof voltages === 'object' && voltages !== null) {
-        // If voltages is already an object like { LV: true, MV: false, ... }
-        voltagesObj = {
-          ...voltagesObj, // Default values
-          ...voltages // Override with provided values
-        };
-      }
-      
-      // Create project in the database with new schema fields
+      // Create project using fields that match the schema
       const projectData = { 
-        customer: customer || title, // Use customer, fallback to title for backward compatibility
-        description: description || desc || `Project for ${customer || title}`,
+        title: projectName || title, // Use projectName, fallback to title
+        description: description || desc || `Project created at ${new Date().toLocaleString()}`,
         location: location || "",
         consultant: consultant || "",
         client: client || "",
-        status: status || "Active",
-        voltages: voltagesObj,
-        lvOptions: lvOptions || {},
-        mvOptions: mvOptions || {},
-        hvOptions: hvOptions || {},
-        evOptions: evOptions || {}
+        status: status || "Draft",
+        team: Array.isArray(team) ? team : [],
+        teamLead: teamLead || "",
+        systems: Array.isArray(systems) ? systems : [],
+        activities: Array.isArray(activities) ? activities : [],
+        mobilization: mobilization || "",
+        accommodation: accommodation || "",
+        kits: Array.isArray(kits) ? kits : [],
+        cars: Array.isArray(cars) ? cars : [],
       };
       
       console.log('Project API route: Project data to save', projectData);
@@ -110,9 +90,28 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  await connectDB();
-  const projects = await Project.find() as unknown[];
-  return NextResponse.json({ projects });
+  try {
+    console.log('Project API route: Attempting to connect to database');
+    await connectDB();
+    console.log('Project API route: Connected to database, fetching projects');
+    
+    try {
+      const projects = await Project.find({}).lean();
+      console.log(`Project API route: Successfully fetched ${projects.length} projects`);
+      return NextResponse.json({ projects: projects || [] });
+    } catch (findError) {
+      console.error('Project API route: Error finding projects', findError);
+      // Return empty projects array instead of an error to prevent client-side crashes
+      return NextResponse.json({ projects: [], error: 'Database query error, returning empty results' });
+    }
+  } catch (error) {
+    console.error('Project API route: Error connecting to database or fetching projects', error);
+    // Return empty projects array instead of an error to prevent client-side crashes
+    return NextResponse.json({ 
+      projects: [], 
+      error: 'Database connection error, returning empty results'
+    });
+  }
 }
 
 export async function DELETE(request: NextRequest) {

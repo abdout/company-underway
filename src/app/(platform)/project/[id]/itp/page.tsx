@@ -1,48 +1,35 @@
-"use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { usePDF } from "react-to-pdf";
 import { useProject } from "@/provider/project";
-import Index from "@/components/platform/project/itp/index";
+import IndexTable from "@/components/platform/project/itp/index-table";
 import ActivityWrapper from "@/components/platform/project/itp/warpper";
 import Action from "@/components/platform/project/layout/action";
+import { SystemType } from "@/components/platform/project/constant";
+import { getProject } from "@/components/platform/project/actions";
 
-interface Params {
-  id: string;
+interface PageProps {
+  params: {
+    id: string;
+  };
 }
 
-const ITP = ({ params }: { params: Params | Promise<Params> }) => {
-  // Properly unwrap params using React.use() for Next.js 15
-  const unwrappedParams = params instanceof Promise ? React.use(params) : params;
-  const id = unwrappedParams.id;
+export default async function ITP({ params }: PageProps) {
+  const { success, data: project } = await getProject(params.id);
+  
+  if (!success || !project) {
+    return <div>Project not found</div>;
+  }
 
-  const { project, fetchProject } = useProject();
-  const loadedProjectId = useRef<string | null>(null);
-
-  useEffect(() => {
-    // Prevent re-fetching if we already have the project data for this ID
-    if (project && project._id === id && loadedProjectId.current === id) {
-      console.log("ITP page: Project already loaded for this ID, skipping fetch");
-      return;
-    }
-    
-    console.log("ITP page: Fetching project with ID", id);
-    fetchProject(id);
-    loadedProjectId.current = id;
-  }, [id, fetchProject, project]);
-
-  const { toPDF, targetRef } = usePDF({
-    filename: `${project?.customer} ITP.pdf`,
-  });
+  const serializedProject = JSON.parse(JSON.stringify(project));
+  const systems = serializedProject.systems as SystemType[];
   
   return (
     <div className="flex flex-col gap-8 mb-10">
-      <Action projectTitle={project?.customer || ""} toPDF={toPDF} />
-      <div ref={targetRef} className="space-y-8">
-        <Index params={unwrappedParams} />
-        <ActivityWrapper params={unwrappedParams} />
+      <Action projectTitle={serializedProject?.customer || ""} />
+      <div className="space-y-8">
+        <IndexTable systems={systems} />
+        <ActivityWrapper />
       </div>
     </div>
   );
-};
-
-export default ITP;
+}

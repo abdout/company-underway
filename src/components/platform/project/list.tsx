@@ -1,23 +1,63 @@
 "use client";
-import { useProject } from "@/provider/project";
 import React, { useState, useEffect } from "react";
-import Delete from "./home/crud/delete";
-import ProjectDialog from "./home/dialog";
-import Link from "next/link";
+import { ProjectDialog } from "./home/dialog";
 import { Icon } from "@iconify/react";
-import { Project } from '@/components/platform/project/project';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Project } from './types';
+import { getProjects } from './actions';
+import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
+import ProjectCreateForm from './form';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import ProjectCard from './card';
 
 const ProjectList: React.FC = () => {
   console.log("ProjectList: Component rendering");
-  const { projects } = useProject();
-  console.log("ProjectList: Loaded projects:", projects?.length || 0);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
   
   // Local state for dialog
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingProjectId, setEditingProjectId] = useState<string | null>(null);
-
   const [contextMenu, setContextMenu] = useState<{ x: number, y: number, projectID: string | null }>({ x: 0, y: 0, projectID: null });
+
+  // Fetch projects
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        console.log("ProjectList: Fetching projects...");
+        const result = await getProjects();
+        console.log("ProjectList: Server action response:", result);
+        
+        if (result.success && result.data) {
+          console.log("ProjectList: Projects fetched successfully:", result.data);
+          console.log("ProjectList: Number of projects:", result.data.length);
+          setProjects(result.data as unknown as Project[]);
+        } else {
+          console.error("ProjectList: Failed to fetch projects:", result.message);
+          toast.error(result.message || 'Failed to fetch projects');
+        }
+      } catch (error) {
+        console.error("ProjectList: Error fetching projects:", error);
+        console.error("ProjectList: Error details:", {
+          name: error instanceof Error ? error.name : 'Unknown',
+          message: error instanceof Error ? error.message : String(error),
+          stack: error instanceof Error ? error.stack : 'No stack trace'
+        });
+        toast.error('An error occurred while fetching projects');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  // Log when projects state changes
+  useEffect(() => {
+    console.log("ProjectList: Projects state updated:", projects);
+  }, [projects]);
 
   useEffect(() => {
     console.log("ProjectList: Dialog state changed", { dialogOpen, editingProjectId });
@@ -55,6 +95,14 @@ const ProjectList: React.FC = () => {
     }
   }, [projectToEdit]);
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+      </div>
+    );
+  }
+
   return (
     <>
       <ProjectDialog 
@@ -68,59 +116,34 @@ const ProjectList: React.FC = () => {
         }}
         projectToEdit={projectToEdit} 
       />
-      
-      {projects.map((t: Project) => (
-        <Card
-          key={t._id}
-          className={`border border-gray-400 hover:border-black m-5 w-[14rem] h-48 relative ${contextMenu.projectID === t._id ? 'opacity-20' : ''}`}
-          onContextMenu={(e) => {
-            if (t._id) {
-              handleRightClick(e, t._id);
-            }
-          }}
-        >
-          <Link href={`/project/${t._id}`} >
-            <CardHeader>
-              <strong className="font-heading text-2xl">{t.customer}</strong>
-              <p className="line-clamp-1 overflow-hidden text-ellipsis">
-                {t.location ? t.location : <span className="opacity-50">Location</span>}
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="flex gap-2 -ml-1 items-center -mt-2">
-                <Icon icon="material-symbols-light:bookmark-sharp" width={25}/>
-                <p>Osman</p>
-              </div>
-            </CardContent>
-            <CardFooter className="flex gap-4 items-center -mt-5">
-              <div className="rounded-full bg-green-600 w-4 h-4"></div>
-              <p>Done</p>
-            </CardFooter>
-          </Link>
 
-          {contextMenu.projectID === t._id && (
-            <div
-              className="absolute top-0 left-0 w-full h-full flex flex-row justify-center items-center space-x-4 p-8 bg-white bg-opacity-50 "
-              onMouseLeave={handleCloseContextMenu}
-            >
-              <Delete id={contextMenu.projectID} />
-              <button
-                onClick={() => t._id && handleOpenDialog(t._id)}
-                className="flex gap-4 opacity-75 hover:opacity-100"
-              >
-                <Icon icon="icon-park-solid:edit" width={40} />
-              </button>
-            </div>
-          )}
-        </Card>
-      ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {projects.map((project: Project) => (
+          <ProjectCard
+            key={project._id}
+            project={project}
+            contextMenu={contextMenu}
+            onRightClick={handleRightClick}
+            onCloseContextMenu={handleCloseContextMenu}
+            onOpenDialog={handleOpenDialog}
+          />
+        ))}
 
-      <button
-        className="p-6 border m-5  w-[14rem]  rounded-xl flex flex-col items-center justify-center hover:border-black opacity-70 hover:opacity-100"
-        onClick={() => handleOpenDialog(null)}
-      >
-        <Icon icon="ph:plus-thin" width={70} />
-      </button>
+        <div className="h-48">
+          <button
+            className="w-full h-full p-6 border rounded-xl flex flex-col items-center justify-center hover:border-black opacity-70 hover:opacity-100"
+            onClick={() => setIsCreateDialogOpen(true)}
+          >
+            <Icon icon="ph:plus-thin" width={70} />
+          </button>
+        </div>
+      </div>
+
+      <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+        <DialogContent className="max-w-full h-screen p-0 overflow-hidden">
+          <ProjectCreateForm onSuccess={() => setIsCreateDialogOpen(false)} />
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

@@ -42,11 +42,44 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const fetchProjects = async () => {
     try {
+      console.log('Context: Fetching projects');
       const res = await fetch(`/api/project`);
-      const data = await res.json();
-      setProjects(data.projects);
+      
+      if (!res.ok) {
+        console.error(`Context: Error fetching projects: ${res.status} ${res.statusText}`);
+        setProjects([]);
+        return;
+      }
+      
+      const text = await res.text();
+      if (!text) {
+        console.error('Context: Empty response received from server');
+        setProjects([]);
+        return;
+      }
+      
+      try {
+        const data = JSON.parse(text);
+        if (data && Array.isArray(data.projects)) {
+          console.log(`Context: Successfully fetched ${data.projects.length} projects`);
+          setProjects(data.projects);
+        } else {
+          console.error('Context: Invalid projects data format:', data);
+          setProjects([]);
+        }
+        
+        // If there was an error message but we still got some data
+        if (data.error) {
+          console.warn('Context: Server returned warning:', data.error);
+        }
+      } catch (parseError) {
+        console.error('Context: Failed to parse JSON response:', parseError);
+        console.error('Context: Raw response:', text);
+        setProjects([]);
+      }
     } catch (error) {
-      console.error('Failed to fetch projects:', error);
+      console.error('Context: Failed to fetch projects:', error);
+      setProjects([]);
     }
   };
 

@@ -3,92 +3,58 @@
 import connectDB from "@/lib/mongodb";
 import Project from "@/components/platform/project/model";
 import { revalidatePath } from "next/cache";
+import { SystemType } from "@/components/platform/project/constant";
 
 export type ProjectData = {
-  // Original fields from the form
-  customer: string;
+  // Basic Information
+  title: string;
+  description: string;
   location: string;
-  consultant: string;
   client: string;
-  voltages: string[] | { [key: string]: boolean };
-  lvOptions: any;
-  mvOptions: any;
-  hvOptions: any;
-  evOptions: any;
-  // Model fields
-  title?: string;
-  desc?: string;
-  club?: string;
-  status?: string;
-  readme?: string;
-  roadmap?: string;
-  task?: string;
-  contributor?: string;
-  material?: string;
-  chat?: string;
+  consultant: string;
+  status: "Draft" | "Active" | "Completed" | "On Hold";
+  
+  // Team Information
+  team: string[];
+  teamLead: string;
+  
+  // Systems and Activities
+  systems: SystemType[];
+  activities: Array<{
+    system: SystemType;
+    category: string;
+    subcategory: string;
+    activity: string;
+  }>;
+  
+  // Resources
+  mobilization?: string;
+  accommodation?: string;
+  kits?: string[];
+  cars?: string[];
+  
+  // Additional Fields
+  startDate?: Date;
+  endDate?: Date;
 };
 
 export async function createProject(data: ProjectData) {
-  console.log('Server Action: Creating project with data', data);
-  
   try {
-    // Connect to database
-    console.log('Server Action: Attempting to connect to database');
     await connectDB();
-    console.log('Server Action: Database connection successful');
     
-    // Handle different formats of voltages (array or object)
-    let voltagesObj = { LV: false, MV: false, HV: false, EV: false };
+    const project = await Project.create(data);
     
-    if (Array.isArray(data.voltages)) {
-      // If voltages is an array of strings like ['LV', 'MV']
-      voltagesObj = {
-        LV: data.voltages.includes('LV'),
-        MV: data.voltages.includes('MV'),
-        HV: data.voltages.includes('HV'),
-        EV: data.voltages.includes('EV')
-      };
-    } else if (typeof data.voltages === 'object') {
-      // If voltages is already an object like { LV: true, MV: false, ... }
-      voltagesObj = {
-        ...voltagesObj, // Default values
-        ...data.voltages // Override with provided values
-      };
-    }
-    
-    // Create project data object with new schema
-    const projectData = { 
-      customer: data.customer,
-      description: data.desc || `Project for ${data.customer}`,
-      location: data.location || "",
-      consultant: data.consultant || "",
-      client: data.client || "",
-      status: data.status || "Active",
-      voltages: voltagesObj,
-      lvOptions: data.lvOptions,
-      mvOptions: data.mvOptions,
-      hvOptions: data.hvOptions,
-      evOptions: data.evOptions
-    };
-    
-    console.log('Server Action: Project data to save', projectData);
-    const newProject = await Project.create(projectData);
-    console.log('Server Action: Project created successfully', newProject);
-    
-    // Revalidate the projects page to reflect new data
     revalidatePath('/project');
     
-    return { 
-      success: true, 
-      message: "Project Created", 
-      project: JSON.parse(JSON.stringify(newProject)) 
+    return {
+      success: true,
+      project
     };
   } catch (error) {
-    console.error('Server Action: Error creating project', error);
-    return { 
-      success: false, 
-      message: "Failed to create project", 
-      error: error instanceof Error ? error.message : String(error) 
+    console.error('Error creating project:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Failed to create project'
     };
   }
 }
@@ -96,17 +62,50 @@ export async function createProject(data: ProjectData) {
 export async function getProjects() {
   try {
     await connectDB();
-    const projects = await Project.find();
-    return { 
-      success: true, 
-      projects: JSON.parse(JSON.stringify(projects)) 
+    
+    const projects = await Project.find({}).sort({ createdAt: -1 });
+    
+    return {
+      success: true,
+      projects
     };
   } catch (error) {
-    console.error('Server Action: Error getting projects', error);
-    return { 
-      success: false, 
-      message: "Failed to get projects", 
-      error: error instanceof Error ? error.message : String(error) 
+    console.error('Error fetching projects:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Failed to fetch projects'
+    };
+  }
+}
+
+export async function updateProject(id: string, data: Partial<ProjectData>) {
+  try {
+    await connectDB();
+    
+    const project = await Project.findByIdAndUpdate(
+      id,
+      { $set: data },
+      { new: true }
+    );
+    
+    if (!project) {
+      return {
+        success: false,
+        message: 'Project not found'
+      };
+    }
+    
+    revalidatePath('/project');
+    
+    return {
+      success: true,
+      project
+    };
+  } catch (error) {
+    console.error('Error updating project:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Failed to update project'
     };
   }
 }
@@ -114,15 +113,27 @@ export async function getProjects() {
 export async function deleteProject(id: string) {
   try {
     await connectDB();
-    await Project.findByIdAndDelete(id);
+    
+    const project = await Project.findByIdAndDelete(id);
+    
+    if (!project) {
+      return {
+        success: false,
+        message: 'Project not found'
+      };
+    }
+    
     revalidatePath('/project');
-    return { success: true, message: "Project deleted" };
+    
+    return {
+      success: true,
+      message: 'Project deleted successfully'
+    };
   } catch (error) {
-    console.error('Server Action: Error deleting project', error);
-    return { 
-      success: false, 
-      message: "Failed to delete project", 
-      error: error instanceof Error ? error.message : String(error) 
+    console.error('Error deleting project:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Failed to delete project'
     };
   }
 } 

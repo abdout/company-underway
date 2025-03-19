@@ -1,0 +1,217 @@
+'use server';
+
+import { revalidatePath } from 'next/cache';
+import connectDB from '@/lib/mongodb';
+import Project from './model';
+import { ProjectFormValues } from './valid';
+import { auth } from '@/auth';
+import { Project as ProjectType } from './types';
+
+export async function createProject(data: ProjectFormValues) {
+  console.log('=== Server Action: createProject ===');
+  console.log('Received data:', JSON.stringify(data, null, 2));
+  
+  try {
+    // Check authentication
+    const session = await auth();
+    if (!session?.user) {
+      console.error('Authentication failed: No user session');
+      return { success: false, message: 'Authentication required' };
+    }
+    
+    console.log('Attempting to connect to database...');
+    await connectDB();
+    console.log('Database connection successful');
+    
+    console.log('Creating project with data:', JSON.stringify(data, null, 2));
+    const project = await Project.create({
+      customer: data.customer,
+      description: data.description,
+      location: data.location,
+      client: data.client,
+      consultant: data.consultant,
+      status: data.status,
+      priority: data.priority,
+      phase: data.phase,
+      team: data.team,
+      teamLead: data.teamLead,
+      systems: data.systems,
+      activities: data.activities,
+      mobilization: data.mobilization,
+      accommodation: data.accommodation,
+      kits: data.kits,
+      cars: data.cars,
+      startDate: data.startDate,
+      endDate: data.endDate,
+    });
+    console.log('Project created successfully:', JSON.stringify(project, null, 2));
+
+    console.log('Revalidating project path...');
+    revalidatePath('/project');
+    console.log('Path revalidation complete');
+    
+    return { success: true, data: project };
+  } catch (error: any) {
+    console.error('Error in createProject:', {
+      name: error?.name || 'Unknown',
+      message: error?.message || 'No error message',
+      stack: error?.stack || 'No stack trace',
+      code: error?.code,
+      keyPattern: error?.keyPattern,
+      keyValue: error?.keyValue
+    });
+
+    // Handle specific MongoDB errors
+    if (error?.code === 11000) {
+      return { success: false, message: 'A project with this name already exists' };
+    }
+    
+    if (error?.name === 'ValidationError') {
+      return { success: false, message: 'Invalid project data provided' };
+    }
+
+    return { 
+      success: false, 
+      message: error?.message || 'Failed to create project',
+      details: error?.code ? `Error code: ${error.code}` : undefined
+    };
+  }
+}
+
+export async function getProjects() {
+  console.log('=== Server Action: getProjects ===');
+  
+  try {
+    // Check authentication
+    const session = await auth();
+    if (!session?.user) {
+      console.error('Authentication failed: No user session');
+      return { success: false, message: 'Authentication required' };
+    }
+    
+    console.log('Attempting to connect to database...');
+    await connectDB();
+    console.log('Database connection successful');
+    
+    console.log('Fetching projects...');
+    const projects = await Project.find({}).sort({ createdAt: -1 }).lean();
+    console.log(`Found ${projects.length} projects`);
+    
+    return { success: true, data: projects };
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    return { success: false, message: error instanceof Error ? error.message : 'Failed to fetch projects' };
+  }
+}
+
+export async function getProject(id: string) {
+  try {
+    await connectDB();
+    const project = await Project.findById(id);
+    if (!project) {
+      return { success: false, message: 'Project not found' };
+    }
+    return { success: true, data: project };
+  } catch (error) {
+    console.error('Error fetching project:', error);
+    return { success: false, message: 'Failed to fetch project' };
+  }
+}
+
+export async function updateProject(id: string, data: Partial<ProjectFormValues>) {
+  console.log('=== Server Action: updateProject ===');
+  console.log('Project ID:', id);
+  console.log('Update data:', JSON.stringify(data, null, 2));
+  
+  try {
+    console.log('Attempting to connect to database...');
+    await connectDB();
+    console.log('Database connection successful');
+    
+    console.log('Finding and updating project...');
+    const project = await Project.findByIdAndUpdate(
+      id,
+      {
+        customer: data.customer,
+        description: data.description,
+        location: data.location,
+        client: data.client,
+        consultant: data.consultant,
+        status: data.status,
+        priority: data.priority,
+        phase: data.phase,
+        team: data.team,
+        teamLead: data.teamLead,
+        systems: data.systems,
+        activities: data.activities,
+        mobilization: data.mobilization,
+        accommodation: data.accommodation,
+        kits: data.kits,
+        cars: data.cars,
+        startDate: data.startDate,
+        endDate: data.endDate,
+      },
+      { new: true }
+    );
+
+    if (!project) {
+      console.log('Project not found with ID:', id);
+      return { success: false, message: 'Project not found' };
+    }
+
+    console.log('Project updated successfully:', JSON.stringify(project, null, 2));
+    console.log('Revalidating project path...');
+    revalidatePath('/project');
+    console.log('Path revalidation complete');
+
+    return { success: true, data: project };
+  } catch (error: any) {
+    console.error('=== Error in updateProject ===');
+    console.error('Error type:', error?.constructor?.name || 'Unknown');
+    console.error('Error message:', error?.message || 'No error message');
+    console.error('Error stack:', error?.stack || 'No stack trace');
+    
+    // Handle MongoDB specific errors
+    if (error?.code === 11000) {
+      console.error('Duplicate key error:', error.keyPattern);
+      return { success: false, message: 'A project with this information already exists' };
+    }
+    
+    // Handle validation errors
+    if (error?.name === 'ValidationError') {
+      console.error('Validation errors:', Object.values(error.errors).map((err: any) => err.message));
+      return { success: false, message: 'Validation failed', errors: Object.values(error.errors).map((err: any) => err.message) };
+    }
+
+    // Handle other MongoDB errors
+    console.error('Error details:', {
+      name: error?.name || 'Unknown',
+      code: error?.code,
+      keyPattern: error?.keyPattern,
+      keyValue: error?.keyValue
+    });
+    
+    return { 
+      success: false, 
+      message: error?.message || 'Failed to update project',
+      error: error?.message || 'Unknown error'
+    };
+  }
+}
+
+export async function deleteProject(id: string) {
+  try {
+    await connectDB();
+    const project = await Project.findByIdAndDelete(id);
+
+    if (!project) {
+      return { success: false, message: 'Project not found' };
+    }
+
+    revalidatePath('/project');
+    return { success: true, data: project };
+  } catch (error) {
+    console.error('Error deleting project:', error);
+    return { success: false, message: 'Failed to delete project' };
+  }
+} 

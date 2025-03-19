@@ -1,83 +1,63 @@
 import mongoose from "mongoose";
 
-let cachedConnection: typeof mongoose | null = null;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-const connectDB = async (): Promise<typeof mongoose> => {
-  try {
-    // Check if we already have a connection
-    if (cachedConnection) {
-      console.log("Using cached database connection");
-      return cachedConnection;
-    }
+if (!MONGODB_URI) {
+  throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+}
 
-    // Get MongoDB URI from environment variables
-    const uri = process.env.MONGODB_URI;
-    console.log("MongoDB connection: Checking URI availability");
-    
-    if (!uri) {
-      console.error("MONGODB_URI environment variable is not defined!");
-      throw new Error("Please define the MONGODB_URI environment variable");
-    }
+interface Cached {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
 
-    // Log a masked version of the URI for debugging
-    const maskedUri = uri.replace(/:([^@]*)@/, ':******@');
-    console.log(`MongoDB connection: Attempting to connect to ${maskedUri}`);
+declare global {
+  var mongoose: Cached;
+}
 
-    // Set timeout for connection
-    const connectTimeoutMS = 30000; // 30 seconds
-    
-    // Configure mongoose options
-    const options = {
-      connectTimeoutMS,
-      socketTimeoutMS: 45000,
-      serverSelectionTimeoutMS: 60000,
-      family: 4, // Use IPv4, skip trying IPv6
-    } as mongoose.ConnectOptions;
+if (!global.mongoose) {
+  global.mongoose = { conn: null, promise: null };
+}
 
-    console.log("MongoDB connection: Options set, connecting with timeout:", connectTimeoutMS);
-
-    // Disconnect if already connected
-    if (mongoose.connection.readyState !== 0) {
-      console.log("MongoDB connection: Disconnecting existing connection");
-      await mongoose.disconnect();
-    }
-
-    // Connect with timeout
-    const connectionPromise = mongoose.connect(uri, options);
-    
-    // Create a timeout promise
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error(`Connection timeout after ${connectTimeoutMS}ms`));
-      }, connectTimeoutMS);
-    });
-    
-    // Race the connection against timeout
-    const connection = await Promise.race([connectionPromise, timeoutPromise]) as typeof mongoose;
-    
-    console.log("MongoDB connection: Successfully connected to database");
-    console.log("MongoDB connection: Connection state:", mongoose.connection.readyState);
-    
-    cachedConnection = connection;
-    return connection;
-  } catch (error) {
-    console.error("MongoDB connection error:", error);
-    
-    // Try to provide more helpful error messages
-    if (error instanceof Error) {
-      if (error.message.includes('ENOTFOUND')) {
-        console.error("MongoDB hostname not found. Check your connection string's domain.");
-      } else if (error.message.includes('ETIMEDOUT')) {
-        console.error("MongoDB connection timed out. Check your network or firewall settings.");
-      } else if (error.message.includes('Authentication failed')) {
-        console.error("MongoDB authentication failed. Check your username and password.");
-      } else if (error.message.includes('timed out')) {
-        console.error("MongoDB server selection timed out. The server might be down or not reachable.");
-      }
-    }
-    
-    throw error;
+async function connectDB() {
+  console.log('=== MongoDB Connection Debug ===');
+  console.log('MONGODB_URI exists:', !!MONGODB_URI);
+  console.log('Current connection state:', global.mongoose.conn ? 'Connected' : 'Not connected');
+  
+  if (global.mongoose.conn) {
+    console.log('Using cached connection');
+    return global.mongoose.conn;
   }
-};
+
+  if (!global.mongoose.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    console.log('Creating new connection promise');
+    global.mongoose.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
+      console.log('MongoDB connected successfully');
+      return mongoose;
+    }).catch((error) => {
+      console.error('MongoDB connection error:', {
+        name: error.name,
+        message: error.message,
+        code: error.code
+      });
+      throw error;
+    });
+  }
+
+  try {
+    global.mongoose.conn = await global.mongoose.promise;
+    console.log('Connection established successfully');
+  } catch (e) {
+    console.error('Failed to establish connection:', e);
+    global.mongoose.promise = null;
+    throw e;
+  }
+
+  return global.mongoose.conn;
+}
 
 export default connectDB;

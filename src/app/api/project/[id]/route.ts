@@ -7,34 +7,19 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = params;
-    console.log(`Project API route: Fetching project with ID ${id}`);
+    const id = params.id;
+    console.log(`Project API route: Fetching project with id: ${id}`);
 
-    try {
-      // Connect to database
-      console.log('Project API route: Attempting to connect to database');
-      await connectDB();
-      console.log('Project API route: Database connection successful');
-    } catch (dbError) {
-      console.error('Project API route: Database connection error', dbError);
-      return NextResponse.json(
-        { error: 'Failed to connect to database', details: dbError instanceof Error ? dbError.message : String(dbError) },
-        { status: 500 }
-      );
-    }
-
-    // Find the project by ID
-    const project = await Project.findById(id);
+    await connectDB();
+    
+    const project = await Project.findById(id).lean();
     
     if (!project) {
-      console.log(`Project API route: Project with ID ${id} not found`);
-      return NextResponse.json(
-        { error: 'Project not found' },
-        { status: 404 }
-      );
+      console.log(`Project API route: No project found with id: ${id}`);
+      return NextResponse.json({ error: 'Project not found' }, { status: 404 });
     }
-
-    console.log(`Project API route: Successfully fetched project with ID ${id}`);
+    
+    console.log(`Project API route: Successfully fetched project: ${id}`);
     return NextResponse.json({ project });
   } catch (error) {
     console.error('Project API route: Error fetching project', error);
