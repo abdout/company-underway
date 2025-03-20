@@ -10,6 +10,9 @@ export type task = {
   label: string;
   tag: string;
   remark: string;
+  date: string;
+  hours: number;
+  overtime: number;
 };
 
 export interface TaskContextProps {

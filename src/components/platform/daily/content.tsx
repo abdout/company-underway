@@ -31,7 +31,7 @@ import { Input } from '@/components/ui/input'
 import { DataTableFacetedFilter } from '@/components/data-table/data-table-faceted-filter'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
 import { useFilter } from './filter'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog'
 import { Icon } from '@iconify/react'
 import { useModal } from '@/components/atom/modal/context'
 import Create from '@/components/platform/daily/create'
@@ -144,6 +144,7 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                 </Button>
               </DialogTrigger>
               <DialogContent>
+                <DialogTitle>Filter Options</DialogTitle>
                 <div className='flex flex-col gap-4'>
                   {/* Filters inside modal */}
                   {statusColumn && (

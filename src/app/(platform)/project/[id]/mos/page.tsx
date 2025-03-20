@@ -6,6 +6,9 @@ import Action from '@/components/platform/project/layout/action';
 import { useProject } from '@/provider/project';
 import { usePDF } from 'react-to-pdf';
 import ActivityWrapper from '@/components/platform/project/mos/warpper';
+import { allActivities } from 'contentlayer/generated';
+import { MDXContent } from '@/components/mdx-content';
+import type { Activity } from 'contentlayer/generated';
 
 interface Params {
   id: string;
@@ -35,12 +38,41 @@ const MOS = ({ params }: { params: Params | Promise<Params> }) => {
     filename: `${project?.customer} MOS.pdf`,
   });
   
+  // Group activities by system type and subitem
+  const groupedActivities = allActivities.reduce((acc, activity) => {
+    if (!acc[activity.systemType]) {
+      acc[activity.systemType] = {};
+    }
+    if (!acc[activity.systemType][activity.subitem]) {
+      acc[activity.systemType][activity.subitem] = [];
+    }
+    acc[activity.systemType][activity.subitem].push(activity);
+    return acc;
+  }, {} as Record<string, Record<string, Activity[]>>);
+  
   return (
     <div className='flex flex-col gap-6 w-[60rem]'>
       <Action projectTitle={project?.customer || ""} toPDF={toPDF} />
       <div ref={targetRef} className="space-y-6">
         <Intro />
-        <ActivityWrapper params={unwrappedParams} />
+        {Object.entries(groupedActivities).map(([systemType, subitems]) => (
+          <div key={systemType} className="space-y-4">
+            <h2 className="text-2xl font-bold">{systemType}</h2>
+            {Object.entries(subitems).map(([subitem, activities]) => (
+              <div key={subitem} className="ml-4 space-y-2">
+                <h3 className="text-xl font-semibold">{subitem}</h3>
+                {activities.map((activity) => (
+                  <div key={activity.slug} className="ml-4 space-y-2">
+                    <h4 className="text-lg font-medium">{activity.title}</h4>
+                    <div className="prose prose-sm">
+                      <MDXContent code={activity.body.code} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   )

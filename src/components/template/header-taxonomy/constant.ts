@@ -174,6 +174,10 @@ export const marketingConfig: MarketingConfig = {
       title: "Platform",
       href: "/platform",
     },
+    {
+      title: "Feature",
+      href: "/feature/invoice",
+    },
 
 
   ],

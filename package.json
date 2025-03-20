@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "generate-docs": "tsx scripts/generate-docs.ts",
-    "build:docs": "cross-env CONTENTLAYER_EXPERIMENTAL_FEATURES={\"useFileSystemCache\":false} contentlayer2 build"
+    "build:docs": "cross-env CONTENTLAYER_EXPERIMENTAL_FEATURES={\"useFileSystemCache\":false} contentlayer2 build",
+    "generate-content": "ts-node scripts/generate-content.ts",
+    "generate-content:watch": "ts-node scripts/generate-content.ts --watch"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.8.0",

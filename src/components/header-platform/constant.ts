@@ -169,10 +169,7 @@ export const marketingConfig: MarketingConfig = {
       title: "Daily",
       href: "/daily",
     },
-    {
-      title: "Features",
-      href: "/feature",
-    },
+   
     {
       title: "Resource",
       href: "/resource/team",

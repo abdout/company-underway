@@ -3,10 +3,11 @@ import React from "react";
 
 const Project = () => {
   return (
-    <div className="container mx-auto py-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Projects</h1>
-      </div>
+    <div className="container mx-auto px-4 py-4">
+      {/* <div className="-mt-4 mb-6">
+        <h1 className="text-4xl font-heading">Project</h1>
+        <p className="text-muted-foreground">Manage. track.</p>
+      </div> */}
       <ProjectList />
     </div>
   );

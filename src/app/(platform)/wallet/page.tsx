@@ -1,12 +1,20 @@
-"use client";
-import React from "react";
+import Footer from '@/components/wallet/timesheet/footer'
+import Header from '@/components/wallet/timesheet/header'
+import TimeList from '@/components/wallet/timesheet/list'
+import React from 'react'
 
-const Account = () => {
+const Timesheet = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl">Account</h1>
+    <div className="min-h-screen bg-white pb-10 px-6">
+      <div className="max-w-7xl mx-auto">
+        <Header />
+        <div className="mt-8">
+          <TimeList />
+        </div>
+        <Footer />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Account;
+export default Timesheet

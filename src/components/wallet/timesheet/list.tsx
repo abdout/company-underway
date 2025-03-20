@@ -23,13 +23,13 @@ const TimeList: React.FC = () => {
   const { refreshTasks, tasks, deleteTask } = useTask();
   const { projects } = useProject();
 
-  const [contextMenu, setContextMenu] = useState<{ x: number, y: number, taskID: string | null }>({ x: 0, y: 0, taskID: null });
+  const [contextMenu, setContextMenu] = useState<{ x: number, y: number, rowId: string | null }>({ x: 0, y: 0, rowId: null });
   const [selectedRow, setSelectedRow] = useState<string | null>(null);
 
-  const handleRightClick = (e: React.MouseEvent, taskID: string) => {
+  const handleRightClick = (e: React.MouseEvent, rowId: string) => {
     e.preventDefault();
-    setContextMenu({ x: e.clientX, y: e.clientY, taskID });
-    setSelectedRow(taskID);
+    setContextMenu({ x: e.clientX, y: e.clientY, rowId });
+    setSelectedRow(rowId);
   };
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const TimeList: React.FC = () => {
   }, [projects.length]);
 
   const handleCloseContextMenu = () => {
-    setContextMenu({ x: 0, y: 0, taskID: null });
+    setContextMenu({ x: 0, y: 0, rowId: null });
     setSelectedRow(null);
   };
 
@@ -61,74 +61,60 @@ const TimeList: React.FC = () => {
 
   return (
     <>
-  {modal.open && modal.id === null && <Modal content={<Create />} />}
-  {/* <div className="flex justify-end">
-    <button
-      className="p-2 m-2 border rounded hover:border-black opacity-70 hover:opacity-100"
-      onClick={() => openModal(null)}
-    >
-      <Icon icon="ph:plus-thin" width={30}/>
-    </button>
-  </div> */}
-  
-  
-  <table className="table-auto w-[60rem] m-8 ">
-    <thead>
-      <tr>
-        <td className="text-lg font-medium border-b border-black py-2">Task</td>
-        <td className="text-lg font-medium border-b border-black py-2">Project</td>
-        <td className="text-lg font-medium border-b border-black py-2">Club</td>
-        <td className="text-lg font-medium border-b border-black py-2">Status</td>
-        <td className="text-lg font-medium border-b border-black py-2">Priority</td>
-        <td className="text-lg font-medium border-b border-black py-2">Duration</td>
-        <td className="text-lg font-medium border-b border-black py-2">Remark</td>
-      </tr>
-    </thead>
-    <tbody>
-      {Array.isArray(tasks) ? tasks.map((task) => {
-        return (
-          <tr key={task._id || ''} className={`border-b ${task._id === selectedRow ? 'bg-black text-[#fcfcfc]' : ''} hover:bg-gray-100`} onContextMenu={(e) => handleRightClick(e, task._id || '')}>
-            <td className="py-4">{task.task}</td>
-            <td className="py-4">
-              <div className="w-24 overflow-hidden overflow-ellipsis whitespacenowrap">
-                {task.project}
-              </div>
-            </td>
-            <td className="py-4">{task.club}</td>
-            <td className="py-4">{task.status}</td>
-            <td className="py-4">{task.prioity}</td>
-            <td className="py-4">{task.duration}</td>
-            <td className="py-4">{task.remark}</td>
-          </tr>
-        );
-      }) : <tr><td colSpan={7} className="text-center py-4">No tasks available</td></tr>}
-      {contextMenu.taskID && (
+      {modal.open && modal.id === null && <Modal content={<Create />} />}
+      
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-50">
+              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider border-b">Date</th>
+              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider border-b">Work Carried Out</th>
+              <th className="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider border-b">Hours</th>
+              <th className="px-6 py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider border-b">O.T</th>
+              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider border-b">Remark</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {Array.isArray(tasks) ? tasks.map((task) => {
+              return (
+                <tr 
+                  key={task._id || ''} 
+                  className={`hover:bg-gray-50 cursor-pointer ${task._id === selectedRow ? 'bg-black text-[#fcfcfc]' : ''}`} 
+                  onContextMenu={(e) => handleRightClick(e, task._id || '')}
+                >
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{task.date}</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">{task.task}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">{task.hours || 8}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">{task.overtime || 0}</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">{task.remark}</td>
+                </tr>
+              );
+            }) : <tr><td colSpan={5} className="text-center py-4">No tasks available</td></tr>}
+          </tbody>
+        </table>
+      </div>
+
+      {contextMenu.rowId && (
         <div 
-        style={{ top: `${contextMenu.y}px`, left: `${contextMenu.x}px` }} 
-        className="absolute flex flex-col space-y-4 p-8 justify-start items-start bg-white border shadow-lg"
-        onMouseLeave={handleCloseContextMenu}
-          
+          style={{ top: `${contextMenu.y}px`, left: `${contextMenu.x}px` }} 
+          className="absolute flex flex-col space-y-2 p-4 bg-white border shadow-lg rounded-md"
+          onMouseLeave={handleCloseContextMenu}
         >
           <button
-          onClick={() => handleDelete(contextMenu.taskID)}
-          className="flex gap-4 opacity-80 hover:opacity-100"
+            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
           >
-           <Icon icon="ant-design:delete-outlined" width={30}/>
-           <h3>Delete</h3>
+            <Icon icon="iconoir:edit" width={20}/>
+            <span>Edit</span>
           </button>
-          <button 
-        //   onClick={() => handleEdit(contextMenu.taskID)}
-          className="flex gap-4 opacity-80 hover:opacity-100"
+          <button
+            className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-gray-100 rounded-md"
           >
-            <Icon icon="iconoir:edit" width={30}/>
-            <h3>Edit</h3>
+            <Icon icon="ant-design:delete-outlined" width={20}/>
+            <span>Delete</span>
           </button>
         </div>
       )}
-      
-    </tbody>
-  </table>
-</>
+    </>
   );
 };
 

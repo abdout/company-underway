@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { MemberProvider } from '@/components/platform/member/context';
+import { MemberProvider } from '@/components/member/context';
 import { UploadProvider } from '@/components/upload/context';
-import Create from '@/components/platform/member/create';
+import Create from '@/components/member/create';
 
 
 const Register = () => {

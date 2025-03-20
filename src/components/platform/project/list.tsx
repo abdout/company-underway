@@ -8,8 +8,9 @@ import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import ProjectCreateForm from './form';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import ProjectCard from './card';
+import Loading from "@/components/atom/loading";
 
 const ProjectList: React.FC = () => {
   console.log("ProjectList: Component rendering");
@@ -96,11 +97,7 @@ const ProjectList: React.FC = () => {
   }, [projectToEdit]);
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
@@ -141,6 +138,7 @@ const ProjectList: React.FC = () => {
 
       <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
         <DialogContent className="max-w-full h-screen p-0 overflow-hidden">
+          <DialogTitle>Create Project</DialogTitle>
           <ProjectCreateForm onSuccess={() => setIsCreateDialogOpen(false)} />
         </DialogContent>
       </Dialog>

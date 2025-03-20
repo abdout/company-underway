@@ -137,32 +137,27 @@ export function Sidebar() {
     {
       href: '/platform',
       icon: <HomeIcon className="h-5 w-5" />,
-      label: 'الرئيسية'
+      label: 'Home'
     },
     {
       href: '/platform/messages',
       icon: <MessageIcon className="h-5 w-5" />,
-      label: 'الرسائل'
+      label: 'Messages'
     },
     {
       href: '/platform/notifications',
       icon: <NotificationIcon className="h-[18px] w-[18px]" />,
-      label: 'الاشعارات'
-    },
-    {
-      href: '/platform/daily',
-      icon: <TaskIcon className="h-5 w-5" />,
-      label: 'التقارير اليومية'
+      label: 'Notifications'
     },
     {
       href: '/platform/profile',
       icon: <UserIcon className="h-5 w-5" />,
-      label: 'الملف'
+      label: 'Profile'
     },
     {
       href: '/platform/settings',
       icon: <SettingsIcon className="h-[18px] w-[18px]" />,
-      label: 'الضبط'
+      label: 'Settings'
     }
   ];
 

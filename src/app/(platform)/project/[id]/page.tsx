@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Info from "@/components/platform/project/detial/info";
 import { useProject } from "@/provider/project";
 import React from "react";
+import Loading from "@/components/atom/loading";
 
 interface Params {
   id: string;
@@ -55,12 +56,7 @@ const Detail = ({ params }: { params: Params | Promise<Params> }) => {
   console.log("Project data:", project);
 
   if (loading) {
-    console.log("Rendering loading spinner");
-    return (
-      <div className="flex justify-center items-center h-[calc(100vh-200px)]">
-        <div className="w-12 h-12 rounded-full border-4 border-gray-300 border-t-gray-600 animate-spin"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {

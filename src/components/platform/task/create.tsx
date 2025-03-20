@@ -20,8 +20,8 @@ import SelectPopover from "@/components/atom/popover/popover";
 // import { Checkbox } from "@/components/ui/checkbox";
 // import { useRouter } from "next/navigation";
 import Indicator from "@/components/atom/modal/indicator";
-import Status from "../nmbd-project/status";
-import { club, clubs } from "../nmbd-project/constant";
+import Status from "../../nmbd-project/status";
+import { club, clubs } from "../../nmbd-project/constant";
 import EstTime from "./esttime";
 import Priority from "./priority";
 

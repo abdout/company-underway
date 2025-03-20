@@ -392,146 +392,6 @@
       "hasWarnings": false,
       "documentTypeName": "Doc"
     },
-    "docs/component/contactor/coil-operation-pickup-dropout.mdx": {
-      "document": {
-        "title": "Coil Operation Pickup-Dropout",
-        "description": "Documentation for Coil Operation Pickup-Dropout under Contactor in Component category",
-        "body": {
-          "raw": "\n# Coil Operation Pickup-Dropout\n\nThis is the documentation page for **Coil Operation Pickup-Dropout** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Coil Operation Pickup-Dropout here.\n\n## Procedure\n\n1. Step one of the Coil Operation Pickup-Dropout procedure\n2. Step two of the Coil Operation Pickup-Dropout procedure\n3. Step three of the Coil Operation Pickup-Dropout procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Coil Operation Pickup-Dropout can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var p=Object.create;var o=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,k=Object.prototype.hasOwnProperty;var b=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),D=(i,e)=>{for(var r in e)o(i,r,{get:e[r],enumerable:!0})},c=(i,e,r,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of m(e))!k.call(i,t)&&t!==r&&o(i,t,{get:()=>e[t],enumerable:!(a=u(e,t))||a.enumerable});return i};var C=(i,e,r)=>(r=i!=null?p(f(i)):{},c(e||!i||!i.__esModule?o(r,\"default\",{value:i,enumerable:!0}):r,i)),g=i=>c(o({},\"__esModule\",{value:!0}),i);var d=b((O,l)=>{l.exports=_jsx_runtime});var P={};D(P,{default:()=>s,frontmatter:()=>v});var n=C(d()),v={title:\"Coil Operation Pickup-Dropout\",description:\"Documentation for Coil Operation Pickup-Dropout under Contactor in Component category\"};function h(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"coil-operation-pickup-dropout\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#coil-operation-pickup-dropout\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Coil Operation Pickup-Dropout\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Coil Operation Pickup-Dropout\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Coil Operation Pickup-Dropout here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Coil Operation Pickup-Dropout procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Coil Operation Pickup-Dropout procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Coil Operation Pickup-Dropout procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Coil Operation Pickup-Dropout can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(h,{...i})}):h(i)}return g(P);})();\n;return Component;"
-        },
-        "_id": "docs/component/contactor/coil-operation-pickup-dropout.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/component/contactor/coil-operation-pickup-dropout.mdx",
-          "sourceFileName": "coil-operation-pickup-dropout.mdx",
-          "sourceFileDir": "docs/component/contactor",
-          "contentType": "mdx",
-          "flattenedPath": "docs/component/contactor/coil-operation-pickup-dropout"
-        },
-        "type": "Doc",
-        "slug": "/docs/component/contactor/coil-operation-pickup-dropout",
-        "slugAsParams": "component/contactor/coil-operation-pickup-dropout",
-        "url": "/docs/docs/component/contactor/coil-operation-pickup-dropout",
-        "category": "docs",
-        "subCategory": "component",
-        "activityName": "contactor"
-      },
-      "documentHash": "1742098135262",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/component/contactor/contact-resistance.mdx": {
-      "document": {
-        "title": "Contact Resistance",
-        "description": "Documentation for Contact Resistance under Contactor in Component category",
-        "body": {
-          "raw": "\n# Contact Resistance\n\nThis is the documentation page for **Contact Resistance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Contact Resistance here.\n\n## Procedure\n\n1. Step one of the Contact Resistance procedure\n2. Step two of the Contact Resistance procedure\n3. Step three of the Contact Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Contact Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var C=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),g=(t,e)=>{for(var a in e)r(t,a,{get:e[a],enumerable:!0})},o=(t,e,a,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of u(e))!b.call(t,i)&&i!==a&&r(t,i,{get:()=>e[i],enumerable:!(c=m(e,i))||c.enumerable});return t};var v=(t,e,a)=>(a=t!=null?p(f(t)):{},o(e||!t||!t.__esModule?r(a,\"default\",{value:t,enumerable:!0}):a,t)),N=t=>o(r({},\"__esModule\",{value:!0}),t);var l=C((D,s)=>{s.exports=_jsx_runtime});var R={};g(R,{default:()=>h,frontmatter:()=>k});var n=v(l()),k={title:\"Contact Resistance\",description:\"Documentation for Contact Resistance under Contactor in Component category\"};function d(t){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"contact-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#contact-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Contact Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Contact Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Contact Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Contact Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Contact Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Contact Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Contact Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(d,{...t})}):d(t)}return N(R);})();\n;return Component;"
-        },
-        "_id": "docs/component/contactor/contact-resistance.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/component/contactor/contact-resistance.mdx",
-          "sourceFileName": "contact-resistance.mdx",
-          "sourceFileDir": "docs/component/contactor",
-          "contentType": "mdx",
-          "flattenedPath": "docs/component/contactor/contact-resistance"
-        },
-        "type": "Doc",
-        "slug": "/docs/component/contactor/contact-resistance",
-        "slugAsParams": "component/contactor/contact-resistance",
-        "url": "/docs/docs/component/contactor/contact-resistance",
-        "category": "docs",
-        "subCategory": "component",
-        "activityName": "contactor"
-      },
-      "documentHash": "1742098135263",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/component/contactor/index.mdx": {
-      "document": {
-        "title": "Contactor",
-        "description": "Index page for Contactor",
-        "body": {
-          "raw": "\n# Contactor\n\n- [Coil Operation Pickup-Dropout](coil-operation-pickup-dropout)\n- [Contact Resistance](contact-resistance)\n- [Insulation Resistance](insulation-resistance)\n- [Mechanical Endurance](mechanical-endurance)\n",
-          "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var c in n)i(e,c,{get:n[c],enumerable:!0})},o=(e,n,c,r)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of m(n))!x.call(e,a)&&a!==c&&i(e,a,{get:()=>n[a],enumerable:!(r=p(n,a))||r.enumerable});return e};var j=(e,n,c)=>(c=e!=null?u(f(e)):{},o(n||!e||!e.__esModule?i(c,\"default\",{value:e,enumerable:!0}):c,e)),g=e=>o(i({},\"__esModule\",{value:!0}),e);var s=C((b,l)=>{l.exports=_jsx_runtime});var M={};_(M,{default:()=>d,frontmatter:()=>k});var t=j(s()),k={title:\"Contactor\",description:\"Index page for Contactor\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"contactor\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#contactor\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Contactor\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"coil-operation-pickup-dropout\",children:\"Coil Operation Pickup-Dropout\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"mechanical-endurance\",children:\"Mechanical Endurance\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return g(M);})();\n;return Component;"
-        },
-        "_id": "docs/component/contactor/index.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/component/contactor/index.mdx",
-          "sourceFileName": "index.mdx",
-          "sourceFileDir": "docs/component/contactor",
-          "contentType": "mdx",
-          "flattenedPath": "docs/component/contactor"
-        },
-        "type": "Doc",
-        "slug": "/docs/component/contactor",
-        "slugAsParams": "component/contactor",
-        "url": "/docs/docs/component/contactor",
-        "category": "docs",
-        "subCategory": "component",
-        "activityName": "contactor"
-      },
-      "documentHash": "1742098135261",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/component/contactor/insulation-resistance.mdx": {
-      "document": {
-        "title": "Insulation Resistance",
-        "description": "Documentation for Insulation Resistance under Contactor in Component category",
-        "body": {
-          "raw": "\n# Insulation Resistance\n\nThis is the documentation page for **Insulation Resistance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Insulation Resistance here.\n\n## Procedure\n\n1. Step one of the Insulation Resistance procedure\n2. Step two of the Insulation Resistance procedure\n3. Step three of the Insulation Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Insulation Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),v=(i,e)=>{for(var t in e)r(i,t,{get:e[t],enumerable:!0})},o=(i,e,t,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!b.call(i,a)&&a!==t&&r(i,a,{get:()=>e[a],enumerable:!(c=p(e,a))||c.enumerable});return i};var N=(i,e,t)=>(t=i!=null?u(f(i)):{},o(e||!i||!i.__esModule?r(t,\"default\",{value:i,enumerable:!0}):t,i)),k=i=>o(r({},\"__esModule\",{value:!0}),i);var l=g((I,s)=>{s.exports=_jsx_runtime});var x={};v(x,{default:()=>h,frontmatter:()=>R});var n=N(l()),R={title:\"Insulation Resistance\",description:\"Documentation for Insulation Resistance under Contactor in Component category\"};function d(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"insulation-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#insulation-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Insulation Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Insulation Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Insulation Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Insulation Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Insulation Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Insulation Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Insulation Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(d,{...i})}):d(i)}return k(x);})();\n;return Component;"
-        },
-        "_id": "docs/component/contactor/insulation-resistance.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/component/contactor/insulation-resistance.mdx",
-          "sourceFileName": "insulation-resistance.mdx",
-          "sourceFileDir": "docs/component/contactor",
-          "contentType": "mdx",
-          "flattenedPath": "docs/component/contactor/insulation-resistance"
-        },
-        "type": "Doc",
-        "slug": "/docs/component/contactor/insulation-resistance",
-        "slugAsParams": "component/contactor/insulation-resistance",
-        "url": "/docs/docs/component/contactor/insulation-resistance",
-        "category": "docs",
-        "subCategory": "component",
-        "activityName": "contactor"
-      },
-      "documentHash": "1742098135265",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
-    "docs/component/contactor/mechanical-endurance.mdx": {
-      "document": {
-        "title": "Mechanical Endurance",
-        "description": "Documentation for Mechanical Endurance under Contactor in Component category",
-        "body": {
-          "raw": "\n# Mechanical Endurance\n\nThis is the documentation page for **Mechanical Endurance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Mechanical Endurance here.\n\n## Procedure\n\n1. Step one of the Mechanical Endurance procedure\n2. Step two of the Mechanical Endurance procedure\n3. Step three of the Mechanical Endurance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Mechanical Endurance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
-          "code": "var Component=(()=>{var u=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),v=(a,e)=>{for(var r in e)c(a,r,{get:e[r],enumerable:!0})},l=(a,e,r,t)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of m(e))!b.call(a,i)&&i!==r&&c(a,i,{get:()=>e[i],enumerable:!(t=p(e,i))||t.enumerable});return a};var N=(a,e,r)=>(r=a!=null?u(f(a)):{},l(e||!a||!a.__esModule?c(r,\"default\",{value:a,enumerable:!0}):r,a)),k=a=>l(c({},\"__esModule\",{value:!0}),a);var d=g((E,o)=>{o.exports=_jsx_runtime});var x={};v(x,{default:()=>s,frontmatter:()=>M});var n=N(d()),M={title:\"Mechanical Endurance\",description:\"Documentation for Mechanical Endurance under Contactor in Component category\"};function h(a){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...a.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"mechanical-endurance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#mechanical-endurance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Mechanical Endurance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Mechanical Endurance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Mechanical Endurance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Mechanical Endurance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Mechanical Endurance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Mechanical Endurance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Mechanical Endurance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,{...a,children:(0,n.jsx)(h,{...a})}):h(a)}return k(x);})();\n;return Component;"
-        },
-        "_id": "docs/component/contactor/mechanical-endurance.mdx",
-        "_raw": {
-          "sourceFilePath": "docs/component/contactor/mechanical-endurance.mdx",
-          "sourceFileName": "mechanical-endurance.mdx",
-          "sourceFileDir": "docs/component/contactor",
-          "contentType": "mdx",
-          "flattenedPath": "docs/component/contactor/mechanical-endurance"
-        },
-        "type": "Doc",
-        "slug": "/docs/component/contactor/mechanical-endurance",
-        "slugAsParams": "component/contactor/mechanical-endurance",
-        "url": "/docs/docs/component/contactor/mechanical-endurance",
-        "category": "docs",
-        "subCategory": "component",
-        "activityName": "contactor"
-      },
-      "documentHash": "1742098135266",
-      "hasWarnings": false,
-      "documentTypeName": "Doc"
-    },
     "docs/component/current-transformer/burden.mdx": {
       "document": {
         "title": "Burden",
@@ -697,6 +557,146 @@
         "activityName": "current-transformer"
       },
       "documentHash": "1742098135291",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/component/contactor/coil-operation-pickup-dropout.mdx": {
+      "document": {
+        "title": "Coil Operation Pickup-Dropout",
+        "description": "Documentation for Coil Operation Pickup-Dropout under Contactor in Component category",
+        "body": {
+          "raw": "\n# Coil Operation Pickup-Dropout\n\nThis is the documentation page for **Coil Operation Pickup-Dropout** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Coil Operation Pickup-Dropout here.\n\n## Procedure\n\n1. Step one of the Coil Operation Pickup-Dropout procedure\n2. Step two of the Coil Operation Pickup-Dropout procedure\n3. Step three of the Coil Operation Pickup-Dropout procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Coil Operation Pickup-Dropout can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var p=Object.create;var o=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,k=Object.prototype.hasOwnProperty;var b=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),D=(i,e)=>{for(var r in e)o(i,r,{get:e[r],enumerable:!0})},c=(i,e,r,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of m(e))!k.call(i,t)&&t!==r&&o(i,t,{get:()=>e[t],enumerable:!(a=u(e,t))||a.enumerable});return i};var C=(i,e,r)=>(r=i!=null?p(f(i)):{},c(e||!i||!i.__esModule?o(r,\"default\",{value:i,enumerable:!0}):r,i)),g=i=>c(o({},\"__esModule\",{value:!0}),i);var d=b((O,l)=>{l.exports=_jsx_runtime});var P={};D(P,{default:()=>s,frontmatter:()=>v});var n=C(d()),v={title:\"Coil Operation Pickup-Dropout\",description:\"Documentation for Coil Operation Pickup-Dropout under Contactor in Component category\"};function h(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"coil-operation-pickup-dropout\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#coil-operation-pickup-dropout\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Coil Operation Pickup-Dropout\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Coil Operation Pickup-Dropout\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Coil Operation Pickup-Dropout here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Coil Operation Pickup-Dropout procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Coil Operation Pickup-Dropout procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Coil Operation Pickup-Dropout procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Coil Operation Pickup-Dropout can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(h,{...i})}):h(i)}return g(P);})();\n;return Component;"
+        },
+        "_id": "docs/component/contactor/coil-operation-pickup-dropout.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/component/contactor/coil-operation-pickup-dropout.mdx",
+          "sourceFileName": "coil-operation-pickup-dropout.mdx",
+          "sourceFileDir": "docs/component/contactor",
+          "contentType": "mdx",
+          "flattenedPath": "docs/component/contactor/coil-operation-pickup-dropout"
+        },
+        "type": "Doc",
+        "slug": "/docs/component/contactor/coil-operation-pickup-dropout",
+        "slugAsParams": "component/contactor/coil-operation-pickup-dropout",
+        "url": "/docs/docs/component/contactor/coil-operation-pickup-dropout",
+        "category": "docs",
+        "subCategory": "component",
+        "activityName": "contactor"
+      },
+      "documentHash": "1742098135262",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/component/contactor/contact-resistance.mdx": {
+      "document": {
+        "title": "Contact Resistance",
+        "description": "Documentation for Contact Resistance under Contactor in Component category",
+        "body": {
+          "raw": "\n# Contact Resistance\n\nThis is the documentation page for **Contact Resistance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Contact Resistance here.\n\n## Procedure\n\n1. Step one of the Contact Resistance procedure\n2. Step two of the Contact Resistance procedure\n3. Step three of the Contact Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Contact Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var C=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),g=(t,e)=>{for(var a in e)r(t,a,{get:e[a],enumerable:!0})},o=(t,e,a,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of u(e))!b.call(t,i)&&i!==a&&r(t,i,{get:()=>e[i],enumerable:!(c=m(e,i))||c.enumerable});return t};var v=(t,e,a)=>(a=t!=null?p(f(t)):{},o(e||!t||!t.__esModule?r(a,\"default\",{value:t,enumerable:!0}):a,t)),N=t=>o(r({},\"__esModule\",{value:!0}),t);var l=C((D,s)=>{s.exports=_jsx_runtime});var R={};g(R,{default:()=>h,frontmatter:()=>k});var n=v(l()),k={title:\"Contact Resistance\",description:\"Documentation for Contact Resistance under Contactor in Component category\"};function d(t){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"contact-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#contact-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Contact Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Contact Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Contact Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Contact Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Contact Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Contact Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Contact Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(d,{...t})}):d(t)}return N(R);})();\n;return Component;"
+        },
+        "_id": "docs/component/contactor/contact-resistance.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/component/contactor/contact-resistance.mdx",
+          "sourceFileName": "contact-resistance.mdx",
+          "sourceFileDir": "docs/component/contactor",
+          "contentType": "mdx",
+          "flattenedPath": "docs/component/contactor/contact-resistance"
+        },
+        "type": "Doc",
+        "slug": "/docs/component/contactor/contact-resistance",
+        "slugAsParams": "component/contactor/contact-resistance",
+        "url": "/docs/docs/component/contactor/contact-resistance",
+        "category": "docs",
+        "subCategory": "component",
+        "activityName": "contactor"
+      },
+      "documentHash": "1742098135263",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/component/contactor/index.mdx": {
+      "document": {
+        "title": "Contactor",
+        "description": "Index page for Contactor",
+        "body": {
+          "raw": "\n# Contactor\n\n- [Coil Operation Pickup-Dropout](coil-operation-pickup-dropout)\n- [Contact Resistance](contact-resistance)\n- [Insulation Resistance](insulation-resistance)\n- [Mechanical Endurance](mechanical-endurance)\n",
+          "code": "var Component=(()=>{var u=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var c in n)i(e,c,{get:n[c],enumerable:!0})},o=(e,n,c,r)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of m(n))!x.call(e,a)&&a!==c&&i(e,a,{get:()=>n[a],enumerable:!(r=p(n,a))||r.enumerable});return e};var j=(e,n,c)=>(c=e!=null?u(f(e)):{},o(n||!e||!e.__esModule?i(c,\"default\",{value:e,enumerable:!0}):c,e)),g=e=>o(i({},\"__esModule\",{value:!0}),e);var s=C((b,l)=>{l.exports=_jsx_runtime});var M={};_(M,{default:()=>d,frontmatter:()=>k});var t=j(s()),k={title:\"Contactor\",description:\"Index page for Contactor\"};function h(e){let n={a:\"a\",h1:\"h1\",li:\"li\",span:\"span\",ul:\"ul\",...e.components};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n.h1,{id:\"contactor\",children:[(0,t.jsx)(n.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#contactor\",children:(0,t.jsx)(n.span,{className:\"icon icon-link\"})}),\"Contactor\"]}),`\n`,(0,t.jsxs)(n.ul,{children:[`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"coil-operation-pickup-dropout\",children:\"Coil Operation Pickup-Dropout\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"contact-resistance\",children:\"Contact Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"insulation-resistance\",children:\"Insulation Resistance\"})}),`\n`,(0,t.jsx)(n.li,{children:(0,t.jsx)(n.a,{href:\"mechanical-endurance\",children:\"Mechanical Endurance\"})}),`\n`]})]})}function d(e={}){let{wrapper:n}=e.components||{};return n?(0,t.jsx)(n,{...e,children:(0,t.jsx)(h,{...e})}):h(e)}return g(M);})();\n;return Component;"
+        },
+        "_id": "docs/component/contactor/index.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/component/contactor/index.mdx",
+          "sourceFileName": "index.mdx",
+          "sourceFileDir": "docs/component/contactor",
+          "contentType": "mdx",
+          "flattenedPath": "docs/component/contactor"
+        },
+        "type": "Doc",
+        "slug": "/docs/component/contactor",
+        "slugAsParams": "component/contactor",
+        "url": "/docs/docs/component/contactor",
+        "category": "docs",
+        "subCategory": "component",
+        "activityName": "contactor"
+      },
+      "documentHash": "1742098135261",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/component/contactor/insulation-resistance.mdx": {
+      "document": {
+        "title": "Insulation Resistance",
+        "description": "Documentation for Insulation Resistance under Contactor in Component category",
+        "body": {
+          "raw": "\n# Insulation Resistance\n\nThis is the documentation page for **Insulation Resistance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Insulation Resistance here.\n\n## Procedure\n\n1. Step one of the Insulation Resistance procedure\n2. Step two of the Insulation Resistance procedure\n3. Step three of the Insulation Resistance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Insulation Resistance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),v=(i,e)=>{for(var t in e)r(i,t,{get:e[t],enumerable:!0})},o=(i,e,t,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!b.call(i,a)&&a!==t&&r(i,a,{get:()=>e[a],enumerable:!(c=p(e,a))||c.enumerable});return i};var N=(i,e,t)=>(t=i!=null?u(f(i)):{},o(e||!i||!i.__esModule?r(t,\"default\",{value:i,enumerable:!0}):t,i)),k=i=>o(r({},\"__esModule\",{value:!0}),i);var l=g((I,s)=>{s.exports=_jsx_runtime});var x={};v(x,{default:()=>h,frontmatter:()=>R});var n=N(l()),R={title:\"Insulation Resistance\",description:\"Documentation for Insulation Resistance under Contactor in Component category\"};function d(i){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"insulation-resistance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#insulation-resistance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Insulation Resistance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Insulation Resistance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Insulation Resistance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Insulation Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Insulation Resistance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Insulation Resistance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Insulation Resistance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function h(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(d,{...i})}):d(i)}return k(x);})();\n;return Component;"
+        },
+        "_id": "docs/component/contactor/insulation-resistance.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/component/contactor/insulation-resistance.mdx",
+          "sourceFileName": "insulation-resistance.mdx",
+          "sourceFileDir": "docs/component/contactor",
+          "contentType": "mdx",
+          "flattenedPath": "docs/component/contactor/insulation-resistance"
+        },
+        "type": "Doc",
+        "slug": "/docs/component/contactor/insulation-resistance",
+        "slugAsParams": "component/contactor/insulation-resistance",
+        "url": "/docs/docs/component/contactor/insulation-resistance",
+        "category": "docs",
+        "subCategory": "component",
+        "activityName": "contactor"
+      },
+      "documentHash": "1742098135265",
+      "hasWarnings": false,
+      "documentTypeName": "Doc"
+    },
+    "docs/component/contactor/mechanical-endurance.mdx": {
+      "document": {
+        "title": "Mechanical Endurance",
+        "description": "Documentation for Mechanical Endurance under Contactor in Component category",
+        "body": {
+          "raw": "\n# Mechanical Endurance\n\nThis is the documentation page for **Mechanical Endurance** which is part of the **Contactor** subcategory in the **Component** section.\n\n## Overview\n\nAdd a brief overview of Mechanical Endurance here.\n\n## Procedure\n\n1. Step one of the Mechanical Endurance procedure\n2. Step two of the Mechanical Endurance procedure\n3. Step three of the Mechanical Endurance procedure\n\n## Parameters\n\n| Parameter | Description | Default Value |\n|-----------|-------------|---------------|\n| Parameter 1 | Description of parameter 1 | Default value |\n| Parameter 2 | Description of parameter 2 | Default value |\n\n## Notes\n\nAdditional notes about Mechanical Endurance can be added here.\n\n## Related Activities\n\n- Other related activities from Contactor\n- Cross-references to related topics\n",
+          "code": "var Component=(()=>{var u=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var g=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),v=(a,e)=>{for(var r in e)c(a,r,{get:e[r],enumerable:!0})},l=(a,e,r,t)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of m(e))!b.call(a,i)&&i!==r&&c(a,i,{get:()=>e[i],enumerable:!(t=p(e,i))||t.enumerable});return a};var N=(a,e,r)=>(r=a!=null?u(f(a)):{},l(e||!a||!a.__esModule?c(r,\"default\",{value:a,enumerable:!0}):r,a)),k=a=>l(c({},\"__esModule\",{value:!0}),a);var d=g((E,o)=>{o.exports=_jsx_runtime});var x={};v(x,{default:()=>s,frontmatter:()=>M});var n=N(d()),M={title:\"Mechanical Endurance\",description:\"Documentation for Mechanical Endurance under Contactor in Component category\"};function h(a){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",table:\"table\",tbody:\"tbody\",td:\"td\",th:\"th\",thead:\"thead\",tr:\"tr\",ul:\"ul\",...a.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"mechanical-endurance\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#mechanical-endurance\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Mechanical Endurance\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This is the documentation page for \",(0,n.jsx)(e.strong,{children:\"Mechanical Endurance\"}),\" which is part of the \",(0,n.jsx)(e.strong,{children:\"Contactor\"}),\" subcategory in the \",(0,n.jsx)(e.strong,{children:\"Component\"}),\" section.\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"overview\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#overview\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Overview\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Add a brief overview of Mechanical Endurance here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"procedure\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#procedure\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Procedure\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Step one of the Mechanical Endurance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step two of the Mechanical Endurance procedure\"}),`\n`,(0,n.jsx)(e.li,{children:\"Step three of the Mechanical Endurance procedure\"}),`\n`]}),`\n`,(0,n.jsxs)(e.h2,{id:\"parameters\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#parameters\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Parameters\"]}),`\n`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:\"Parameter\"}),(0,n.jsx)(e.th,{children:\"Description\"}),(0,n.jsx)(e.th,{children:\"Default Value\"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 1\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 1\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:\"Parameter 2\"}),(0,n.jsx)(e.td,{children:\"Description of parameter 2\"}),(0,n.jsx)(e.td,{children:\"Default value\"})]})]})]}),`\n`,(0,n.jsxs)(e.h2,{id:\"notes\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#notes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Notes\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Additional notes about Mechanical Endurance can be added here.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"related-activities\",children:[(0,n.jsx)(e.a,{className:\"subheading-anchor\",\"aria-label\":\"Link to section\",href:\"#related-activities\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Related Activities\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Other related activities from Contactor\"}),`\n`,(0,n.jsx)(e.li,{children:\"Cross-references to related topics\"}),`\n`]})]})}function s(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,{...a,children:(0,n.jsx)(h,{...a})}):h(a)}return k(x);})();\n;return Component;"
+        },
+        "_id": "docs/component/contactor/mechanical-endurance.mdx",
+        "_raw": {
+          "sourceFilePath": "docs/component/contactor/mechanical-endurance.mdx",
+          "sourceFileName": "mechanical-endurance.mdx",
+          "sourceFileDir": "docs/component/contactor",
+          "contentType": "mdx",
+          "flattenedPath": "docs/component/contactor/mechanical-endurance"
+        },
+        "type": "Doc",
+        "slug": "/docs/component/contactor/mechanical-endurance",
+        "slugAsParams": "component/contactor/mechanical-endurance",
+        "url": "/docs/docs/component/contactor/mechanical-endurance",
+        "category": "docs",
+        "subCategory": "component",
+        "activityName": "contactor"
+      },
+      "documentHash": "1742098135266",
       "hasWarnings": false,
       "documentTypeName": "Doc"
     },

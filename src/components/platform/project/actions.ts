@@ -97,7 +97,46 @@ export async function getProjects() {
     const projects = await Project.find({}).sort({ createdAt: -1 }).lean();
     console.log(`Found ${projects.length} projects`);
     
-    return { success: true, data: projects };
+    // Helper function to serialize MongoDB documents
+    const serializeDocument = (doc: any): any => {
+      if (!doc) return doc;
+      
+      // Handle arrays
+      if (Array.isArray(doc)) {
+        return doc.map(item => serializeDocument(item));
+      }
+      
+      // Handle objects
+      if (typeof doc === 'object') {
+        const serialized: any = {};
+        for (const [key, value] of Object.entries(doc)) {
+          // Handle ObjectId
+          if (key === '_id' && value?.toString) {
+            serialized[key] = value.toString();
+          }
+          // Handle Date objects
+          else if (value instanceof Date) {
+            serialized[key] = value.toISOString();
+          }
+          // Handle nested objects
+          else if (typeof value === 'object' && value !== null) {
+            serialized[key] = serializeDocument(value);
+          }
+          // Handle primitive values
+          else {
+            serialized[key] = value;
+          }
+        }
+        return serialized;
+      }
+      
+      return doc;
+    };
+    
+    // Serialize all projects and their nested objects
+    const serializedProjects = projects.map(project => serializeDocument(project));
+    
+    return { success: true, data: serializedProjects };
   } catch (error) {
     console.error('Error fetching projects:', error);
     return { success: false, message: error instanceof Error ? error.message : 'Failed to fetch projects' };
