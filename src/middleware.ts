@@ -1,11 +1,11 @@
-
 import NextAuth from "next-auth"
 import authConfig from "./auth.config"
 import { 
   apiAuthPrefix, 
   authRoutes, 
   DEFAULT_LOGIN_REDIRECT, 
-  publicRoutes 
+  publicRoutes,
+  adminRoutes
 } from "./routes"
 
 const { auth } = NextAuth(authConfig)
@@ -24,6 +24,7 @@ export default auth((req) => {
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
   const isAuthRoute = authRoutes.includes(nextUrl.pathname)
+  const isAdminRoute = adminRoutes.some(route => nextUrl.pathname.startsWith(route))
 
   if (isApiAuthRoute) {
     console.log("[Middleware] API Auth Route:", nextUrl.pathname);
@@ -39,6 +40,20 @@ export default auth((req) => {
     return
   }
 
+  if (isAdminRoute) {
+    if (!isLoggedIn) {
+      const callbackUrl = nextUrl.pathname + nextUrl.search
+      const encodedCallbackUrl = encodeURIComponent(callbackUrl)
+      const loginUrl = `/auth/login?callbackUrl=${encodedCallbackUrl}`
+      return Response.redirect(new URL(loginUrl, nextUrl))
+    }
+
+    const isAdmin = req.auth?.user?.role === "ADMIN"
+    if (!isAdmin) {
+      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
+    }
+  }
+
   if (!isLoggedIn && !isPublicRoute) {
     console.log("[Middleware] Unauthorized access - redirecting to login:", {
       from: nextUrl.pathname,
@@ -47,7 +62,7 @@ export default auth((req) => {
     
     const callbackUrl = nextUrl.pathname + nextUrl.search
     const encodedCallbackUrl = encodeURIComponent(callbackUrl)
-    const loginUrl = `/login?callbackUrl=${encodedCallbackUrl}`
+    const loginUrl = `/auth/login?callbackUrl=${encodedCallbackUrl}`
 
     console.log("[Middleware] Redirect URL:", loginUrl);
     return Response.redirect(new URL(loginUrl, nextUrl))

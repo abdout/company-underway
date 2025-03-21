@@ -3,6 +3,10 @@
 # Package Manager
 package-manager: pnpm
 
+# UI Components Priority
+- Always use shadcn/ui components first
+- Maintain consistent styling with shadcn/ui theme when creating custom components
+
 # Naming Conventions
 
 ## Directories

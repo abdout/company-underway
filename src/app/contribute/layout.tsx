@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Toaster } from "@/components/ui/sonner"
 
-export default function FeatureLayout({
+export default function ContributeLayout({
   children,
 }: {
   children: React.ReactNode
@@ -14,27 +14,15 @@ export default function FeatureLayout({
   
   const navItems = [
     {
-      href: "/feature/invoice",
-      label: "Invoice Management"
+      href: "/contribute/installation",
+      label: "Installation"
     },
     {
-      href: "/feature/timesheet",
-      label: "Timesheet"
+      href: "/contribute/architecture",
+      label: "Architecture"
     },
     {
-      href: "/feature/pdf-extractor",
-      label: "PDF Extractor"
-    },
-    {
-      href: "/feature/report-generator",
-      label: "Report Generator"
-    },
-    {
-      href: "/feature/document-library",
-      label: "Document Library"
-    },
-    {
-      href: "/mvp-tracker",
+      href: "/contribute/mvp",
       label: "MVP Tracker"
     }
   ]
@@ -46,7 +34,7 @@ export default function FeatureLayout({
         <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">Features</span>
+              <span className="font-bold">Contribute</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               {navItems.map((item) => (
