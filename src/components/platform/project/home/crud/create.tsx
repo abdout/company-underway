@@ -3,7 +3,7 @@ import { FC, FormEvent, useState, useEffect } from "react";
 import { useProject } from "@/provider/project";
 import { lv, mv, hv, ev, LvSwgr, HvSwgr, EvSwgr, LvTrafo, HvTrafo, EvTrafo, LvCable, HvCable, EvCable, LvRmu, HvRmu, EvRmu } from "@/constant/project/item";
 import { useCreate } from "@/provider/create";
-import { usePostProject } from "@/provider/post";
+import { toast } from "sonner";
 import General from "../step/general";
 import ItemStep from "../step/item";
 import MvStep from "../step/mv";
@@ -15,7 +15,8 @@ import Submit from "../../../../atom/button/submit";
 import Indicator from "../step/indicator";
 import PrevNextButtons from "../step/next";
 import { DialogFooter } from "@/components/ui/dialog";
-import { Project } from '@/components/platform/project/project';
+import { Project } from '@/components/platform/project/types';
+import { createProject, updateProject } from "@/components/platform/project/actions";
 
 interface CreateProps {
   projectToEdit?: Project | null;
@@ -23,105 +24,111 @@ interface CreateProps {
 }
 
 const Create: FC<CreateProps> = ({ projectToEdit, onSuccess }) => {
-  console.log("Create: Component rendering", { isEditing: !!projectToEdit });
-  
   const { fetchProjects } = useProject();
-  const { postProject, postProjectState } = usePostProject();
-  console.log("Create: Post project state", postProjectState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const { customer, setCustomer, location, setLocation, consultant, setConsultant, client, setClient, voltages, setVoltages, lvOptions, setLvOptions, mvOptions, setMvOptions, hvOptions, setHvOptions, evOptions, setEvOptions, lvSwgr, setLvSwgr, lvTrafo, setLvTrafo, lvRmu, setLvRmu, lvCable, setLvCable, mvSwgr, setMvSwgr, mvTrafo, setMvTrafo, mvRmu, setMvRmu, mvCable, setMvCable, hvSwgr, setHvSwgr, hvTrafo, setHvTrafo, hvRmu, setHvRmu, hvCable, setHvCable, evSwgr, setEvSwgr, evTrafo, setEvTrafo, evRmu, setEvRmu, evCable, setEvCable } = useCreate();
+  const { 
+    customer, setCustomer, 
+    location, setLocation, 
+    consultant, setConsultant, 
+    client, setClient, 
+    voltages, setVoltages, 
+    lvOptions, setLvOptions, 
+    mvOptions, setMvOptions, 
+    hvOptions, setHvOptions, 
+    evOptions, setEvOptions, 
+    lvSwgr, setLvSwgr, 
+    lvTrafo, setLvTrafo, 
+    lvRmu, setLvRmu, 
+    lvCable, setLvCable, 
+    mvSwgr, setMvSwgr, 
+    mvTrafo, setMvTrafo, 
+    mvRmu, setMvRmu, 
+    mvCable, setMvCable, 
+    hvSwgr, setHvSwgr, 
+    hvTrafo, setHvTrafo, 
+    hvRmu, setHvRmu, 
+    hvCable, setHvCable, 
+    evSwgr, setEvSwgr, 
+    evTrafo, setEvTrafo, 
+    evRmu, setEvRmu, 
+    evCable, setEvCable 
+  } = useCreate();
   
   const [currentStep, setCurrentStep] = useState(1);
-  console.log("Create: Current step", currentStep);
-  
   const { step, nextStep, prevStep } = useStep(voltages, currentStep, setCurrentStep);
-  console.log("Create: Available steps", step);
 
   // Load project data if editing
   useEffect(() => {
     if (projectToEdit) {
-      console.log("Create: Loading project data for editing", projectToEdit);
       // Populate form fields based on the project being edited
       if (projectToEdit.customer) {
-        console.log("Create: Setting customer", projectToEdit.customer);
         setCustomer(projectToEdit.customer);
       }
       if (projectToEdit.location) {
-        console.log("Create: Setting location", projectToEdit.location);
         setLocation(projectToEdit.location);
       }
       if (projectToEdit.consultant) {
-        console.log("Create: Setting consultant", projectToEdit.consultant);
         setConsultant(projectToEdit.consultant);
       }
       if (projectToEdit.client) {
-        console.log("Create: Setting client", projectToEdit.client);
         setClient(projectToEdit.client);
       }
       if (projectToEdit.voltages) {
-        console.log("Create: Setting voltages", projectToEdit.voltages);
         setVoltages(projectToEdit.voltages);
       }
       // Add more fields as needed
     }
   }, [projectToEdit, setCustomer, setLocation, setConsultant, setClient, setVoltages]);
 
-  useEffect(() => {
-    console.log("Create: Form values changed", { 
-      customer, 
-      location, 
-      consultant, 
-      client, 
-      voltages,
-      currentStep
-    });
-  }, [customer, location, consultant, client, voltages, currentStep]);
-
-  useEffect(() => {
-    if (postProjectState.status === 'loading') {
-      console.log("Create: Submitting project...");
-    } else if (postProjectState.status === 'succeeded') {
-      console.log("Create: Project creation succeeded!");
-      fetchProjects();
-      if (onSuccess) {
-        console.log("Create: Calling onSuccess callback");
-        onSuccess();
-      }
-    } else if (postProjectState.status === 'failed') {
-      console.error("Create: Project creation failed", postProjectState.error);
-    }
-  }, [postProjectState.status, fetchProjects, onSuccess, postProjectState.error]);
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Create: Form submitted");
+    setIsSubmitting(true);
 
-    const projectData = {
-      customer,
-      location,
-      consultant,
-      client,
-      voltages,
-      lvOptions: { lvSwgr, lvTrafo, lvCable, lvRmu },
-      mvOptions: { mvSwgr, mvTrafo, mvCable, mvRmu },
-      hvOptions: { hvSwgr, hvTrafo, hvCable, hvRmu },
-      evOptions: { evSwgr, evTrafo, evCable, evRmu }
-    };
-    
-    console.log("Create: Project data to submit", projectData);
+    try {
+      const projectData = {
+        customer,
+        location,
+        consultant,
+        client,
+        voltages,
+        lvOptions: { lvSwgr, lvTrafo, lvCable, lvRmu },
+        mvOptions: { mvSwgr, mvTrafo, mvCable, mvRmu },
+        hvOptions: { hvSwgr, hvTrafo, hvCable, hvRmu },
+        evOptions: { evSwgr, evTrafo, evCable, evRmu }
+      };
 
-    if (projectToEdit && projectToEdit._id) {
-      console.log("Create: This is an edit operation for project", projectToEdit._id);
-      // Add update logic if needed
-      // await updateProject(projectToEdit._id, projectData);
-    } else {
-      console.log("Create: This is a create operation");
-      await postProject(projectData);
+      let result;
+      
+      if (projectToEdit && projectToEdit._id) {
+        // Update existing project
+        result = await updateProject(projectToEdit._id, projectData);
+      } else {
+        // Create new project
+        result = await createProject(projectData);
+      }
+
+      if (result.success) {
+        toast.success(projectToEdit ? "Project updated successfully" : "Project created successfully");
+        
+        // Refresh the project list
+        await fetchProjects();
+        
+        // Call the success callback
+        if (onSuccess) {
+          onSuccess();
+        }
+      } else {
+        toast.error(result.message || "Failed to save project");
+      }
+    } catch (error: any) {
+      toast.error(error.message || "An unexpected error occurred");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const totalSteps = 2 + step.length; // 2 initial steps + selected voltage steps
-  console.log("Create: Total steps", totalSteps);
 
   return (
     <div className="h-full flex flex-col">
@@ -131,35 +138,20 @@ const Create: FC<CreateProps> = ({ projectToEdit, onSuccess }) => {
             {currentStep === 1 && (
               <General
                 customer={customer}
-                setCustomer={(val) => {
-                  console.log("Create: Setting customer to", val);
-                  setCustomer(val);
-                }}
+                setCustomer={setCustomer}
                 location={location}
-                setLocation={(val) => {
-                  console.log("Create: Setting location to", val);
-                  setLocation(val);
-                }}
+                setLocation={setLocation}
                 consultant={consultant}
-                setConsultant={(val) => {
-                  console.log("Create: Setting consultant to", val);
-                  setConsultant(val);
-                }}
+                setConsultant={setConsultant}
                 client={client}
-                setClient={(val) => {
-                  console.log("Create: Setting client to", val);
-                  setClient(val);
-                }}
+                setClient={setClient}
               />
             )}
 
             {currentStep === 2 && (
               <ItemStep
                 voltages={voltages}
-                setVoltages={(val) => {
-                  console.log("Create: Setting voltages to", val);
-                  setVoltages(val);
-                }}
+                setVoltages={setVoltages}
                 lv={lv}
                 setLvOptions={setLvOptions}
                 mv={mv}
@@ -234,18 +226,15 @@ const Create: FC<CreateProps> = ({ projectToEdit, onSuccess }) => {
             <PrevNextButtons
               currentStep={currentStep}
               totalSteps={totalSteps}
-              prevStep={() => {
-                console.log("Create: Moving to previous step from", currentStep);
-                prevStep();
-              }}
-              nextStep={() => {
-                console.log("Create: Moving to next step from", currentStep);
-                nextStep();
-              }}
+              prevStep={prevStep}
+              nextStep={nextStep}
             />
             
             {currentStep === totalSteps && (
-              <Submit label={projectToEdit ? "Update Project" : "Create Project"} />
+              <Submit 
+                label={projectToEdit ? "Update Project" : "Create Project"} 
+                disabled={isSubmitting}
+              />
             )}
           </DialogFooter>
         </div>

@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useCallback, useActionState, startTransition } from 'react';
+import { useState, useEffect, useCallback, startTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { projectFormSchema, type ProjectFormValues } from './valid';
-import { createProject } from './actions';
+import { createProject, updateProject } from './actions';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Save, Plus, X } from 'lucide-react';
@@ -22,77 +22,66 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { systemActivities, TEAM_MEMBERS, TEAM_LEADS, KITS, CARS, type SystemType } from './constant';
 import { type ActivityCategory, type ActivityWithSystem, type ProjectCreateFormProps } from './types';
-import { useRouter } from 'next/navigation';
 
-export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps) {
+export default function ProjectCreateForm({ projectToEdit, onSuccess, onClose }: ProjectCreateFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedSystems, setSelectedSystems] = useState<SystemType[]>([]);
   const [activeSystemTab, setActiveSystemTab] = useState<SystemType | null>(null);
-  const router = useRouter();
   
-  // Define the action functions for activity selection
-  const selectActivity = async (previousState: ActivityWithSystem[], formData: FormData) => {
-    const system = formData.get('system') as SystemType;
-    const category = formData.get('category') as string;
-    const subcategory = formData.get('subcategory') as string;
-    const activity = formData.get('activity') as string;
-    const checked = formData.get('checked') === 'true';
+  // Replace useActionState with regular state
+  const [selectedActivities, setSelectedActivities] = useState<ActivityWithSystem[]>(
+    (projectToEdit?.activities as unknown as ActivityWithSystem[]) || []
+  );
+  
+  // Replace the action functions with direct state updates
+  const handleActivityChange = useCallback((system: SystemType, category: string, subcategory: string, activity: string, checked: boolean) => {
+    setSelectedActivities(prev => {
+      if (checked) {
+        // Add the activity
+        return [...prev, { system, category, subcategory, activity }];
+      } else {
+        // Remove the activity
+        return prev.filter(a => 
+          !(a.system === system &&
+            a.category === category && 
+            a.subcategory === subcategory && 
+            a.activity === activity)
+        );
+      }
+    });
+  }, []);
 
-    if (checked) {
-      // Add the activity
-      return [...previousState, { system, category, subcategory, activity }];
-    } else {
-      // Remove the activity
-      return previousState.filter(a => 
-        !(a.system === system &&
-          a.category === category && 
-          a.subcategory === subcategory && 
-          a.activity === activity)
-      );
-    }
-  };
-
-  const selectAllActivities = async (previousState: ActivityWithSystem[], formData: FormData) => {
-    const system = formData.get('system') as SystemType;
-    const category = formData.get('category') as string;
-    const subcategory = formData.get('subcategory') as string;
-    const activities = JSON.parse(formData.get('activities') as string) as ActivityWithSystem[];
-
-    // Remove existing activities for this category/subcategory
-    const filteredPrev = previousState.filter(a => 
-      !(a.system === system && 
-        a.category === category && 
-        (!subcategory || a.subcategory === subcategory))
-    );
-    
-    // Add new activities
-    return [...filteredPrev, ...activities];
-  };
-
-  const unselectAllActivities = async (previousState: ActivityWithSystem[], formData: FormData) => {
-    const system = formData.get('system') as SystemType;
-    const category = formData.get('category') as string;
-    const subcategory = formData.get('subcategory') as string;
-
-    if (subcategory) {
-      // Remove activities for specific subcategory
-      return previousState.filter(a => 
+  const handleSelectAllActivities = useCallback((system: SystemType, category: string, subcategory: string | null, activities: ActivityWithSystem[]) => {
+    setSelectedActivities(prev => {
+      // Remove existing activities for this category/subcategory
+      const filteredPrev = prev.filter(a => 
         !(a.system === system && 
           a.category === category && 
-          a.subcategory === subcategory)
+          (!subcategory || a.subcategory === subcategory))
       );
-    } else {
-      // Remove all activities for the category
-      return previousState.filter(a => 
-        !(a.system === system && a.category === category)
-      );
-    }
-  };
+      
+      // Add new activities
+      return [...filteredPrev, ...activities];
+    });
+  }, []);
 
-  // Use useActionState for activity selection
-  const [selectedActivities, selectActivityAction] = useActionState(selectActivity, []);
-  const [, selectAllAction] = useActionState(selectAllActivities, []);
-  const [, unselectAllAction] = useActionState(unselectAllActivities, []);
+  const handleUnselectAllActivities = useCallback((system: SystemType, category: string, subcategory: string | null) => {
+    setSelectedActivities(prev => {
+      if (subcategory) {
+        // Remove activities for specific subcategory
+        return prev.filter(a => 
+          !(a.system === system && 
+            a.category === category && 
+            a.subcategory === subcategory)
+        );
+      } else {
+        // Remove all activities for the category
+        return prev.filter(a => 
+          !(a.system === system && a.category === category)
+        );
+      }
+    });
+  }, []);
   
   // Track selected categories per system
   const [selectedCategories, setSelectedCategories] = useState<Record<SystemType, string[]>>({
@@ -123,24 +112,90 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
   const form = useForm<ProjectFormValues>({
     resolver: zodResolver(projectFormSchema),
     defaultValues: {
-      customer: '',
-      description: '',
-      location: '',
-      client: '',
-      consultant: '',
-      status: 'neutral',
-      priority: 'neutral',
-      phase: 'approved',
-      team: [],
-      teamLead: '',
-      systems: [],
-      activities: [],
-      mobilization: '',
-      accommodation: '',
-      kits: [],
-      cars: [],
+      customer: projectToEdit?.customer || '',
+      description: projectToEdit?.description || '',
+      location: projectToEdit?.location || '',
+      client: projectToEdit?.client || '',
+      consultant: projectToEdit?.consultant || '',
+      status: projectToEdit?.status || 'neutral',
+      priority: projectToEdit?.priority || 'neutral',
+      phase: projectToEdit?.phase || 'approved',
+      team: projectToEdit?.team || [],
+      teamLead: projectToEdit?.teamLead || '',
+      systems: projectToEdit?.systems as SystemType[] || [],
+      activities: projectToEdit?.activities || [],
+      mobilization: projectToEdit?.mobilization || '',
+      accommodation: projectToEdit?.accommodation || '',
+      kits: projectToEdit?.kits || [],
+      cars: projectToEdit?.cars || [],
+      startDate: projectToEdit?.startDate || undefined,
+      endDate: projectToEdit?.endDate || undefined,
     },
   });
+
+  // Initialize selectedSystems from projectToEdit if available
+  useEffect(() => {
+    if (projectToEdit && projectToEdit.systems && projectToEdit.systems.length > 0) {
+      const systemTypes = projectToEdit.systems.filter((sys): sys is SystemType => 
+        ['MV SWGR', 'HV SWGR', 'LV SWGR', 'POWER TRAFO', 'DIST. TRAFO', 'COMPONENT', 'RELAY', 'RMU', 'LOW CURRENT'].includes(sys)
+      );
+      setSelectedSystems(systemTypes);
+      
+      if (systemTypes.length > 0) {
+        setActiveSystemTab(systemTypes[0]);
+      }
+    }
+    
+    // Initialize categories and subcategories from project activities
+    if (projectToEdit?.activities && projectToEdit.activities.length > 0) {
+      const categoriesMap: Record<SystemType, string[]> = {
+        'MV SWGR': [],
+        'HV SWGR': [],
+        'LV SWGR': [],
+        'POWER TRAFO': [],
+        'DIST. TRAFO': [],
+        'COMPONENT': [],
+        'RELAY': [],
+        'RMU': [],
+        'LOW CURRENT': []
+      };
+      
+      const subcategoriesMap: Record<SystemType, Record<string, string[]>> = {
+        'MV SWGR': {},
+        'HV SWGR': {},
+        'LV SWGR': {},
+        'POWER TRAFO': {},
+        'DIST. TRAFO': {},
+        'COMPONENT': {},
+        'RELAY': {},
+        'RMU': {},
+        'LOW CURRENT': {}
+      };
+      
+      projectToEdit.activities.forEach(activity => {
+        const system = activity.system as SystemType;
+        if (!system) return;
+        
+        // Add category if not already added
+        if (!categoriesMap[system].includes(activity.category)) {
+          categoriesMap[system].push(activity.category);
+        }
+        
+        // Initialize subcategory array if needed
+        if (!subcategoriesMap[system][activity.category]) {
+          subcategoriesMap[system][activity.category] = [];
+        }
+        
+        // Add subcategory if not already added
+        if (!subcategoriesMap[system][activity.category].includes(activity.subcategory)) {
+          subcategoriesMap[system][activity.category].push(activity.subcategory);
+        }
+      });
+      
+      setSelectedCategories(categoriesMap);
+      setSelectedSubcategories(subcategoriesMap);
+    }
+  }, [projectToEdit]);
 
   useEffect(() => {
     // When selected systems change, update the form value
@@ -168,33 +223,32 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
   }, [selectedSystems, form]);
 
   const onSubmit = async (data: ProjectFormValues) => {
-    console.log('=== Form Submission Debug Logs ===');
-    console.log('Form submission started');
-    console.log('Form data:', JSON.stringify(data, null, 2));
-    console.log('Selected systems:', selectedSystems);
-    console.log('Selected activities:', JSON.stringify(selectedActivities, null, 2));
-    console.log('Selected categories:', JSON.stringify(selectedCategories, null, 2));
-    console.log('Selected subcategories:', JSON.stringify(selectedSubcategories, null, 2));
-    
     setIsSubmitting(true);
     try {
-      console.log('Preparing to call createProject with data:', {
+      const projectData = {
         ...data,
         systems: selectedSystems,
         activities: selectedActivities
-      });
+      };
       
-      const result = await createProject({
-        ...data,
-        systems: selectedSystems,
-        activities: selectedActivities
-      });
-
-      console.log('createProject result:', JSON.stringify(result, null, 2));
+      let result;
+      
+      if (projectToEdit && projectToEdit._id) {
+        // Update existing project
+        result = await updateProject(projectToEdit._id, projectData);
+        if (result.success) {
+          toast.success('Project updated successfully!');
+        }
+      } else {
+        // Create new project
+        result = await createProject(projectData);
+        if (result.success) {
+          toast.success('Project created successfully!');
+        }
+      }
 
       if (result.success) {
-        console.log('Project created successfully');
-        toast.success('Project created successfully!');
+        // Reset form state
         form.reset();
         setSelectedSystems([]);
         setSelectedCategories({
@@ -220,39 +274,33 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
           'LOW CURRENT': {}
         });
         setActiveSystemTab(null);
+        
+        // Call onSuccess callback to update project list
         if (onSuccess) {
-          onSuccess();
+          await onSuccess();
         }
-        // Redirect to project page
-        router.push('/platform/project');
+        
+        // Call onClose to immediately close dialog
+        if (onClose) {
+          onClose();
+        }
       } else {
-        console.error('Failed to create project:', result.message);
-        toast.error(result.message || 'Failed to create project');
+        toast.error(result.message || `Failed to ${projectToEdit ? 'update' : 'create'} project`);
       }
     } catch (error: any) {
-      console.error('Error during project creation:', error);
-      console.error('Error details:', {
-        name: error?.name || 'Unknown',
-        message: error?.message || 'No error message',
-        stack: error?.stack || 'No stack trace'
-      });
+      console.error(`Error ${projectToEdit ? 'updating' : 'creating'} project:`, error);
       toast.error(error?.message || 'An unexpected error occurred');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Memoize handlers to prevent unnecessary rerenders
+  // Handle system toggle
   const handleSystemToggle = useCallback((system: SystemType) => {
     setSelectedSystems(prev => {
       if (prev.includes(system)) {
         // If system is already selected, remove it and all its activities
-        const formData = new FormData();
-        formData.append('system', system);
-        formData.append('category', '*'); // Use wildcard to remove all activities for this system
-        startTransition(() => {
-          unselectAllAction(formData);
-        });
+        handleUnselectAllActivities(system, '*', null);
         // Clear selected categories for this system
         setSelectedCategories(prev => ({
           ...prev,
@@ -268,7 +316,7 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
         return [...prev, system];
       }
     });
-  }, [setSelectedSystems, setSelectedCategories, setSelectedSubcategories, unselectAllAction]);
+  }, [setSelectedSystems, setSelectedCategories, setSelectedSubcategories, handleUnselectAllActivities]);
 
   // Handle category toggle
   const handleCategoryToggle = useCallback((system: SystemType, category: string) => {
@@ -294,14 +342,8 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
     }));
 
     // Handle activities
-    const formData = new FormData();
-    formData.append('system', system);
-    formData.append('category', category);
-
     if (isSelected) {
-      startTransition(() => {
-        unselectAllAction(formData);
-      });
+      handleUnselectAllActivities(system, category, null);
     } else if (categoryData) {
       const newActivities: ActivityWithSystem[] = [];
       categoryData.subitems.forEach(subcategory => {
@@ -314,12 +356,9 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
           });
         });
       });
-      formData.append('activities', JSON.stringify(newActivities));
-      startTransition(() => {
-        selectAllAction(formData);
-      });
+      handleSelectAllActivities(system, category, null, newActivities);
     }
-  }, [selectedCategories, systemActivities, selectAllAction, unselectAllAction]);
+  }, [selectedCategories, systemActivities, handleSelectAllActivities, handleUnselectAllActivities]);
 
   // Handle subcategory toggle
   const handleSubcategoryToggle = useCallback((system: SystemType, category: string, subcategory: string) => {
@@ -329,13 +368,7 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
 
       if (isSelected) {
         // Remove subcategory and filter out related activities
-        const formData = new FormData();
-        formData.append('system', system);
-        formData.append('category', category);
-        formData.append('subcategory', subcategory);
-        startTransition(() => {
-          unselectAllAction(formData);
-        });
+        handleUnselectAllActivities(system, category, subcategory);
       }
 
       return {
@@ -348,13 +381,12 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
         }
       };
     });
-  }, [unselectAllAction]);
+  }, [handleUnselectAllActivities]);
 
   // Handle initial selection
   useEffect(() => {
     if (selectedSystems.length > 0) {
       // Batch the activity selections
-      const formData = new FormData();
       const allActivities: ActivityWithSystem[] = [];
       
       selectedSystems.forEach(system => {
@@ -374,13 +406,10 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
       });
 
       if (allActivities.length > 0) {
-        formData.append('activities', JSON.stringify(allActivities));
-        startTransition(() => {
-          selectAllAction(formData);
-        });
+        setSelectedActivities(prev => [...prev, ...allActivities]);
       }
     }
-  }, [selectedSystems, systemActivities, selectAllAction]);
+  }, [selectedSystems, systemActivities]);
 
   const systemOptions: SystemType[] = ['MV SWGR', 'HV SWGR', 'LV SWGR', 'POWER TRAFO', 'DIST. TRAFO', 'COMPONENT', 'RELAY', 'RMU', 'LOW CURRENT'];
 
@@ -600,15 +629,13 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                                               id={`${system}-${category.item}-${subcategory.name}-${activity}`}
                                                               checked={isSelected}
                                                               onCheckedChange={(checked) => {
-                                                                const formData = new FormData();
-                                                                formData.append('system', system);
-                                                                formData.append('category', category.item);
-                                                                formData.append('subcategory', subcategory.name);
-                                                                formData.append('activity', activity);
-                                                                formData.append('checked', checked.toString());
-                                                                startTransition(() => {
-                                                                  selectActivityAction(formData);
-                                                                });
+                                                                handleActivityChange(
+                                                                  system,
+                                                                  category.item,
+                                                                  subcategory.name,
+                                                                  activity,
+                                                                  !!checked
+                                                                );
                                                               }}
                                                               onClick={(e) => e.stopPropagation()}
                                                               className="mr-2"
@@ -657,13 +684,7 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                                     });
                                                   });
                                                 });
-                                                const formData = new FormData();
-                                                formData.append('system', system);
-                                                formData.append('category', category.item);
-                                                formData.append('activities', JSON.stringify(newActivities));
-                                                startTransition(() => {
-                                                  selectAllAction(formData);
-                                                });
+                                                handleSelectAllActivities(system, category.item, null, newActivities);
                                               }}
                                             >
                                               Select All
@@ -674,12 +695,7 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                               onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
-                                                const formData = new FormData();
-                                                formData.append('system', system);
-                                                formData.append('category', category.item);
-                                                startTransition(() => {
-                                                  unselectAllAction(formData);
-                                                });
+                                                handleUnselectAllActivities(system, category.item, null);
                                               }}
                                             >
                                               Unselect All
@@ -692,7 +708,7 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                                   <h4 className="text-sm font-medium">{subcategory.name}</h4>
                                                   <div className="flex gap-1">
                                                     <Button
-                                                      variant="ghost"
+                                                      variant="outline"
                                                       size="sm"
                                                       onClick={(e) => {
                                                         e.preventDefault();
@@ -703,31 +719,18 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                                           subcategory: subcategory.name,
                                                           activity
                                                         }));
-                                                        const formData = new FormData();
-                                                        formData.append('system', system);
-                                                        formData.append('category', category.item);
-                                                        formData.append('subcategory', subcategory.name);
-                                                        formData.append('activities', JSON.stringify(newActivities));
-                                                        startTransition(() => {
-                                                          selectAllAction(formData);
-                                                        });
+                                                        handleSelectAllActivities(system, category.item, null, newActivities);
                                                       }}
                                                     >
                                                       Select All
                                                     </Button>
                                                     <Button
-                                                      variant="ghost"
+                                                      variant="outline"
                                                       size="sm"
                                                       onClick={(e) => {
                                                         e.preventDefault();
                                                         e.stopPropagation();
-                                                        const formData = new FormData();
-                                                        formData.append('system', system);
-                                                        formData.append('category', category.item);
-                                                        formData.append('subcategory', subcategory.name);
-                                                        startTransition(() => {
-                                                          unselectAllAction(formData);
-                                                        });
+                                                        handleUnselectAllActivities(system, category.item, null);
                                                       }}
                                                     >
                                                       Unselect All
@@ -755,15 +758,13 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                                                             id={`${system}-${category.item}-${subcategory.name}-${activity}`}
                                                             checked={isSelected}
                                                             onCheckedChange={(checked) => {
-                                                              const formData = new FormData();
-                                                              formData.append('system', system);
-                                                              formData.append('category', category.item);
-                                                              formData.append('subcategory', subcategory.name);
-                                                              formData.append('activity', activity);
-                                                              formData.append('checked', checked.toString());
-                                                              startTransition(() => {
-                                                                selectActivityAction(formData);
-                                                              });
+                                                              handleActivityChange(
+                                                                system,
+                                                                category.item,
+                                                                subcategory.name,
+                                                                activity,
+                                                                !!checked
+                                                              );
                                                             }}
                                                             onClick={(e) => e.stopPropagation()}
                                                             className="mr-2"
@@ -1226,7 +1227,10 @@ export default function ProjectCreateForm({ onSuccess }: ProjectCreateFormProps)
                 size="lg"
               >
                 <Save className="mr-2 h-5 w-5" />
-                {isSubmitting ? "Creating Project..." : "Create Project"}
+                {isSubmitting 
+                  ? (projectToEdit ? "Updating Project..." : "Creating Project...") 
+                  : (projectToEdit ? "Update Project" : "Create Project")
+                }
               </Button>
             </div>
           </form>

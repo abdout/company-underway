@@ -36,7 +36,9 @@ export interface ActivityWithSystem {
 }
 
 export interface ProjectCreateFormProps {
-  onSuccess?: () => void;
+  projectToEdit?: Project | null;
+  onSuccess?: () => Promise<void>;
+  onClose?: () => void;
 }
 
 export interface Project {

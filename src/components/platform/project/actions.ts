@@ -7,6 +7,42 @@ import { ProjectFormValues } from './valid';
 import { auth } from '@/auth';
 import { Project as ProjectType } from './types';
 
+// Helper function to serialize MongoDB documents
+const serializeDocument = (doc: any): any => {
+  if (!doc) return doc;
+  
+  // Handle arrays
+  if (Array.isArray(doc)) {
+    return doc.map(item => serializeDocument(item));
+  }
+  
+  // Handle objects
+  if (typeof doc === 'object') {
+    const serialized: any = {};
+    for (const [key, value] of Object.entries(doc)) {
+      // Handle ObjectId
+      if (key === '_id' && value?.toString) {
+        serialized[key] = value.toString();
+      }
+      // Handle Date objects
+      else if (value instanceof Date) {
+        serialized[key] = value.toISOString();
+      }
+      // Handle nested objects
+      else if (typeof value === 'object' && value !== null) {
+        serialized[key] = serializeDocument(value);
+      }
+      // Handle primitive values
+      else {
+        serialized[key] = value;
+      }
+    }
+    return serialized;
+  }
+  
+  return doc;
+};
+
 export async function createProject(data: ProjectFormValues) {
   console.log('=== Server Action: createProject ===');
   console.log('Received data:', JSON.stringify(data, null, 2));
@@ -47,10 +83,13 @@ export async function createProject(data: ProjectFormValues) {
     console.log('Project created successfully:', JSON.stringify(project, null, 2));
 
     console.log('Revalidating project path...');
-    revalidatePath('/project');
+    revalidatePath('/platform/project');
     console.log('Path revalidation complete');
     
-    return { success: true, data: project };
+    // Serialize the project before returning
+    const serializedProject = serializeDocument(project.toObject ? project.toObject() : project);
+    
+    return { success: true, data: serializedProject };
   } catch (error: any) {
     console.error('Error in createProject:', {
       name: error?.name || 'Unknown',
@@ -97,42 +136,6 @@ export async function getProjects() {
     const projects = await Project.find({}).sort({ createdAt: -1 }).lean();
     console.log(`Found ${projects.length} projects`);
     
-    // Helper function to serialize MongoDB documents
-    const serializeDocument = (doc: any): any => {
-      if (!doc) return doc;
-      
-      // Handle arrays
-      if (Array.isArray(doc)) {
-        return doc.map(item => serializeDocument(item));
-      }
-      
-      // Handle objects
-      if (typeof doc === 'object') {
-        const serialized: any = {};
-        for (const [key, value] of Object.entries(doc)) {
-          // Handle ObjectId
-          if (key === '_id' && value?.toString) {
-            serialized[key] = value.toString();
-          }
-          // Handle Date objects
-          else if (value instanceof Date) {
-            serialized[key] = value.toISOString();
-          }
-          // Handle nested objects
-          else if (typeof value === 'object' && value !== null) {
-            serialized[key] = serializeDocument(value);
-          }
-          // Handle primitive values
-          else {
-            serialized[key] = value;
-          }
-        }
-        return serialized;
-      }
-      
-      return doc;
-    };
-    
     // Serialize all projects and their nested objects
     const serializedProjects = projects.map(project => serializeDocument(project));
     
@@ -146,11 +149,15 @@ export async function getProjects() {
 export async function getProject(id: string) {
   try {
     await connectDB();
-    const project = await Project.findById(id);
+    const project = await Project.findById(id).lean();
     if (!project) {
       return { success: false, message: 'Project not found' };
     }
-    return { success: true, data: project };
+    
+    // Serialize the project before returning
+    const serializedProject = serializeDocument(project);
+    
+    return { success: true, data: serializedProject };
   } catch (error) {
     console.error('Error fetching project:', error);
     return { success: false, message: 'Failed to fetch project' };
@@ -200,10 +207,13 @@ export async function updateProject(id: string, data: Partial<ProjectFormValues>
 
     console.log('Project updated successfully:', JSON.stringify(project, null, 2));
     console.log('Revalidating project path...');
-    revalidatePath('/project');
+    revalidatePath('/platform/project');
     console.log('Path revalidation complete');
 
-    return { success: true, data: project };
+    // Serialize the project before returning
+    const serializedProject = serializeDocument(project.toObject ? project.toObject() : project);
+    
+    return { success: true, data: serializedProject };
   } catch (error: any) {
     console.error('=== Error in updateProject ===');
     console.error('Error type:', error?.constructor?.name || 'Unknown');
@@ -247,10 +257,14 @@ export async function deleteProject(id: string) {
       return { success: false, message: 'Project not found' };
     }
 
-    revalidatePath('/project');
-    return { success: true, data: project };
-  } catch (error) {
+    revalidatePath('/platform/project');
+    
+    // Serialize the project before returning
+    const serializedProject = serializeDocument(project.toObject ? project.toObject() : project);
+    
+    return { success: true, data: serializedProject };
+  } catch (error: any) {
     console.error('Error deleting project:', error);
-    return { success: false, message: 'Failed to delete project' };
+    return { success: false, message: error?.message || 'Failed to delete project' };
   }
 } 

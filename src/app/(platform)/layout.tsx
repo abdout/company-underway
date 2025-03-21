@@ -7,6 +7,7 @@ import { ProjectProvider } from "@/components/nmbd-project/context";
 import { TaskProvider } from "@/components/platform/task/context";
 import { MainProvider } from "@/provider/main";
 import { ModalProvider } from "@/components/atom/modal/context";
+import { Toaster } from "@/components/ui/sonner";
 
 interface AppLayoutProps {
   children: React.ReactNode
@@ -31,6 +32,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
         </ProjectProvider>
       </MainProvider>
       </main>
+      <Toaster position="bottom-right" />
       {/* <Footer /> */}
     </div>
   )

@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Create from "./crud/create";
-import { Project } from '@/components/platform/project/project';
+import { Project } from '@/components/platform/project/types';
 import {
   Dialog,
   DialogContent,
@@ -17,25 +17,10 @@ interface ProjectDialogProps {
 }
 
 export function ProjectDialog({ projectToEdit, open, onOpenChange }: ProjectDialogProps) {
-  console.log("ProjectDialog: Rendering with props", { open, hasProjectToEdit: !!projectToEdit });
-  
-  useEffect(() => {
-    console.log("ProjectDialog: Dialog open state changed to", open);
-  }, [open]);
-  
-  useEffect(() => {
-    if (projectToEdit) {
-      console.log("ProjectDialog: Project to edit changed", projectToEdit);
-    }
-  }, [projectToEdit]);
-
   return (
     <Dialog
       open={open}
-      onOpenChange={(newState) => {
-        console.log("ProjectDialog: Dialog onOpenChange triggered with state", newState);
-        onOpenChange(newState);
-      }}
+      onOpenChange={onOpenChange}
     >
       <DialogContent className="max-w-3xl h-[90vh] overflow-y-auto flex flex-col">
         <DialogHeader className="pb-4">
@@ -52,7 +37,6 @@ export function ProjectDialog({ projectToEdit, open, onOpenChange }: ProjectDial
           <Create 
             projectToEdit={projectToEdit} 
             onSuccess={() => {
-              console.log("ProjectDialog: Create onSuccess callback triggered");
               onOpenChange(false);
             }}
           />

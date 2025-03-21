@@ -1,4 +1,4 @@
-import ProjectList from "@/components/platform/project/list";
+import ProjectList from "@/components/platform/project/content";
 import React from "react";
 
 const Project = () => {
