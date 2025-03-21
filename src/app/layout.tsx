@@ -22,8 +22,8 @@ const fontHeading = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "الحركة الوطنية للبناء والتنمية",
-  description: "حركة إصلاح اجتماعي وسياسي شامل",
+  title: "Company",
+  description: "Company automation",
 };
 
 export default async function RootLayout({

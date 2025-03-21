@@ -1,13 +1,13 @@
-import { useTask } from './context';
 import { useEffect, useState } from 'react';
-import { task } from './type';
+import { getTasks } from './actions';
+import { Task } from './type';
 
 interface FilterOption {
     label: string;
     value: string;
 }
 
-const getUniqueValues = (tasks: task[], property: keyof task) => {
+const getUniqueValues = (tasks: Task[], property: keyof Task) => {
     if (property === 'task') {
       return [];
     }
@@ -17,35 +17,42 @@ const getUniqueValues = (tasks: task[], property: keyof task) => {
 };
 
 // Default values for status and priority when no tasks are available
-const getDefaultOptions = (property: keyof task): FilterOption[] => {
+const getDefaultOptions = (property: keyof Task): FilterOption[] => {
   if (property === 'status') {
     return [
-      { label: 'Neutral', value: 'Neutral' },
-      { label: 'In Progress', value: 'In Progress' },
-      { label: 'Completed', value: 'Completed' },
-      { label: 'Stopped', value: 'Stopped' }
+      { label: 'Stuck', value: 'stuck' },
+      { label: 'In Progress', value: 'in_progress' },
+      { label: 'Done', value: 'done' },
+      { label: 'Cancelled', value: 'cancelled' }
     ];
   }
   
   if (property === 'priority') {
     return [
-      { label: 'Neutral', value: 'Neutral' },
-      { label: 'Low', value: 'Low' },
-      { label: 'Medium', value: 'Medium' },
-      { label: 'High', value: 'High' }
+      { label: 'Neutral', value: 'neutral' },
+      { label: 'Low', value: 'low' },
+      { label: 'Medium', value: 'medium' },
+      { label: 'High', value: 'high' }
     ];
   }
   
   return [];
 };
 
-export const useFilter = (property: keyof task): FilterOption[] => {
-  const { tasks, refreshTasks } = useTask();
+export const useFilter = (property: keyof Task): FilterOption[] => {
   const [filterOptions, setFilterOptions] = useState<FilterOption[]>(getDefaultOptions(property));
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    refreshTasks();
-  }, [refreshTasks]);
+    async function fetchTasks() {
+      const result = await getTasks();
+      if (result.success && result.tasks) {
+        setTasks(result.tasks);
+      }
+    }
+    
+    fetchTasks();
+  }, []);
 
   useEffect(() => {
     const uniqueValues = getUniqueValues(tasks, property);

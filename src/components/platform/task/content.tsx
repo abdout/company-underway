@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import {
   ColumnDef,
   flexRender,
@@ -30,20 +30,21 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { DataTableFacetedFilter } from '@/components/data-table/data-table-faceted-filter'
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
-import { useFilter } from './filter'
-// import { ShadcnDailog } from '@/components/atom/dailog'
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog'
 import { Icon } from '@iconify/react'
-import { useModal } from '@/components/atom/modal/context'
-import Create from '@/components/platform/task/create'
-import Modal from '@/components/atom/modal/modal'
+import { Plus } from 'lucide-react'
+import { toast } from 'sonner'
+
+import TaskForm from './form'
+import { Task } from './type'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  onTasksChange?: () => Promise<void>
 }
 
-export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
@@ -53,10 +54,7 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
     remark: false,
   })
   const [rowSelection, setRowSelection] = useState({})
-  const [page, setPage] = useState(0)
-  const loadMoreRef = useRef(null)
-
-  const PAGE_SIZE = 20
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const table = useReactTable({
     data,
@@ -77,57 +75,22 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
     getFilteredRowModel: getFilteredRowModel(),
   })
 
-  const statusOptions = useFilter('status')
-  const priorityOptions = useFilter('priority')
   const statusColumn = table.getColumn('status')
   const priorityColumn = table.getColumn('priority')
 
-  // const [ setOpen] = useState(false)
-
-  // const handleClose = () => {
-  //   setOpen(false)
-  // }
-
-  useEffect(() => {
-    setPage(0)
-  }, [table.getFilteredRowModel(), columnFilters, sorting])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const filteredRows = table.getFilteredRowModel().rows
-          if ((page + 1) * PAGE_SIZE < filteredRows.length) {
-            setPage((prevPage) => prevPage + 1)
-          }
-        }
-      },
-      { threshold: 1.0 }
-    )
-
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current)
+  const handleCloseModal = async () => {
+    setIsModalOpen(false);
+    if (onTasksChange) {
+      await onTasksChange();
     }
+  }
 
-    return () => {
-      if (loadMoreRef.current) {
-        observer.unobserve(loadMoreRef.current)
-      }
-    }
-  }, [page, table.getFilteredRowModel()])
-
-  const visibleRows = table.getRowModel().rows.slice(0, (page + 1) * PAGE_SIZE)
-
-  const { modal, openModal, closeModal } = useModal()
-
-  const handleCloseModal = () => {
-    closeModal()
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   }
 
   return (
     <>
-      {modal.open && modal.id === null && <Modal content={<Create onClose={handleCloseModal} />} />}
-      
       {/* Filters and Add Task Button */}
       <div className='flex flex-wrap items-center justify-between gap-2 md:gap-4 py-4'>
         <div className='flex flex-wrap items-center gap-2 md:gap-4'>
@@ -157,51 +120,33 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                     <DataTableFacetedFilter
                       column={statusColumn}
                       title='Status'
-                      options={statusOptions}
+                      options={[
+                        { label: 'Stuck', value: 'stuck' },
+                        { label: 'In Progress', value: 'in_progress' },
+                        { label: 'Done', value: 'done' },
+                        { label: 'Cancelled', value: 'cancelled' },
+                      ]}
                       onFilterChange={(filterValue) => {
                         statusColumn.setFilterValue(filterValue)
                       }}
                     />
                   )}
+                  
                   {priorityColumn && (
                     <DataTableFacetedFilter
                       column={priorityColumn}
                       title='Priority'
-                      options={priorityOptions}
+                      options={[
+                        { label: 'High', value: 'high' },
+                        { label: 'Medium', value: 'medium' },
+                        { label: 'Low', value: 'low' },
+                        { label: 'Neutral', value: 'neutral' },
+                      ]}
                       onFilterChange={(filterValue) => {
                         priorityColumn.setFilterValue(filterValue)
                       }}
                     />
                   )}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        aria-label='Select Columns'
-                        variant='outline'
-                        className='ml-auto gap-2 reveal'
-                      >
-                        <MixerHorizontalIcon className='mr-2 size-4' />
-                        Columns
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align='end'>
-                      {table
-                        .getAllColumns()
-                        .filter((column) => column.getCanHide())
-                        .map((column) => {
-                          return (
-                            <DropdownMenuCheckboxItem
-                              key={column.id}
-                              className='capitalize'
-                              checked={column.getIsVisible()}
-                              onCheckedChange={(value) => column.toggleVisibility(!!value)}
-                            >
-                              {column.id}
-                            </DropdownMenuCheckboxItem>
-                          )
-                        })}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
                 </div>
               </DialogContent>
             </Dialog>
@@ -229,7 +174,12 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                   <DataTableFacetedFilter
                     column={statusColumn}
                     title='Status'
-                    options={statusOptions}
+                    options={[
+                      { label: 'Stuck', value: 'stuck' },
+                      { label: 'In Progress', value: 'in_progress' },
+                      { label: 'Done', value: 'done' },
+                      { label: 'Cancelled', value: 'cancelled' },
+                    ]}
                     onFilterChange={(filterValue) => {
                       statusColumn.setFilterValue(filterValue);
                     }}
@@ -237,11 +187,12 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                 </DropdownMenuContent>
               </DropdownMenu>
             )}
+            
             {priorityColumn && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="h-9 px-3 gap-2 reveal"
                   >
                     <Icon icon="lucide:filter" className="size-3" />
@@ -257,7 +208,12 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                   <DataTableFacetedFilter
                     column={priorityColumn}
                     title='Priority'
-                    options={priorityOptions}
+                    options={[
+                      { label: 'High', value: 'high' },
+                      { label: 'Medium', value: 'medium' },
+                      { label: 'Low', value: 'low' },
+                      { label: 'Neutral', value: 'neutral' },
+                    ]}
                     onFilterChange={(filterValue) => {
                       priorityColumn.setFilterValue(filterValue);
                     }}
@@ -303,7 +259,7 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
             <Button 
               variant="outline"
               className="h-9 w-9 rounded-full flex items-center justify-center p-0 mx-1.5"
-              onClick={() => openModal(null)}
+              onClick={handleOpenModal}
             >
               <Icon icon="lucide:plus" className="size-4" />
             </Button>
@@ -333,8 +289,8 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
             ))}
           </TableHeader>
           <TableBody>
-            {visibleRows?.length ? (
-              visibleRows.map((row) => (
+            {table.getRowModel().rows.length ? (
+              table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
@@ -360,16 +316,20 @@ export function Content<TData, TValue>({ columns, data }: DataTableProps<TData, 
                 </TableCell>
               </TableRow>
             )}
-            <TableRow>
-              <TableCell
-                ref={loadMoreRef}
-                colSpan={columns.length}
-                className='p-2 border-0'
-              ></TableCell>
-            </TableRow>
           </TableBody>
         </Table>
       </div>
+
+      {/* Task create/edit modal */}
+      {isModalOpen && (
+        <TaskForm
+          onSuccess={async () => {
+            if (onTasksChange) await onTasksChange();
+            return Promise.resolve();
+          }}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   )
 }

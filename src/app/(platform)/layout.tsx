@@ -4,7 +4,7 @@ import PlatformHeader from "@/components/header-platform/platform-header"
 import { MemberProvider } from "@/components/member/context";
 import { UploadProvider } from "@/components/upload/context";
 import { ProjectProvider } from "@/components/nmbd-project/context";
-import { TaskProvider } from "@/components/platform/task/context";
+
 import { MainProvider } from "@/provider/main";
 import { ModalProvider } from "@/components/atom/modal/context";
 import { Toaster } from "@/components/ui/sonner";
@@ -20,7 +20,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <main className="flex flex-1 flex-col pt-8">
       <MainProvider>
         <ProjectProvider>
-          <TaskProvider>
+          
             <UploadProvider>
               <MemberProvider>
                 <ModalProvider>
@@ -28,7 +28,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 </ModalProvider>
               </MemberProvider>
             </UploadProvider>
-          </TaskProvider>
+          
         </ProjectProvider>
       </MainProvider>
       </main>
