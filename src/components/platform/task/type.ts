@@ -1,10 +1,22 @@
+import { TASK_STATUS, TASK_PRIORITY } from './constant';
+
+export interface Activity {
+  system: string;
+  category: string;
+  subcategory: string;
+  activity: string;
+}
+
+export type TaskStatus = typeof TASK_STATUS[keyof typeof TASK_STATUS];
+export type TaskPriority = typeof TASK_PRIORITY[keyof typeof TASK_PRIORITY];
+
 export interface Task {
   _id?: string;
   project: string;
   task: string;
   club: string;
-  status: "stuck" | "in_progress" | "done" | "cancelled";
-  priority: "high" | "medium" | "low" | "neutral";
+  status: TaskStatus;
+  priority: TaskPriority;
   duration: string;
   desc: string;
   label: string;

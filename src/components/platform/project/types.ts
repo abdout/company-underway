@@ -1,4 +1,4 @@
-import { SystemType } from './constant';
+export type Systems = 'MV SWGR' | 'HV SWGR' | 'LV SWGR' | 'POWER TRAFO' | 'DIST. TRAFO' | 'COMPONENT' | 'RELAY' | 'RMU' | 'LOW CURRENT';
 
 export interface TeamMember {
   id: string;
@@ -29,7 +29,7 @@ export interface ActivityCategory {
 }
 
 export interface ActivityWithSystem {
-  system: SystemType;
+  system: Systems;
   category: string;
   subcategory: string;
   activity: string;

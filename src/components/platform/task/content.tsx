@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   ColumnDef,
   flexRender,
@@ -34,17 +34,20 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/
 import { Icon } from '@iconify/react'
 import { Plus } from 'lucide-react'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 import TaskForm from './form'
 import { Task } from './type'
+import { syncProjectsWithTasks } from './actions'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   onTasksChange?: () => Promise<void>
+  onRowClick?: (task: TData) => void
 }
 
-export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTableProps<TData, TValue>) {
+export function Content<TData, TValue>({ columns, data, onTasksChange, onRowClick }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
@@ -55,6 +58,7 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
   })
   const [rowSelection, setRowSelection] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSyncing, setIsSyncing] = useState(false)
 
   const table = useReactTable({
     data,
@@ -78,6 +82,8 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
   const statusColumn = table.getColumn('status')
   const priorityColumn = table.getColumn('priority')
 
+  const router = useRouter()
+
   const handleCloseModal = async () => {
     setIsModalOpen(false);
     if (onTasksChange) {
@@ -88,6 +94,52 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
   const handleOpenModal = () => {
     setIsModalOpen(true);
   }
+
+  // Function to sync with projects
+  const handleSyncWithProjects = async () => {
+    try {
+      setIsSyncing(true);
+      toast.info('Syncing tasks with projects...');
+      
+      const result = await syncProjectsWithTasks();
+      
+      if (result.error) {
+        console.error('Failed to sync with projects:', result.error);
+        toast.error('Failed to sync with projects');
+        return;
+      }
+      
+      toast.success(result.message || 'Successfully synced with projects');
+      
+      // Fetch updated tasks after sync
+      if (onTasksChange) await onTasksChange();
+    } catch (error) {
+      console.error('Error syncing with projects:', error);
+      toast.error('Error syncing with projects');
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+  // Initial sync on component mount and set up auto-sync interval
+  useEffect(() => {
+    // Auto-sync with projects on initial load
+    handleSyncWithProjects();
+    
+    // Set up an interval to sync with projects every 5 minutes
+    const syncInterval = setInterval(() => {
+      handleSyncWithProjects();
+    }, 5 * 60 * 1000); // 5 minutes in milliseconds
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(syncInterval);
+  }, []); // Empty dependency array means this runs once on mount
+
+  const handleRowClick = (task: TData) => {
+    if (onRowClick) {
+      onRowClick(task);
+    }
+  };
 
   return (
     <>
@@ -121,6 +173,7 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
                       column={statusColumn}
                       title='Status'
                       options={[
+                        { label: 'Pending', value: 'pending' },
                         { label: 'Stuck', value: 'stuck' },
                         { label: 'In Progress', value: 'in_progress' },
                         { label: 'Done', value: 'done' },
@@ -175,6 +228,7 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
                     column={statusColumn}
                     title='Status'
                     options={[
+                      { label: 'Pending', value: 'pending' },
                       { label: 'Stuck', value: 'stuck' },
                       { label: 'In Progress', value: 'in_progress' },
                       { label: 'Done', value: 'done' },
@@ -221,48 +275,64 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
                 </DropdownMenuContent>
               </DropdownMenu>
             )}
-          </div>
 
-          {/* Column visibility dropdown */}
-          <div className="ml-auto flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  aria-label='Select Columns'
-                  variant='outline'
-                  className='h-9 px-3 gap-2 reveal'
-                >
-                  <MixerHorizontalIcon className='size-4' />
-                  Columns
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align='end'>
-                {table
-                  .getAllColumns()
-                  .filter((column) => column.getCanHide())
-                  .map((column) => {
-                    return (
-                      <DropdownMenuCheckboxItem
-                        key={column.id}
-                        className='capitalize'
-                        checked={column.getIsVisible()}
-                        onCheckedChange={(value) => column.toggleVisibility(!!value)}
-                      >
-                        {column.id}
-                      </DropdownMenuCheckboxItem>
-                    )
-                  })}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Column visibility dropdown */}
+            <div className="ml-auto flex items-center gap-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    aria-label='Select Columns'
+                    variant='outline'
+                    className='h-9 px-3 gap-2 reveal'
+                  >
+                    <MixerHorizontalIcon className='size-4' />
+                    Columns
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align='end'>
+                  {table
+                    .getAllColumns()
+                    .filter((column) => column.getCanHide())
+                    .map((column) => {
+                      return (
+                        <DropdownMenuCheckboxItem
+                          key={column.id}
+                          className='capitalize'
+                          checked={column.getIsVisible()}
+                          onCheckedChange={(value) => column.toggleVisibility(!!value)}
+                        >
+                          {column.id}
+                        </DropdownMenuCheckboxItem>
+                      )
+                    })}
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-            {/* Add Task Button */}
-            <Button 
-              variant="outline"
-              className="h-9 w-9 rounded-full flex items-center justify-center p-0 mx-1.5"
-              onClick={handleOpenModal}
-            >
-              <Icon icon="lucide:plus" className="size-4" />
-            </Button>
+              {/* Sync Button */}
+              <div className='pl-2'>
+              <Button
+                variant="outline"
+                className="h-9 px-3  gap-2 reveal"
+                onClick={handleSyncWithProjects}
+                disabled={isSyncing}
+              >
+                <Icon 
+                  icon="lucide:refresh-cw" 
+                  className={`size-4 ${isSyncing ? 'animate-spin' : ''}`} 
+                />
+                {isSyncing ? 'Syncing...' : 'Sync'}
+              </Button>
+              </div>
+
+              {/* Add Task Button */}
+              <Button 
+                variant="outline"
+                className="h-9 w-9 rounded-full flex items-center justify-center p-0 mx-1.5"
+                onClick={handleOpenModal}
+              >
+                <Icon icon="lucide:plus" className="size-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -275,7 +345,7 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
               <TableRow key={headerGroup.id} className="border-b">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="border-b border-l-0 border-r-0">
+                    <TableHead key={header.id} className="border-b border-l-0 border-r-0 px-4">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -289,30 +359,25 @@ export function Content<TData, TValue>({ columns, data, onTasksChange }: DataTab
             ))}
           </TableHeader>
           <TableBody>
-            {table.getRowModel().rows.length ? (
+            {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && 'selected'}
-                  className="border-b hover:bg-slate-50"
+                  data-state={row.getIsSelected() && "selected"}
+                  onClick={() => handleRowClick(row.original)}
+                  className="cursor-pointer hover:bg-neutral-50"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="border-0 p-4">
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                    <TableCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className='h-24 text-center border-0'
-                >
-                  No results found
+                <TableCell colSpan={columns.length} className="h-24 text-center">
+                  No results.
                 </TableCell>
               </TableRow>
             )}

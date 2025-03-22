@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import connectDB from '@/lib/mongodb';
 import Project from './model';
-import { ProjectFormValues } from './valid';
+import { ProjectFormValues } from './validation';
 import { auth } from '@/auth';
 import { Project as ProjectType } from './types';
 

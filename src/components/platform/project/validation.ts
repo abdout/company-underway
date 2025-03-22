@@ -1,5 +1,5 @@
 import * as z from "zod";
-import { SystemType } from "./constant";
+import { type Systems } from "./types";
 
 const activitySchema = z.object({
   system: z.string().optional(),

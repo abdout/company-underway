@@ -1,5 +1,3 @@
-import { TeamMember, TeamLead, Kit, Car, Project } from './types';
-
 export const activities = {
   "MV SWGR": {
     items: {
@@ -476,33 +474,3 @@ export const activities = {
     },
   },
 };
-// Mock data - These would be fetched from your APIs in production
-export const TEAM_MEMBERS: TeamMember[] = [
-  { id: '1', name: 'John Doe' },
-  { id: '2', name: 'Jane Smith' },
-  { id: '3', name: 'Bob Johnson' },
-  { id: '4', name: 'Sarah Williams' },
-  { id: '5', name: 'Mike Brown' },
-];
-
-export const TEAM_LEADS: TeamLead[] = [
-  { id: '1', name: 'John Doe' },
-  { id: '2', name: 'Jane Smith' },
-  { id: '3', name: 'Sarah Williams' },
-];
-
-export const KITS: Kit[] = [
-  { id: '1', name: 'Testing Kit A' },
-  { id: '2', name: 'Measurement Kit B' },
-  { id: '3', name: 'Relay Test Kit' },
-  { id: '4', name: 'Protection Kit C' },
-  { id: '5', name: 'Circuit Breaker Kit' },
-];
-
-export const CARS: Car[] = [
-  { id: '1', name: 'Toyota SUV' },
-  { id: '2', name: 'Ford Pickup' },
-  { id: '3', name: 'Chevrolet Van' },
-  { id: '4', name: 'Nissan Truck' },
-  { id: '5', name: 'Jeep 4x4' },
-];

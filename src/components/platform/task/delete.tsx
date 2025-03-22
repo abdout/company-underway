@@ -74,7 +74,7 @@ const DeleteTask = ({ task, onSuccess }: DeleteTaskProps) => {
           e.stopPropagation();
           setIsOpen(true);
         }}
-        className="h-8 w-8 p-0 text-destructive"
+        className="h-8 w-8 p-0 text-destructive hover:text-destructive"
       >
         <Trash2 className="h-4 w-4" />
       </Button>

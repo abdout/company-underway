@@ -44,7 +44,7 @@ const ActionsCell: React.FC<ActionsCellProps> = ({ row, onTaskUpdate }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   
   return (
-    <div className="flex items-center justify-end gap-2">
+    <div className="flex items-center justify-center gap-0.5">
       <Button
         variant="ghost"
         size="icon"
@@ -84,17 +84,13 @@ interface StatusCircleProps {
 }
 
 const StatusCircle: React.FC<StatusCircleProps> = ({ status }) => {
-  const statusColors: { [key: string]: string } = {
-    'stuck': 'bg-red-400',
+  const statusStyles: Record<string, string> = {
+    'pending': 'bg-gray-400',
+    'stuck': 'bg-red-500',
     'in_progress': 'bg-yellow-400',
-    'done': 'bg-green-400',
-    'cancelled': 'bg-gray-400',
-    'Neutral': 'bg-gray-400',
-    'In Progress': 'bg-yellow-400',
-    'Completed': 'bg-green-400',
-    'Stopped': 'bg-gray-400',
+    'done': 'bg-green-500'
   };
-  const colorClass = statusColors[status] || 'bg-gray-400'; // Default color
+  const colorClass = statusStyles[status] || 'bg-gray-400'; // Default color
 
   return (
     <div className={`w-4 h-4 rounded-full ${colorClass}`} />
@@ -137,6 +133,21 @@ export const getColumns = (onTaskUpdate?: () => Promise<void>): ColumnDef<Task>[
           Task
           <ArrowUpDown className='ml-2 h-4 w-4' />
         </Button>
+      )
+    },
+    cell: ({ row }) => {
+      const task = row.getValue('task') as string;
+      const tag = row.original.tag;
+      
+      return (
+        <div className="flex items-center gap-2">
+          <span>{task}</span>
+          {tag && (
+            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-neutral-100 text-neutral-800">
+              {tag}
+            </div>
+          )}
+        </div>
       )
     }
   },
@@ -205,7 +216,11 @@ export const getColumns = (onTaskUpdate?: () => Promise<void>): ColumnDef<Task>[
   },
   {
     accessorKey: 'actions',
-    header: 'Actions',
-    cell: ({ row }) => <ActionsCell row={row} onTaskUpdate={onTaskUpdate} />,
+    header: () => <div className="text-center w-full pl-8">Actions</div>,
+    cell: ({ row }) => (
+      <div className="pl-8">
+        <ActionsCell row={row} onTaskUpdate={onTaskUpdate} />
+      </div>
+    ),
   }
 ]; 

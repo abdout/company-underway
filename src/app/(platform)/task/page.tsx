@@ -5,10 +5,12 @@ import { Content } from '@/components/platform/task/content';
 import { toast } from 'sonner';
 import { getTasks } from '@/components/platform/task/actions';
 import { Task } from '@/components/platform/task/type';
+import { useRouter } from 'next/navigation';
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   
   const fetchTasks = async () => {
     console.log('=== Client: Fetching Tasks ===');
@@ -47,6 +49,10 @@ const TaskPage = () => {
     fetchTasks();
   }, []);
   
+  const handleRowClick = (task: Task) => {
+    router.push(`/task/${task._id}`);
+  };
+  
   return (
     <div className="container mx-auto px-4">
       <div className="flex justify-between items-center mb-6">
@@ -56,7 +62,12 @@ const TaskPage = () => {
         </div>
       </div>
       
-      <Content columns={columns} data={tasks} onTasksChange={fetchTasks} />
+      <Content 
+        columns={columns} 
+        data={tasks} 
+        onTasksChange={fetchTasks} 
+        onRowClick={handleRowClick}
+      />
     </div>
   );
 };

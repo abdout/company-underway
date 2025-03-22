@@ -2,18 +2,18 @@ import mongoose, { Schema } from "mongoose";
 
 const taskSchema = new Schema(
   {
-    project: { type: String, required: true },
-    task: { type: String, required: true },
+    project: { type: String },
+    task: { type: String },
     club: { type: String },
     status: { 
       type: String, 
-      enum: ["stuck", "in_progress", "done", "cancelled"],
-      default: "stuck"
+      enum: ["pending", "stuck", "in_progress", "done"],
+      default: "pending"
     },
     priority: { 
       type: String, 
-      enum: ["high", "medium", "low", "neutral"],
-      default: "neutral"
+      enum: ["pending", "high", "medium", "low"],
+      default: "pending"
     },
     duration: { type: String },
     desc: { type: String },

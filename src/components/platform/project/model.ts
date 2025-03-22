@@ -1,96 +1,39 @@
 import mongoose, { Schema } from "mongoose";
-import { SystemType } from "./constant";
-import { ProjectFormValues } from "./valid";
+import { type Systems } from "./types";
+import { type ProjectFormValues } from "./validation";
 
 const activitySchema = new Schema({
-  system: {
-    type: String,
-    enum: ["MV SWGR", "HV SWGR", "LV SWGR", "POWER TRAFO", "DIST. TRAFO", "COMPONENT", "RELAY", "RMU", "LOW CURRENT"],
-    required: true
-  },
-  category: {
-    type: String,
-    required: true
-  },
-  subcategory: {
-    type: String,
-    required: true
-  },
-  activity: {
-    type: String,
-    required: true
-  }
+  system: String,
+  category: String,
+  subcategory: String,
+  activity: String
 });
 
 const projectSchema = new Schema<ProjectFormValues>(
   {
     // Basic Information
-    customer: {
-      type: String,
-      trim: true
-    },
-    description: {
-      type: String,
-      trim: true
-    },
-    location: {
-      type: String,
-      trim: true
-    },
-    client: {
-      type: String,
-      trim: true
-    },
-    consultant: {
-      type: String,
-      trim: true
-    },
-    status: {
-      type: String,
-      enum: ["neutral", "on_progress", "done", "stuck"],
-      default: "neutral"
-    },
-    priority: {
-      type: String,
-      enum: ["high", "medium", "low", "neutral"],
-      default: "neutral"
-    },
-    phase: {
-      type: String,
-      enum: ["approved", "start", "half_way", "almost_done", "handover"],
-      default: "approved"
-    },
+    customer: String,
+    description: String,
+    location: String,
+    client: String,
+    consultant: String,
+    status: String,
+    priority: String,
+    phase: String,
     
     // Team Information
-    team: [{
-      type: String
-    }],
-    teamLead: {
-      type: String
-    },
+    team: [String],
+    teamLead: String,
     
     // Systems and Activities
-    systems: [{
-      type: String,
-      enum: ["MV SWGR", "HV SWGR", "LV SWGR", "POWER TRAFO", "DIST. TRAFO", "COMPONENT", "RELAY", "RMU", "LOW CURRENT"]
-    }],
+    systems: [String],
     activities: [activitySchema],
     
     // Resources
-    mobilization: {
-      type: String,
-      trim: true
-    },
-    accommodation: {
-      type: String,
-      trim: true
-    },
-    kits: [{
-      type: String
-    }],
-    cars: [{
-      type: String
-    }],
+    mobilization: String,
+    accommodation: String,
+    kits: [String],
+    cars: [String],
     
     // Additional Fields
     startDate: Date,

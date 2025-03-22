@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { systemActivities } from '../src/components/platform/project/constant'
+import { activities } from '../src/components/platform/project/activities'
 import chokidar from 'chokidar'
 
 const contentDir = path.join(process.cwd(), 'content', 'mos')
@@ -18,7 +18,7 @@ function generateContent() {
   }
 
   // Generate MDX files for each system type, subitem, and activity
-  Object.entries(systemActivities).forEach(([systemType, items]) => {
+  Object.entries(activities).forEach(([systemType, data]) => {
     const systemDir = path.join(contentDir, systemType.toLowerCase().replace(/\s+/g, '-'))
     
     // Create system type directory
@@ -26,28 +26,27 @@ function generateContent() {
       fs.mkdirSync(systemDir, { recursive: true })
     }
 
-    items.forEach(item => {
-      item.subitems.forEach(subitem => {
-        const subitemDir = path.join(systemDir, subitem.name.toLowerCase().replace(/\s+/g, '-'))
-        
-        // Create subitem directory
-        if (!fs.existsSync(subitemDir)) {
-          fs.mkdirSync(subitemDir, { recursive: true })
-        }
+    Object.entries(data.items).forEach(([itemName, itemData]) => {
+      const subitemDir = path.join(systemDir, itemName.toLowerCase().replace(/\s+/g, '-'))
+      
+      // Create subitem directory
+      if (!fs.existsSync(subitemDir)) {
+        fs.mkdirSync(subitemDir, { recursive: true })
+      }
 
-        // Create MDX files for each activity
-        subitem.activities.forEach(activity => {
-          const activityFile = path.join(subitemDir, `${activity.toLowerCase().replace(/\s+/g, '-')}.mdx`)
-          const content = `---
+      // Create MDX files for each activity
+      itemData.activities.forEach(activity => {
+        const activityFile = path.join(subitemDir, `${activity.toLowerCase().replace(/\s+/g, '-')}.mdx`)
+        const content = `---
 title: "${activity}"
 description: "Description for ${activity}"
 systemType: "${systemType}"
-subitem: "${subitem.name}"
+subitem: "${itemName}"
 ---
 
 # ${activity}
 
-This is the content for ${activity} activity in ${subitem.name} under ${systemType}.
+This is the content for ${activity} activity in ${itemName} under ${systemType}.
 
 ## Description
 
@@ -70,8 +69,7 @@ Add your detailed description here.
 Add any important notes or considerations here.
 `
 
-          fs.writeFileSync(activityFile, content)
-        })
+        fs.writeFileSync(activityFile, content)
       })
     })
   })
@@ -81,14 +79,14 @@ Add any important notes or considerations here.
 
 // Watch mode
 if (process.argv.includes('--watch')) {
-  console.log('Watching for changes in systemActivities...')
+  console.log('Watching for changes in activities...')
   
-  // Watch the constant.ts file
-  chokidar.watch('../src/components/platform/project/constant.ts', {
+  // Watch the activities.ts file
+  chokidar.watch('../src/components/platform/project/activities.ts', {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true
-  }).on('change', (path) => {
-    console.log(`File ${path} has been changed. Regenerating content...`)
+  }).on('change', (filePath: string) => {
+    console.log(`File ${filePath} has been changed. Regenerating content...`)
     generateContent()
   })
 } else {

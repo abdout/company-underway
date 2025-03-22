@@ -3,13 +3,25 @@
 import { revalidatePath } from 'next/cache';
 import connectDB from '@/lib/mongodb';
 import Task from './model';
-import { TaskFormValues } from './valid';
+import { TaskFormValues } from './validation';
 import { auth } from '@/auth';
-import { Task as TaskType } from './type';
+import { Task as TaskType, Activity } from './type';
 import Project from '../project/model';
+import { TASK_STATUS, TASK_PRIORITY } from './constant';
 
 export async function createTask(data: TaskFormValues) {
   console.log('=== Server Action: createTask ===');
+  console.log('Raw data received:', {
+    status: data.status,
+    priority: data.priority,
+    statusType: typeof data.status,
+    priorityType: typeof data.priority
+  });
+  console.log('Expected values:', {
+    statusEnum: [TASK_STATUS.PENDING, TASK_STATUS.STUCK, TASK_STATUS.IN_PROGRESS, TASK_STATUS.DONE],
+    priorityEnum: [TASK_PRIORITY.PENDING, TASK_PRIORITY.HIGH, TASK_PRIORITY.MEDIUM, TASK_PRIORITY.LOW]
+  });
+  
   try {
     // Check authentication
     const session = await auth();
@@ -32,10 +44,8 @@ export async function createTask(data: TaskFormValues) {
       priority: data.priority,
       duration: data.duration,
       desc: data.desc,
-      club: data.club || '',
       tag: data.tag || '',
       remark: data.remark || '',
-      label: data.label || '',
       date: data.date,
       hours: data.hours,
       overtime: data.overtime,
@@ -179,10 +189,8 @@ export async function updateTask(id: string, data: Partial<TaskFormValues>) {
     if (data.priority !== undefined) cleanData.priority = data.priority;
     if (data.duration !== undefined) cleanData.duration = data.duration;
     if (data.desc !== undefined) cleanData.desc = data.desc;
-    if (data.club !== undefined) cleanData.club = data.club;
     if (data.tag !== undefined) cleanData.tag = data.tag;
     if (data.remark !== undefined) cleanData.remark = data.remark;
-    if (data.label !== undefined) cleanData.label = data.label;
     if (data.date !== undefined) cleanData.date = data.date;
     if (data.hours !== undefined) cleanData.hours = data.hours;
     if (data.overtime !== undefined) cleanData.overtime = data.overtime;
@@ -213,10 +221,8 @@ export async function updateTask(id: string, data: Partial<TaskFormValues>) {
       priority: plainTask.priority || '',
       duration: plainTask.duration || '',
       desc: plainTask.desc || '',
-      club: plainTask.club || '',
       tag: plainTask.tag || '',
       remark: plainTask.remark || '',
-      label: plainTask.label || '',
       date: plainTask.date ? new Date(plainTask.date) : undefined,
       hours: plainTask.hours || 0,
       overtime: plainTask.overtime || 0,
@@ -313,37 +319,205 @@ export async function generateTasksFromProject(projectId: string) {
     
     console.log(`Found ${activities.length} activities in project`);
     
-    const tasksToCreate = activities.map((activity: any) => ({
+    // First, remove existing tasks linked to this project to avoid duplicates
+    console.log('Removing existing tasks linked to this project...');
+    const deleteResult = await Task.deleteMany({
+      'linkedActivity.projectId': projectId
+    });
+    console.log(`Deleted ${deleteResult.deletedCount} existing tasks`);
+    
+    // Group activities by system and subcategory to create tasks at the subcategory level
+    const groupedActivities = new Map();
+    
+    // Group activities by "system-category-subcategory"
+    activities.forEach((activity: Activity) => {
+      const key = `${activity.system}-${activity.category}-${activity.subcategory}`;
+      if (!groupedActivities.has(key)) {
+        groupedActivities.set(key, {
+          system: activity.system,
+          category: activity.category,
+          subcategory: activity.subcategory,
+          activities: []
+        });
+      }
+      groupedActivities.get(key).activities.push(activity.activity);
+    });
+    
+    console.log(`Grouped activities into ${groupedActivities.size} subitems`);
+    
+    // Create one task per subcategory
+    const tasksToCreate = Array.from(groupedActivities.values()).map(group => ({
       project: project.customer,
-      task: `${activity.activity} for ${activity.system}`,
-      status: "stuck",
-      priority: "medium",
-      desc: `Task generated from project activity: ${activity.activity} for ${activity.system}`,
+      task: group.subcategory, // Use subcategory name as task name (e.g., "Overcurrent")
+      club: group.system || '',
+      status: "pending",
+      priority: "pending",
+      duration: "4",
+      desc: `${group.subcategory} task for ${project.customer} under ${group.system}`,
+      label: group.category || '',
+      tag: group.system || '',
+      remark: `Auto-generated from project "${project.customer}"`,
       linkedActivity: {
         projectId: projectId,
-        system: activity.system,
-        category: activity.category,
-        subcategory: activity.subcategory,
-        activity: activity.activity
-      }
+        system: group.system,
+        category: group.category,
+        subcategory: group.subcategory,
+        activity: '' // No specific activity as this is at subcategory level
+      },
+      assignedTo: project.team || []
     }));
     
-    console.log(`Creating ${tasksToCreate.length} tasks from activities`);
+    if (tasksToCreate.length === 0) {
+      console.log('No tasks to create after grouping subitems');
+      return { 
+        success: true, 
+        message: 'No tasks to create from project subitems'
+      };
+    }
+    
+    console.log(`Creating ${tasksToCreate.length} tasks from subitems`);
     
     // Create tasks in bulk
     const createdTasks = await Task.insertMany(tasksToCreate);
     console.log(`Successfully created ${createdTasks.length} tasks`);
     
+    // Revalidate task page path to update UI
     revalidatePath('/task');
     console.log('Revalidated path: /task');
     
     return { 
       success: true, 
-      message: `${tasksToCreate.length} tasks created from project activities` 
+      message: `${createdTasks.length} tasks created from project subitems` 
     };
   } catch (error: any) {
     console.error('Error generating tasks from project:', error);
     console.error('Error stack:', error.stack);
     return { error: error.message || 'Failed to generate tasks' };
+  }
+}
+
+// Sync all projects and tasks to ensure all project activities have corresponding tasks
+export async function syncProjectsWithTasks() {
+  console.log('=== Server Action: syncProjectsWithTasks ===');
+  
+  try {
+    // Check authentication
+    const session = await auth();
+    if (!session?.user) {
+      console.log('User not authenticated for syncing projects with tasks');
+      return { error: 'Not authenticated' };
+    }
+
+    await connectDB();
+    console.log('Connected to DB for syncing projects with tasks');
+    
+    // Get all projects
+    const projects = await Project.find({});
+    console.log(`Found ${projects.length} projects to check for tasks`);
+    
+    let totalTasksCreated = 0;
+    let processedProjects = 0;
+    
+    // Process each project
+    for (const project of projects) {
+      console.log(`Processing project: ${project.customer} (ID: ${project._id})`);
+      
+      // Skip projects without activities
+      if (!project.activities || project.activities.length === 0) {
+        console.log(`Project ${project.customer} has no activities to sync`);
+        processedProjects++;
+        continue;
+      }
+      
+      // Group activities by system and subcategory
+      const groupedActivities = new Map();
+      
+      // Group activities by "system-category-subcategory"
+      project.activities.forEach((activity: Activity) => {
+        const key = `${activity.system}-${activity.category}-${activity.subcategory}`;
+        if (!groupedActivities.has(key)) {
+          groupedActivities.set(key, {
+            system: activity.system,
+            category: activity.category,
+            subcategory: activity.subcategory,
+            activities: []
+          });
+        }
+        groupedActivities.get(key).activities.push(activity.activity);
+      });
+      
+      // Check existing tasks for this project
+      const existingTasks = await Task.find({
+        'linkedActivity.projectId': project._id.toString()
+      });
+      
+      // Create a map of existing tasks by subcategory for quick lookup
+      const existingTaskMap = new Map();
+      existingTasks.forEach(task => {
+        if (task.linkedActivity) {
+          const key = `${task.linkedActivity.system}-${task.linkedActivity.category}-${task.linkedActivity.subcategory}`;
+          existingTaskMap.set(key, task);
+        }
+      });
+      
+      // Find subitems without tasks
+      const subitemsNeedingTasks = [];
+      for (const [key, group] of groupedActivities.entries()) {
+        if (!existingTaskMap.has(key)) {
+          subitemsNeedingTasks.push(group);
+        }
+      }
+      
+      if (subitemsNeedingTasks.length === 0) {
+        console.log(`Project ${project.customer} has all subitems synced with tasks`);
+        processedProjects++;
+        continue;
+      }
+      
+      console.log(`Found ${subitemsNeedingTasks.length} subitems without tasks in project ${project.customer}`);
+      
+      // Create tasks for these subitems
+      const tasksToCreate = subitemsNeedingTasks.map(group => ({
+        project: project.customer,
+        task: group.subcategory, // Use subcategory name as task name (e.g., "Overcurrent")
+        club: group.system || '',
+        status: "pending",
+        priority: "pending",
+        duration: "4",
+        desc: `${group.subcategory} task for ${project.customer} under ${group.system}`,
+        label: group.category || '',
+        tag: group.system || '',
+        remark: `Auto-generated from project "${project.customer}"`,
+        linkedActivity: {
+          projectId: project._id.toString(),
+          system: group.system,
+          category: group.category,
+          subcategory: group.subcategory,
+          activity: '' // No specific activity as this is at subcategory level
+        },
+        assignedTo: project.team || []
+      }));
+      
+      // Create these tasks
+      if (tasksToCreate.length > 0) {
+        const createdTasks = await Task.insertMany(tasksToCreate);
+        console.log(`Created ${createdTasks.length} new tasks for project ${project.customer}`);
+        totalTasksCreated += createdTasks.length;
+      }
+      
+      processedProjects++;
+    }
+    
+    // Revalidate task page path
+    revalidatePath('/task');
+    
+    return {
+      success: true,
+      message: `Synced ${processedProjects} projects and created ${totalTasksCreated} new tasks`
+    };
+  } catch (error: any) {
+    console.error('Error syncing projects with tasks:', error);
+    console.error('Error stack:', error.stack);
+    return { error: error.message || 'Failed to sync projects with tasks' };
   }
 } 

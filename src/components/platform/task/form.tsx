@@ -35,8 +35,8 @@ import { Calendar } from '@/components/ui/calendar';
 import { Badge } from '@/components/ui/badge';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
-import { TASK_STATUS_OPTIONS, TASK_PRIORITY_OPTIONS } from './constant';
-import { taskFormSchema, TaskFormValues } from './valid';
+import { TASK_STATUS, TASK_PRIORITY, TASK_STATUS_OPTIONS, TASK_PRIORITY_OPTIONS } from './constant';
+import { taskFormSchema, TaskFormValues } from './validation';
 import { TaskCreateFormProps } from './type';
 import { createTask, updateTask } from './actions';
 import { cn } from '@/lib/utils';
@@ -92,9 +92,9 @@ const TaskForm: React.FC<TaskCreateFormProps> = ({
   const defaultValues: Partial<TaskFormValues> = {
     project: taskToEdit?.project || '',
     task: taskToEdit?.task || '',
-    status: taskToEdit?.status || 'stuck',
-    priority: taskToEdit?.priority || 'neutral',
-    duration: taskToEdit?.duration || '',
+    status: taskToEdit?.status || TASK_STATUS.PENDING,
+    priority: taskToEdit?.priority || TASK_PRIORITY.PENDING,
+    duration: taskToEdit?.duration || '4',
     desc: taskToEdit?.desc || '',
     tag: taskToEdit?.tag || '',
     date: taskToEdit?.date ? new Date(taskToEdit.date) : undefined,

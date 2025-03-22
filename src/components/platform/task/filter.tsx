@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getTasks } from './actions';
 import { Task } from './type';
+import { TASK_STATUS, TASK_PRIORITY } from './constant';
 
 interface FilterOption {
     label: string;
@@ -20,19 +21,19 @@ const getUniqueValues = (tasks: Task[], property: keyof Task) => {
 const getDefaultOptions = (property: keyof Task): FilterOption[] => {
   if (property === 'status') {
     return [
-      { label: 'Stuck', value: 'stuck' },
-      { label: 'In Progress', value: 'in_progress' },
-      { label: 'Done', value: 'done' },
-      { label: 'Cancelled', value: 'cancelled' }
+      { label: 'Pending', value: TASK_STATUS.PENDING },
+      { label: 'Stuck', value: TASK_STATUS.STUCK },
+      { label: 'In Progress', value: TASK_STATUS.IN_PROGRESS },
+      { label: 'Done', value: TASK_STATUS.DONE }
     ];
   }
   
   if (property === 'priority') {
     return [
-      { label: 'Neutral', value: 'neutral' },
-      { label: 'Low', value: 'low' },
-      { label: 'Medium', value: 'medium' },
-      { label: 'High', value: 'high' }
+      { label: 'Pending', value: TASK_PRIORITY.PENDING },
+      { label: 'Low', value: TASK_PRIORITY.LOW },
+      { label: 'Medium', value: TASK_PRIORITY.MEDIUM },
+      { label: 'High', value: TASK_PRIORITY.HIGH }
     ];
   }
   
