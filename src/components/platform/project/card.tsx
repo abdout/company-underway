@@ -65,12 +65,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </CardContent>
           <CardFooter className="flex gap-4 items-center -mt-5">
             <div className={`rounded-full w-4 h-4 ${
-              project.status === 'done' ? 'bg-green-600' :
-              project.status === 'on_progress' ? 'bg-blue-600' :
-              project.status === 'stuck' ? 'bg-red-600' :
-              'bg-gray-600'
+              project.status === 'done' ? 'bg-green-500' :
+              project.status === 'on_progress' ? 'bg-yellow-400' :
+              project.status === 'stuck' ? 'bg-red-500' :
+              'bg-neutral-400'
             }`}></div>
-            <p className="capitalize">{project.status || 'neutral'}</p>
+            <p className="capitalize">{project.status || 'pending'}</p>
           </CardFooter>
         </Link>
       </Card>
