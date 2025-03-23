@@ -10,6 +10,17 @@ interface PageProps {
   };
 }
 
+// Define activity type based on MongoDB data
+interface ProjectActivity {
+  system: string;
+  category: string;
+  subcategory: string;
+  activity: string;
+  _id: {
+    $oid: string;
+  };
+}
+
 export default async function ITPPage({ params }: PageProps) {
   // Fetch project data from MongoDB using server action
   const { success, data: project } = await getProject(params.id);
@@ -25,12 +36,14 @@ export default async function ITPPage({ params }: PageProps) {
 
   // Get systems from MongoDB project data
   const systems = project.systems as SystemType[];
+  // Get activities from MongoDB project data
+  const activities = project.activities as ProjectActivity[] || [];
 
   return (
     <div className="container mx-auto py-8 px-4">
      
       <IndexTable systems={systems} />
-      <ActivityWrapper systems={systems} />
+      <ActivityWrapper systems={systems} activities={activities} />
     </div>
   );
 }

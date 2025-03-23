@@ -13,6 +13,17 @@ interface PageProps {
   };
 }
 
+// Define activity type based on MongoDB data
+interface ProjectActivity {
+  system: string;
+  category: string;
+  subcategory: string;
+  activity: string;
+  _id: {
+    $oid: string;
+  };
+}
+
 export default async function ITP({ params }: PageProps) {
   // Fetch project data from MongoDB using server action
   const { success, data: project } = await getProject(params.id);
@@ -24,13 +35,15 @@ export default async function ITP({ params }: PageProps) {
   const serializedProject = JSON.parse(JSON.stringify(project));
   // Get systems from MongoDB project data
   const systems = serializedProject.systems as SystemType[];
+  // Get activities from MongoDB project data
+  const activities = serializedProject.activities as ProjectActivity[] || [];
   
   return (
     <div className="flex flex-col gap-8 mb-10">
       <Action projectTitle={serializedProject?.customer || ""} />
       <div className="space-y-8">
         <IndexTable systems={systems} />
-        <ActivityWrapper systems={systems} />
+        <ActivityWrapper systems={systems} activities={activities} />
       </div>
     </div>
   );

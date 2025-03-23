@@ -6,10 +6,22 @@ import Table from "./table";
 import { Accept, Document } from "@/constant/project/itp/table";
 import SubActivity from "./subactivity";
 
+// Define activity type based on MongoDB data
+interface ProjectActivity {
+  system: string;
+  category: string;
+  subcategory: string;
+  activity: string;
+  _id: {
+    $oid: string;
+  };
+}
+
 interface IndexProps {
   option: OptionKey;
   index: number;
   systemName?: string;
+  activities?: ProjectActivity[];
 }
 
 type OptionKey = 'evSwgr' | 'evTrafo' | 'evCable' | 'evRmu' | 'hvSwgr' | 'hvTrafo' | 'hvCable' | 'hvRmu' | 'mvSwgr' | 'mvTrafo' | 'mvCable' | 'mvRmu' | 'lvSwgr' | 'lvTrafo' | 'lvCable' | 'lvRmu';
@@ -34,7 +46,7 @@ const optionLabels: Record<OptionKey, string> = {
   lvRmu: 'LV RMU'
 };
 
-const Activity: React.FC<IndexProps> = ({ option, index, systemName }) => {
+const Activity: React.FC<IndexProps> = ({ option, index, systemName, activities = [] }) => {
   const displayName = systemName || optionLabels[option];
 
   return (
@@ -63,7 +75,7 @@ const Activity: React.FC<IndexProps> = ({ option, index, systemName }) => {
           width="1239"
         />
         
-        <SubActivity option={option} />
+        <SubActivity option={option} systemName={systemName} activities={activities} />
         <Cell
           data="FINAL ACCEPTANCE"
           alian={true}

@@ -24,11 +24,23 @@ const systemToOptionKey: Record<string, OptionKey> = {
   'LV RMU': 'lvRmu'
 };
 
-interface ActivityWrapperProps {
-  systems?: string[];
+// Define activity type based on MongoDB data
+interface ProjectActivity {
+  system: string;
+  category: string;
+  subcategory: string;
+  activity: string;
+  _id: {
+    $oid: string;
+  };
 }
 
-const ActivityWrapper: React.FC<ActivityWrapperProps> = ({ systems = [] }) => {
+interface ActivityWrapperProps {
+  systems?: string[];
+  activities?: ProjectActivity[];
+}
+
+const ActivityWrapper: React.FC<ActivityWrapperProps> = ({ systems = [], activities = [] }) => {
   return (
     <>
       {systems.map((system, index) => {
@@ -39,6 +51,7 @@ const ActivityWrapper: React.FC<ActivityWrapperProps> = ({ systems = [] }) => {
             option={optionKey} 
             index={index + 1} 
             systemName={system}
+            activities={activities}
           />
         );
       })}
