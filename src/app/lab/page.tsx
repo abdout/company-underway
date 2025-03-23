@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 export default async function ITPPage({ params }: PageProps) {
-  // Fetch project data
+  // Fetch project data from MongoDB using server action
   const { success, data: project } = await getProject(params.id);
 
   if (!success || !project) {
@@ -23,14 +23,14 @@ export default async function ITPPage({ params }: PageProps) {
     );
   }
 
-  // Get the project's systems
+  // Get systems from MongoDB project data
   const systems = project.systems as SystemType[];
 
   return (
     <div className="container mx-auto py-8 px-4">
      
       <IndexTable systems={systems} />
-      <ActivityWrapper />
+      <ActivityWrapper systems={systems} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import SubActivity from "./subactivity";
 interface IndexProps {
   option: OptionKey;
   index: number;
+  systemName?: string;
 }
 
 type OptionKey = 'evSwgr' | 'evTrafo' | 'evCable' | 'evRmu' | 'hvSwgr' | 'hvTrafo' | 'hvCable' | 'hvRmu' | 'mvSwgr' | 'mvTrafo' | 'mvCable' | 'mvRmu' | 'lvSwgr' | 'lvTrafo' | 'lvCable' | 'lvRmu';
@@ -33,8 +34,8 @@ const optionLabels: Record<OptionKey, string> = {
   lvRmu: 'LV RMU'
 };
 
-const Activity: React.FC<IndexProps> = ({ option, index }) => {
-  const label = optionLabels[option];
+const Activity: React.FC<IndexProps> = ({ option, index, systemName }) => {
+  const displayName = systemName || optionLabels[option];
 
   return (
     <div className="flex justify-center w-full">
@@ -42,7 +43,7 @@ const Activity: React.FC<IndexProps> = ({ option, index }) => {
         <Header />
         
         <Cell
-          data={`${index}. ${label} PRECOMMISSIONING TEST`}
+          data={`${index}. ${displayName} PRECOMMISSIONING TEST`}
           head={true}
           bg={2}
           alian={true}

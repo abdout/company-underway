@@ -14,6 +14,7 @@ interface PageProps {
 }
 
 export default async function ITP({ params }: PageProps) {
+  // Fetch project data from MongoDB using server action
   const { success, data: project } = await getProject(params.id);
   
   if (!success || !project) {
@@ -21,6 +22,7 @@ export default async function ITP({ params }: PageProps) {
   }
 
   const serializedProject = JSON.parse(JSON.stringify(project));
+  // Get systems from MongoDB project data
   const systems = serializedProject.systems as SystemType[];
   
   return (
@@ -28,7 +30,7 @@ export default async function ITP({ params }: PageProps) {
       <Action projectTitle={serializedProject?.customer || ""} />
       <div className="space-y-8">
         <IndexTable systems={systems} />
-        <ActivityWrapper />
+        <ActivityWrapper systems={systems} />
       </div>
     </div>
   );
